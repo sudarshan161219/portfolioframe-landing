@@ -18,8 +18,8 @@ export default function Nav() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 72 72"
-            width="48px"
-            height="48px"
+            width="45px"
+            height="45px"
           >
             <defs>
               <filter
