@@ -1,0 +1,84 @@
+.footer {
+  border-top: 1px solid var(--hairline);
+  padding: 56px var(--edge) 28px;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 40px;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.mark {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--mint);
+  border-radius: 4px;
+}
+
+.tagline {
+  margin-top: 14px;
+  max-width: 32ch;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.groupLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linkGroup a {
+  font-size: 0.88rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  width: fit-content;
+}
+
+.linkGroup a:hover {
+  color: var(--text-primary);
+}
+
+.baseline {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--hairline);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+
+@media (max-width: 620px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+  .baseline {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

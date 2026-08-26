@@ -1,0 +1,35 @@
+:root {
+  --cream: #f5f6f7;
+  --paper: #e8eaed;
+  --mint: #4ea8de;
+  --red: #3a3d42;
+  --sage: #7c828b;
+  --ink: #000000;
+  --pine: #18191b;
+  --void: #0b0c0d;
+
+  /* ---- surfaces ---- */
+  --bg: var(--void);
+  --bg-elev: var(--pine);
+  --bg-elev-2: color-mix(in srgb, var(--pine) 82%, black);
+  --hairline: color-mix(in srgb, var(--cream) 12%, transparent);
+  --hairline-strong: color-mix(in srgb, var(--cream) 22%, transparent);
+
+  /* ---- text ---- */
+  --text-primary: var(--cream);
+  --text-muted: color-mix(in srgb, var(--cream) 62%, transparent);
+  --text-faint: color-mix(in srgb, var(--cream) 40%, transparent);
+  --text-on-paper: var(--pine);
+
+  /* ---- type ---- */
+  --font-display: 'Fraunces', 'Iowan Old Style', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  /* ---- shape / rhythm ---- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --container: 1180px;
+  --edge: clamp(20px, 5vw, 64px);
+}

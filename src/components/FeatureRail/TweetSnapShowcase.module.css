@@ -1,0 +1,142 @@
+.panel {
+  position: relative;
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 5vw, 48px);
+  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.card {
+  flex: 1 1 320px;
+  max-width: 380px;
+  background: var(--cream);
+  border: 1px solid rgba(27, 33, 26, 0.08);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: 0 18px 32px rgba(9, 20, 19, 0.12);
+}
+
+.cardDark {
+  background: var(--void);
+  border-color: var(--hairline);
+  max-width: 240px;
+  align-self: center;
+  transform: rotate(2deg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--mint), var(--sage));
+  flex-shrink: 0;
+}
+
+.avatar[data-dark='true'] {
+  width: 30px;
+  height: 30px;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-on-paper);
+}
+
+.badge {
+  color: var(--mint);
+  font-size: 0.8rem;
+}
+
+.handle {
+  font-size: 0.82rem;
+  color: rgba(27, 33, 26, 0.5);
+}
+
+.nameDark {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.handleDark {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+
+.body {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-on-paper);
+  margin-bottom: 14px;
+}
+
+.bodyDark {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.timestamp {
+  display: block;
+  font-size: 0.76rem;
+  color: rgba(27, 33, 26, 0.45);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(27, 33, 26, 0.08);
+}
+
+.timestampDark {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-faint);
+}
+
+.stats {
+  display: flex;
+  gap: 16px;
+  font-size: 0.76rem;
+  color: rgba(27, 33, 26, 0.55);
+}
+
+.caption {
+  position: absolute;
+  left: clamp(28px, 5vw, 48px);
+  bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  color: rgba(27, 33, 26, 0.45);
+}
+
+@media (max-width: 640px) {
+  .panel {
+    padding: 24px 20px 52px;
+  }
+  .card,
+  .cardDark {
+    max-width: 100%;
+  }
+  .cardDark {
+    transform: none;
+  }
+}

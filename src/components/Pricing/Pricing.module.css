@@ -1,0 +1,193 @@
+.section {
+  border-top: 1px solid var(--hairline);
+  padding: clamp(56px, 8vw, 96px) var(--edge);
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 52ch;
+  margin-bottom: 44px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 14px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 480;
+  font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  background: var(--bg-elev);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardPro {
+  background: var(--pine);
+  border-color: var(--hairline-strong);
+  box-shadow: 0 0 0 1px rgba(139, 223, 221, 0.15);
+}
+
+.proTag {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--void);
+  background: var(--mint);
+  padding: 4px 9px;
+  border-radius: 999px;
+}
+
+.cardTitle {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.cardPrice {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 480;
+  color: var(--text-primary);
+  margin-top: 10px;
+}
+
+.cardCaption {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  margin-bottom: 24px;
+}
+
+.list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.list li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--sage);
+}
+
+.licenseBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: rgba(9, 20, 19, 0.6);
+  border: 1px dashed var(--hairline-strong);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 20px;
+}
+
+.licenseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sage);
+  flex-shrink: 0;
+}
+
+.licensePlaceholder {
+  flex: 1;
+  letter-spacing: 0.04em;
+}
+
+.licenseVerified {
+  color: var(--sage);
+  white-space: nowrap;
+}
+
+.ctaGhost,
+.ctaSolid {
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 13px 20px;
+  border-radius: var(--radius-sm);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.ctaGhost {
+  color: var(--text-primary);
+  border: 1px solid var(--hairline-strong);
+}
+
+.ctaGhost:hover {
+  background: rgba(255, 246, 222, 0.06);
+}
+
+.ctaSolid {
+  color: var(--void);
+  background: var(--mint);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-block;
+}
+
+.ctaSolid:hover {
+  background: var(--sage);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

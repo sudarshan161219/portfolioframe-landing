@@ -1,0 +1,140 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, minmax(150px, auto));
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.tile {
+  position: relative;
+  background: var(--paper);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tileDark {
+  background: var(--void);
+  border: 1px solid var(--hairline);
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 0;
+}
+
+.tileMacbook {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.imgMacbook {
+  width: 78%;
+  filter: drop-shadow(0 18px 28px rgba(9, 20, 19, 0.22));
+}
+
+.imgIphone {
+  width: 46%;
+  filter: drop-shadow(0 12px 20px rgba(9, 20, 19, 0.2));
+}
+
+.imgWatch {
+  width: 42%;
+  filter: drop-shadow(0 10px 16px rgba(9, 20, 19, 0.18));
+}
+
+.tileLabel {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+  color: rgba(27, 33, 26, 0.45);
+}
+
+.tileDark .tileLabel {
+  color: var(--text-faint);
+}
+
+.chipChrome {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.chipChrome span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hairline-strong);
+}
+
+.chipPath {
+  margin-left: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  color: var(--text-faint);
+}
+
+.chipBody {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.chipBlock {
+  height: 8px;
+  border-radius: 3px;
+  background: var(--hairline-strong);
+}
+
+.chipBlock[data-short='true'] {
+  width: 55%;
+}
+
+.terminalBody {
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.terminalBody p {
+  margin: 0 0 8px;
+}
+
+.prompt {
+  color: var(--mint);
+  margin-right: 6px;
+}
+
+.cursorLine {
+  display: flex;
+  align-items: center;
+}
+
+.cursor {
+  width: 6px;
+  height: 12px;
+  background: var(--mint);
+  display: inline-block;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .tileMacbook {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+}

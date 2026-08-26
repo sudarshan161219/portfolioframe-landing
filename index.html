@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Frame — a darkroom for screenshots and code</title>
+    <meta
+      name="description"
+      content="Portfolio Frame is a Chrome extension that turns raw screenshots and code into press-ready visuals. No account, no upload — everything stays on your device."
+    />
+    <link rel="canonical" href="https://portfolioframe.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolioframe.com/" />
+    <meta property="og:site_name" content="Portfolio Frame" />
+    <meta property="og:title" content="Portfolio Frame — a darkroom for screenshots and code" />
+    <meta
+      property="og:description"
+      content="Portfolio Frame is a Chrome extension that turns raw screenshots and code into press-ready visuals. No account, no upload — everything stays on your device."
+    />
+    <meta property="og:image" content="https://portfolioframe.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portfolio Frame — a darkroom for screenshots and code" />
+    <meta
+      name="twitter:description"
+      content="Portfolio Frame is a Chrome extension that turns raw screenshots and code into press-ready visuals. No account, no upload — everything stays on your device."
+    />
+    <meta name="twitter:image" content="https://portfolioframe.com/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Portfolio Frame",
+        "url": "https://portfolioframe.com/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Chrome",
+        "description": "A Chrome extension that turns raw screenshots and code into press-ready visuals. No account, no upload — everything stays on your device.",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro",
+            "priceCurrency": "USD",
+            "description": "One-time license, verified via Gumroad"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
