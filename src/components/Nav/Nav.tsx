@@ -8,6 +8,7 @@ const RAIL_LINKS = [
   { href: "/#annotate", label: "Annotate" },
   { href: "/#brand", label: "Brand" },
   { href: "/#pricing", label: "Pricing" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export default function Nav() {

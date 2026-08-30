@@ -5,27 +5,78 @@
   padding: clamp(28px, 5vw, 48px);
   margin-bottom: 40px;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: center;
+}
+
+.toggleGroup {
+  display: flex;
+  background: rgba(27, 33, 26, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  gap: 2px;
+}
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  padding: 7px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(27, 33, 26, 0.55);
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.toggleBtn[data-active="true"] {
+  background: var(--cream);
+  color: var(--text-on-paper);
+  box-shadow: 0 2px 6px rgba(9, 20, 19, 0.12);
 }
 
 .card {
-  flex: 1 1 320px;
-  max-width: 380px;
+  position: relative;
+  width: 100%;
+  max-width: 420px;
   background: var(--cream);
   border: 1px solid rgba(27, 33, 26, 0.08);
   border-radius: var(--radius-md);
-  padding: 18px 20px;
+  padding: 22px 24px 20px;
   box-shadow: 0 18px 32px rgba(9, 20, 19, 0.12);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.cardDark {
+.card[data-theme="dark"] {
   background: var(--void);
   border-color: var(--hairline);
-  max-width: 240px;
-  align-self: center;
-  transform: rotate(2deg);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.3);
+}
+
+.platformIcon {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  color: rgba(27, 33, 26, 0.35);
+}
+
+.card[data-theme="dark"] .platformIcon {
+  color: var(--text-faint);
 }
 
 .header {
@@ -43,11 +94,6 @@
   flex-shrink: 0;
 }
 
-.avatar[data-dark='true'] {
-  width: 30px;
-  height: 30px;
-}
-
 .identity {
   display: flex;
   flex-direction: column;
@@ -60,6 +106,10 @@
   color: var(--text-on-paper);
 }
 
+.card[data-theme="dark"] .name {
+  color: var(--text-primary);
+}
+
 .badge {
   color: var(--mint);
   font-size: 0.8rem;
@@ -70,14 +120,7 @@
   color: rgba(27, 33, 26, 0.5);
 }
 
-.nameDark {
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--text-primary);
-}
-
-.handleDark {
-  font-size: 0.72rem;
+.card[data-theme="dark"] .handle {
   color: var(--text-faint);
 }
 
@@ -88,11 +131,8 @@
   margin-bottom: 14px;
 }
 
-.bodyDark {
-  font-size: 0.78rem;
-  line-height: 1.5;
+.card[data-theme="dark"] .body {
   color: var(--text-muted);
-  margin-bottom: 10px;
 }
 
 .timestamp {
@@ -100,43 +140,87 @@
   font-size: 0.76rem;
   color: rgba(27, 33, 26, 0.45);
   padding-bottom: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   border-bottom: 1px solid rgba(27, 33, 26, 0.08);
 }
 
-.timestampDark {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
+.card[data-theme="dark"] .timestamp {
   color: var(--text-faint);
+  border-bottom-color: var(--hairline);
 }
 
 .stats {
   display: flex;
-  gap: 16px;
+  gap: 10px;
   font-size: 0.76rem;
   color: rgba(27, 33, 26, 0.55);
+  flex-wrap: wrap;
+}
+
+.card[data-theme="dark"] .stats {
+  color: var(--text-muted);
+}
+
+.statField {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 9px;
+  border-radius: 6px;
+  border: 1px dashed rgba(27, 33, 26, 0.2);
+}
+
+.card[data-theme="dark"] .statField {
+  border-color: var(--hairline-strong);
+}
+
+.statActive {
+  border-color: var(--mint);
+  color: var(--text-on-paper);
+  background: color-mix(in srgb, var(--mint) 10%, transparent);
+}
+
+.card[data-theme="dark"] .statActive {
+  color: var(--text-primary);
+}
+
+.editDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(27, 33, 26, 0.3);
+}
+
+.card[data-theme="dark"] .editDot {
+  background: var(--text-faint);
+}
+
+.cursor {
+  width: 2px;
+  height: 12px;
+  background: var(--mint);
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .caption {
-  position: absolute;
-  left: clamp(28px, 5vw, 48px);
-  bottom: 16px;
+  margin-top: 24px;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.03em;
   color: rgba(27, 33, 26, 0.45);
+  text-align: center;
 }
 
 @media (max-width: 640px) {
   .panel {
-    padding: 24px 20px 52px;
-  }
-  .card,
-  .cardDark {
-    max-width: 100%;
-  }
-  .cardDark {
-    transform: none;
+    padding: 24px 20px 32px;
   }
 }

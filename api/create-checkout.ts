@@ -1,7 +1,4 @@
-// Vercel serverless function. Runs server-side only — this is where the
-// secret Dodo API key lives (via env vars), never in frontend code.
-// Local dev note: `vite dev` does not serve /api routes — use `vercel dev`
-// to test this locally, otherwise the checkout button will 404.
+
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })

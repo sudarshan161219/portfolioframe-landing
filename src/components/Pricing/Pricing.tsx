@@ -1,21 +1,11 @@
-import { DodoPayments } from "dodopayments-checkout";
 import styles from "./Pricing.module.css";
 
-async function handleProCheckout() {
-  try {
-    const res = await fetch("/api/create-checkout", { method: "POST" });
-    const data = await res.json();
-    if (data.checkoutUrl) {
-      DodoPayments.Checkout.open({ checkoutUrl: data.checkoutUrl });
-    } else {
-      console.error("No checkout URL returned", data);
-    }
-  } catch (err) {
-    console.error("Could not start checkout", err);
-  }
-}
-
 export default function Pricing() {
+  const handleProCheckout = () => {
+    window.location.href =
+      "https://checkout.dodopayments.com/buy/pdt_0NmQH2p48Kq2fePwLLuKX?quantity=1";
+  };
+
   return (
     <section id="pricing" className={styles.section}>
       <div className={styles.header}>
@@ -49,6 +39,7 @@ export default function Pricing() {
         <div className={`${styles.card} ${styles.cardPro}`}>
           <span className={styles.proTag}>Pro</span>
           <h3 className={styles.cardTitle}>Pro license</h3>
+          <p className={styles.cardPrice}>$19</p>
           <p className={styles.cardPrice}>One-time payment</p>
           <p className={styles.cardCaption}>
             Everything in Free, plus the full studio
@@ -59,6 +50,8 @@ export default function Pricing() {
             <li>Stickers, badges, and the redact tool</li>
             <li>Custom logo, handle, and QR watermarks</li>
             <li>Tiled watermark protection</li>
+            <li>Batch export of every aspect ratio, zipped</li>
+            <li>SVG export</li>
           </ul>
 
           <div className={styles.licenseBox}>
@@ -66,7 +59,9 @@ export default function Pricing() {
             <span className={styles.licensePlaceholder}>
               XXXX-XXXX-XXXX-XXXX
             </span>
-            <span className={styles.licenseVerified}>Verified via Gumroad</span>
+            <span className={styles.licenseVerified}>
+              Verified via Dodo Payments
+            </span>
           </div>
 
           <button

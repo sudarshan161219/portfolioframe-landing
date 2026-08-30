@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './AppRoutes'
-import { initDodo } from './dodo'
+// import { initDodo } from './dodo'
 import '@fontsource-variable/fraunces'
 import '@fontsource/jetbrains-mono/400.css'
 import '@fontsource/jetbrains-mono/500.css'
@@ -16,7 +16,7 @@ import './styles/global.css'
 
 const rootEl = document.getElementById('root')!
 
-initDodo()
+// initDodo()
 
 const app = (
   <React.StrictMode>

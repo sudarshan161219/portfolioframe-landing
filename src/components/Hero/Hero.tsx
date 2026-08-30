@@ -74,7 +74,9 @@ export default function Hero() {
               <span data-dot="red" />
               <span data-dot="mint" />
               <span data-dot="sage" />
-              <span className={styles.codeTitle}>use-export-pipeline.ts</span>
+              <div>
+                <span className={styles.codeTitle}>use-export-pipeline.ts</span>
+              </div>
             </div>
             <div className={styles.codeBody}>
               <div className={styles.line}>

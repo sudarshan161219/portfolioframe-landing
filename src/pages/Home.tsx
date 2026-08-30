@@ -2,6 +2,7 @@ import Nav from "../components/Nav/Nav";
 import Hero from "../components/Hero/Hero";
 import FeatureRail from "../components/FeatureRail/FeatureRail";
 import Pricing from "../components/Pricing/Pricing";
+import FAQ from "../components/FAQ/FAQ";
 import Footer from "../components/Footer/Footer";
 import { usePageMeta } from "../hooks/usePageMeta";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <FeatureRail />
         <Pricing />
+        <FAQ />
       </main>
       <Footer />
     </div>
