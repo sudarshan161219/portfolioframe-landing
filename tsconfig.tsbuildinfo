@@ -1,1 +1,21 @@
-{"root":["./src/AppRoutes.tsx","./src/dodo.ts","./src/entry-server.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/FeatureRail/DeviceShowcase.tsx","./src/components/FeatureRail/FeatureRail.tsx","./src/components/FeatureRail/TweetSnapShowcase.tsx","./src/components/Footer/Footer.tsx","./src/components/Hero/Hero.tsx","./src/components/Nav/Nav.tsx","./src/components/Pricing/Pricing.tsx","./src/data/comparisons.ts","./src/hooks/usePageMeta.ts","./src/pages/Compare.tsx","./src/pages/Home.tsx"],"version":"5.9.3"}
+{
+  "root": [
+    "./src/AppRoutes.tsx",
+    "./src/entry-server.tsx",
+    "./src/main.tsx",
+    "./src/vite-env.d.ts",
+    "./src/components/FAQ/FAQ.tsx",
+    "./src/components/FeatureRail/DeviceShowcase.tsx",
+    "./src/components/FeatureRail/FeatureRail.tsx",
+    "./src/components/FeatureRail/TweetSnapShowcase.tsx",
+    "./src/components/Footer/Footer.tsx",
+    "./src/components/Hero/Hero.tsx",
+    "./src/components/Nav/Nav.tsx",
+    "./src/components/Pricing/Pricing.tsx",
+    "./src/data/comparisons.ts",
+    "./src/hooks/usePageMeta.ts",
+    "./src/pages/Compare.tsx",
+    "./src/pages/Home.tsx"
+  ],
+  "version": "5.9.3"
+}
