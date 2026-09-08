@@ -15,6 +15,29 @@ function replaceTag(html, pattern, value) {
   return html.replace(pattern, value);
 }
 
+// Vite's SSR module loader (used below to render each route) resolves local
+// asset imports to their dev-server paths (e.g. "/src/assets/foo.png"), not
+// the hashed production paths the client build already wrote to dist/assets.
+// Rewrite any that slip into the rendered HTML so the very first paint (before
+// React hydrates) doesn't show a broken image.
+const builtAssets = fs.readdirSync(path.join(distDir, "assets"));
+
+function resolveDevAssetUrls(html) {
+  return html.replace(
+    /\/src\/[^"'\s]+\/([\w.-]+)\.(png|jpe?g|webp|svg|gif|avif)/g,
+    (match, name, ext) => {
+      const hashed = builtAssets.find(
+        (f) => f.startsWith(`${name}-`) && f.endsWith(`.${ext}`),
+      );
+      if (!hashed) {
+        console.warn(`prerender: could not resolve dev asset path ${match}`);
+        return match;
+      }
+      return `/assets/${hashed}`;
+    },
+  );
+}
+
 async function main() {
   const template = fs.readFileSync(path.join(distDir, "index.html"), "utf-8");
 
@@ -46,7 +69,7 @@ async function main() {
   ];
 
   for (const route of routes) {
-    const appHtml = render(route.url);
+    const appHtml = resolveDevAssetUrls(render(route.url));
     const canonicalUrl = `https://portfolioframe.com${route.url}`;
 
     let html = template;

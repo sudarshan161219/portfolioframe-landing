@@ -1,6 +1,9 @@
 import styles from "./FeatureRail.module.css";
 import DeviceShowcase from "./DeviceShowcase";
 import TweetSnapShowcase from "./TweetSnapShowcase";
+import CodeGlassShowcase from "./CodeGlassShowcase";
+import AnnotateShowcase from "./AnnotateShowcase";
+import BrandShowcase from "./BrandShowcase";
 
 type Feature = {
   title: string;
@@ -180,6 +183,9 @@ export default function FeatureRail() {
             <div>
               {section.id === "mockups" && <DeviceShowcase />}
               {section.id === "twitter-snap" && <TweetSnapShowcase />}
+              {section.id === "code" && <CodeGlassShowcase />}
+              {section.id === "annotate" && <AnnotateShowcase />}
+              {section.id === "brand" && <BrandShowcase />}
               <ul className={styles.cards}>
                 {section.features.map((f) => (
                   <li key={f.title} className={styles.card}>

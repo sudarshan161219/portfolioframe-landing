@@ -78,13 +78,13 @@ export const COMPARISONS: Comparison[] = [
     rows: [
       { feature: 'Device library', frame: 'MacBook, iPhone, Apple Watch, browser & terminal frames', competitor: 'iPhone, Android, iPad, iMac, Apple Watch, browser — a larger library' },
       { feature: 'Code snippet editor', frame: 'Syntax highlighting, language badges, window styles', competitor: 'Not a focus — general screenshot/mockup tool' },
-      { feature: 'Animated / video export', frame: 'Not supported', competitor: 'Supported on paid plans' },
+      { feature: 'Animated / video export', frame: 'Tweet cards with an attached video export as MP4; no general animated export yet', competitor: 'Supported on paid plans' },
       { feature: 'Annotations', frame: 'Text, boxes, arrows, numbered steps, redact tool', competitor: 'Not a documented feature' },
       { feature: 'Format', frame: 'Chrome extension', competitor: 'Hosted web app' },
       { feature: 'Tweet card mockup', frame: 'Built in — avatar, badge, handle, editable stats, light & dark themes', competitor: 'Aspect-ratio presets for social, not a styled tweet card' },
       { feature: 'Pricing', frame: 'Free, Pro is a one-time purchase', competitor: 'Free tier with watermark; paid plans $8–12/month' },
     ],
     honestNote:
-      "If you need the biggest device library or want animated, video-style exports, Shots.so's maturity shows — it's the stronger pick if that's your priority. Frame is narrower by design: a Chrome extension for developers, pairing code screenshots with device mockups in one tool, with a one-time price instead of a subscription.",
+      "If you need the biggest device library or want general animated exports beyond tweet cards, Shots.so's maturity shows — it's the stronger pick if that's your priority. Frame is narrower by design: a Chrome extension for developers, pairing code screenshots with device mockups in one tool, with a one-time price instead of a subscription.",
   },
 ]
