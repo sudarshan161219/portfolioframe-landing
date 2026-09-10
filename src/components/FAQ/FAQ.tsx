@@ -15,7 +15,7 @@ const FAQS: FAQItem[] = [
   {
     question: "What's the difference between Free and Pro?",
     answer:
-      "Free covers the core editor: dual image and code modes, a few syntax themes, standard device frames, and basic annotations. Pro adds the full theme and device library, glassmorphism and 3D tilt, stickers, the redact tool, custom watermarking, batch export of every aspect ratio as a zip, and SVG export.",
+      "Free covers the core editor: dual image and code modes, a few syntax themes, 2 device/browser frames per category, the full background Scene library with 3D tilt, stickers, and basic annotations. Pro adds the rest of the device library, glassmorphism materials, badges and the redact tool, saved custom Scenes and fonts, custom watermarking, batch export of every aspect ratio as a zip, and SVG export.",
   },
   {
     question: "How do I get my Pro license key after I pay?",

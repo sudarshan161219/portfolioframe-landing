@@ -66,6 +66,14 @@ async function main() {
       description: c.intro,
       image: `https://portfolioframe.com/og/vs-${c.slug}.png`,
     })),
+    {
+      url: "/privacy",
+      file: "privacy/index.html",
+      title: "Privacy Policy — Portfolio Frame",
+      description:
+        "How Portfolio Frame handles data: everything is processed locally in your browser, nothing is uploaded, and license activation only talks to Dodo Payments.",
+      image: "https://portfolioframe.com/og-image.png",
+    },
   ];
 
   for (const route of routes) {

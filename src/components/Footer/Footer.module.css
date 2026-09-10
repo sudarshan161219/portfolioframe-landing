@@ -66,11 +66,22 @@
 .baseline {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 16px;
   padding-top: 20px;
   border-top: 1px solid var(--hairline);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-faint);
+}
+
+.baseline a {
+  color: var(--text-faint);
+  text-decoration: none;
+}
+
+.baseline a:hover {
+  color: var(--text-primary);
 }
 
 @media (max-width: 620px) {

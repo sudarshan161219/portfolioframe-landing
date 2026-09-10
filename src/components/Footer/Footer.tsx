@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -130,6 +131,7 @@ export default function Footer() {
       <div className={styles.baseline}>
         <span>© {new Date().getFullYear()} Portfolio Frame</span>
         <span>No account. No upload. No server.</span>
+        <Link to="/privacy">Privacy Policy</Link>
       </div>
     </footer>
   );

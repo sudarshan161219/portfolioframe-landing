@@ -27,8 +27,9 @@ export default function Pricing() {
           <ul className={styles.list}>
             <li>Dual editor: images and code</li>
             <li>Core syntax themes and window styles</li>
-            <li>Standard device and browser frames</li>
-            <li>Text, box, and arrow annotations</li>
+            <li>2 device &amp; browser frames per category</li>
+            <li>Full background Scene library, 3D tilt &amp; perspective</li>
+            <li>Stickers, plus text, box, and arrow annotations</li>
             <li>Local storage, no account</li>
           </ul>
           <a href="#top" className={styles.ctaGhost}>
@@ -45,9 +46,10 @@ export default function Pricing() {
             Everything in Free, plus the full studio
           </p>
           <ul className={styles.list}>
-            <li>Full theme &amp; device library</li>
-            <li>Glassmorphism materials and 3D tilt</li>
-            <li>Stickers, badges, and the redact tool</li>
+            <li>Rest of the device &amp; browser mockup library</li>
+            <li>Glassmorphism materials</li>
+            <li>Badges and the redact tool</li>
+            <li>Save custom Scenes, upload custom fonts</li>
             <li>Custom logo, handle, and QR watermarks</li>
             <li>Tiled watermark protection</li>
             <li>Batch export of every aspect ratio, zipped</li>
