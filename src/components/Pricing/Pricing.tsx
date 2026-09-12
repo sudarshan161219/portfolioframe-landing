@@ -32,7 +32,12 @@ export default function Pricing() {
             <li>Stickers, plus text, box, and arrow annotations</li>
             <li>Local storage, no account</li>
           </ul>
-          <a href="#top" className={styles.ctaGhost}>
+          <a
+            href="https://chromewebstore.google.com/detail/kgpdfalcolcdidglbdnfnelgihlocmkf?utm_source=item-share-cb"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.ctaGhost}
+          >
             Add to Chrome
           </a>
         </div>

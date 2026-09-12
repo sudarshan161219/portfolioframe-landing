@@ -19,7 +19,12 @@ export default function Hero() {
         </p>
 
         <div className={styles.actions}>
-          <a href="#pricing" className={styles.primaryCta}>
+          <a
+            href="https://chromewebstore.google.com/detail/kgpdfalcolcdidglbdnfnelgihlocmkf?utm_source=item-share-cb"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.primaryCta}
+          >
             Add to Chrome, it's free
           </a>
           <a href="#code" className={styles.secondaryCta}>

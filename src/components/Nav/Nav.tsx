@@ -122,7 +122,12 @@ export default function Nav() {
           ))}
         </nav>
 
-        <a className={styles.cta} href="/#pricing" rel="noreferrer">
+        <a
+          className={styles.cta}
+          href="https://chromewebstore.google.com/detail/kgpdfalcolcdidglbdnfnelgihlocmkf?utm_source=item-share-cb"
+          target="_blank"
+          rel="noreferrer"
+        >
           Add to Chrome
         </a>
       </div>

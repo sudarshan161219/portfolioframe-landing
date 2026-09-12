@@ -121,8 +121,18 @@ export default function Footer() {
         <div className={styles.linkGroup}>
           <p className={styles.groupLabel}>Get it</p>
           <a href="#pricing">Pricing</a>
-          <a href="#top">Add to Chrome</a>
-          <a href="https://gumroad.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://chromewebstore.google.com/detail/kgpdfalcolcdidglbdnfnelgihlocmkf?utm_source=item-share-cb"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Add to Chrome
+          </a>
+          <a
+            href="https://checkout.dodopayments.com/buy/pdt_0NmQH2p48Kq2fePwLLuKX?quantity=1"
+            target="_blank"
+            rel="noreferrer"
+          >
             Pro license
           </a>
         </div>
