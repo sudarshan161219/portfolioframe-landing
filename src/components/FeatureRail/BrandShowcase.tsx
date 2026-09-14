@@ -1,16 +1,19 @@
 import { useState } from "react";
 import styles from "./BrandShowcase.module.css";
+import { useLocale } from "../../i18n/LocaleContext";
 
 type WatermarkType = "text" | "logo" | "qr";
 
 export default function BrandShowcase() {
+  const { dict } = useLocale();
+  const t = dict.showcases.brand;
   const [watermark, setWatermark] = useState<WatermarkType>("text");
   const [tiled, setTiled] = useState(false);
 
   return (
     <div className={styles.panel}>
       <div className={styles.controls}>
-        <div className={styles.toggleGroup} role="group" aria-label="Watermark type">
+        <div className={styles.toggleGroup} role="group" aria-label={t.ariaWatermarkType}>
           {(["text", "logo", "qr"] as const).map((type) => (
             <button
               key={type}
@@ -19,19 +22,19 @@ export default function BrandShowcase() {
               data-active={watermark === type}
               onClick={() => setWatermark(type)}
             >
-              {type === "text" ? "Text" : type === "logo" ? "Logo" : "QR"}
+              {t.types[type]}
             </button>
           ))}
         </div>
 
-        <div className={styles.toggleGroup} role="group" aria-label="Tiled protection">
+        <div className={styles.toggleGroup} role="group" aria-label={t.ariaTiled}>
           <button
             type="button"
             className={styles.toggleBtn}
             data-active={!tiled}
             onClick={() => setTiled(false)}
           >
-            Tiled off
+            {t.tiledOff}
           </button>
           <button
             type="button"
@@ -39,7 +42,7 @@ export default function BrandShowcase() {
             data-active={tiled}
             onClick={() => setTiled(true)}
           >
-            Tiled on
+            {t.tiledOn}
           </button>
         </div>
       </div>
@@ -76,10 +79,7 @@ export default function BrandShowcase() {
         </div>
       </div>
 
-      <p className={styles.caption}>
-        Watermark as a handle, a logo mark, or a scannable QR — plus a tiled,
-        angled overlay for work you want protected.
-      </p>
+      <p className={styles.caption}>{t.caption}</p>
     </div>
   );
 }

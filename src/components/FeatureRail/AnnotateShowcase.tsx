@@ -1,16 +1,14 @@
 import { useState } from "react";
 import styles from "./AnnotateShowcase.module.css";
+import { useLocale } from "../../i18n/LocaleContext";
 
 type Tool = "box" | "arrow" | "redact" | "sticker";
 
-const TOOLS: { id: Tool; label: string }[] = [
-  { id: "box", label: "Box" },
-  { id: "arrow", label: "Arrow" },
-  { id: "redact", label: "Redact" },
-  { id: "sticker", label: "Sticker" },
-];
+const TOOL_IDS: Tool[] = ["box", "arrow", "redact", "sticker"];
 
 export default function AnnotateShowcase() {
+  const { dict } = useLocale();
+  const t = dict.showcases.annotate;
   const [active, setActive] = useState<Set<Tool>>(new Set(["box"]));
 
   const toggle = (tool: Tool) => {
@@ -25,16 +23,16 @@ export default function AnnotateShowcase() {
   return (
     <div className={styles.panel}>
       <div className={styles.controls}>
-        <div className={styles.toggleGroup} role="group" aria-label="Annotation tools">
-          {TOOLS.map((tool) => (
+        <div className={styles.toggleGroup} role="group" aria-label={t.ariaTools}>
+          {TOOL_IDS.map((tool) => (
             <button
-              key={tool.id}
+              key={tool}
               type="button"
               className={styles.toggleBtn}
-              data-active={active.has(tool.id)}
-              onClick={() => toggle(tool.id)}
+              data-active={active.has(tool)}
+              onClick={() => toggle(tool)}
             >
-              {tool.label}
+              {t.tools[tool]}
             </button>
           ))}
         </div>
@@ -42,11 +40,11 @@ export default function AnnotateShowcase() {
 
       <div className={styles.canvas}>
         <div className={styles.uiBar}>
-          <span className={styles.uiPill}>Dashboard</span>
+          <span className={styles.uiPill}>{t.dashboardLabel}</span>
         </div>
 
         <div className={styles.uiButton} data-boxed={active.has("box")}>
-          Deploy
+          {t.deployLabel}
         </div>
 
         <div className={styles.uiLine} style={{ width: "72%" }} />
@@ -83,10 +81,7 @@ export default function AnnotateShowcase() {
         )}
       </div>
 
-      <p className={styles.caption}>
-        Box, arrow, redact, and stickers, layered directly on the canvas,
-        toggle a few together to see them stack.
-      </p>
+      <p className={styles.caption}>{t.caption}</p>
     </div>
   );
 }

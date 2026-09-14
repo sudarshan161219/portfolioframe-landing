@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
+import { useLocale } from "../../i18n/LocaleContext";
+import { withLocale } from "../../i18n/paths";
 
 export default function Footer() {
+  const { locale, dict } = useLocale();
+
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brandBlock}>
-          <a href="#top" className={styles.wordmark}>
+          <a href={withLocale("/#top", locale)} className={styles.wordmark}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 72 72"
@@ -104,44 +108,41 @@ export default function Footer() {
             </svg>
             Portfolio Frame
           </a>
-          <p className={styles.tagline}>
-            A darkroom for screenshots and code. Everything stays on your
-            device.
-          </p>
+          <p className={styles.tagline}>{dict.footer.tagline}</p>
         </div>
 
         <div className={styles.linkGroup}>
-          <p className={styles.groupLabel}>Product</p>
-          <a href="#editor">Editor</a>
-          <a href="#code">Code</a>
-          <a href="#mockups">Mockups</a>
-          <a href="#brand">Brand</a>
+          <p className={styles.groupLabel}>{dict.footer.productLabel}</p>
+          <a href={withLocale("/#editor", locale)}>{dict.nav.links.editor}</a>
+          <a href={withLocale("/#code", locale)}>{dict.nav.links.code}</a>
+          <a href={withLocale("/#mockups", locale)}>{dict.nav.links.mockups}</a>
+          <a href={withLocale("/#brand", locale)}>{dict.nav.links.brand}</a>
         </div>
 
         <div className={styles.linkGroup}>
-          <p className={styles.groupLabel}>Get it</p>
-          <a href="#pricing">Pricing</a>
+          <p className={styles.groupLabel}>{dict.footer.getItLabel}</p>
+          <a href={withLocale("/#pricing", locale)}>{dict.nav.links.pricing}</a>
           <a
             href="https://chromewebstore.google.com/detail/kgpdfalcolcdidglbdnfnelgihlocmkf?utm_source=item-share-cb"
             target="_blank"
             rel="noreferrer"
           >
-            Add to Chrome
+            {dict.nav.cta}
           </a>
           <a
             href="https://checkout.dodopayments.com/buy/pdt_0NmQH2p48Kq2fePwLLuKX?quantity=1"
             target="_blank"
             rel="noreferrer"
           >
-            Pro license
+            {dict.footer.proLicenseLink}
           </a>
         </div>
       </div>
 
       <div className={styles.baseline}>
         <span>© {new Date().getFullYear()} Portfolio Frame</span>
-        <span>No account. No upload. No server.</span>
-        <Link to="/privacy">Privacy Policy</Link>
+        <span>{dict.footer.noAccountLine}</span>
+        <Link to={withLocale("/privacy", locale)}>{dict.footer.privacyLink}</Link>
       </div>
     </footer>
   );

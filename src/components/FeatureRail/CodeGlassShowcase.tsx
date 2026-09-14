@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./CodeGlassShowcase.module.css";
+import { useLocale } from "../../i18n/LocaleContext";
 
 type Tilt = "flat" | "angled" | "deep";
 
@@ -10,34 +11,37 @@ const TILT_TRANSFORM: Record<Tilt, string> = {
 };
 
 export default function CodeGlassShowcase() {
+  const { dict } = useLocale();
+  const t = dict.showcases.codeGlass;
+  const common = dict.showcases.common;
   const [tilt, setTilt] = useState<Tilt>("angled");
   const [glass, setGlass] = useState(true);
 
   return (
     <div className={styles.panel}>
       <div className={styles.controls}>
-        <div className={styles.toggleGroup} role="group" aria-label="Tilt">
-          {(["flat", "angled", "deep"] as const).map((t) => (
+        <div className={styles.toggleGroup} role="group" aria-label={common.ariaTilt}>
+          {(["flat", "angled", "deep"] as const).map((tt) => (
             <button
-              key={t}
+              key={tt}
               type="button"
               className={styles.toggleBtn}
-              data-active={tilt === t}
-              onClick={() => setTilt(t)}
+              data-active={tilt === tt}
+              onClick={() => setTilt(tt)}
             >
-              {t === "flat" ? "Flat" : t === "angled" ? "Angled" : "Deep"}
+              {common.tiltLabels[tt]}
             </button>
           ))}
         </div>
 
-        <div className={styles.toggleGroup} role="group" aria-label="Glass material">
+        <div className={styles.toggleGroup} role="group" aria-label={t.ariaGlass}>
           <button
             type="button"
             className={styles.toggleBtn}
             data-active={!glass}
             onClick={() => setGlass(false)}
           >
-            Glass off
+            {t.glassOff}
           </button>
           <button
             type="button"
@@ -45,7 +49,7 @@ export default function CodeGlassShowcase() {
             data-active={glass}
             onClick={() => setGlass(true)}
           >
-            Glass on
+            {t.glassOn}
           </button>
         </div>
       </div>
@@ -72,7 +76,7 @@ export default function CodeGlassShowcase() {
             </p>
             <p className={styles.indent}>
               <span className={styles.kw}>return</span>{" "}
-              <span className={styles.str}>"shipped."</span>;
+              <span className={styles.str}>"{t.returnValue}"</span>;
             </p>
             <p>{"}"}</p>
           </div>
@@ -80,10 +84,7 @@ export default function CodeGlassShowcase() {
         </div>
       </div>
 
-      <p className={styles.caption}>
-        Frosted-glass panels with tunable borders, plus adjustable X/Y/Z tilt
-        for depth without gimmicks.
-      </p>
+      <p className={styles.caption}>{t.caption}</p>
     </div>
   );
 }

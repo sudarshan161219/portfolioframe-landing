@@ -1,23 +1,32 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
 import Nav from '../components/Nav/Nav'
 import Footer from '../components/Footer/Footer'
-import { COMPARISONS } from '../data/comparisons'
+import { COMPARISON_SLUGS } from '../data/comparisons'
 import { usePageMeta } from '../hooks/usePageMeta'
+import { useLocale } from '../i18n/LocaleContext'
+import { withLocale } from '../i18n/paths'
+import type { ComparisonSlug } from '../i18n/types'
 import styles from './Compare.module.css'
 
 export default function Compare() {
+  const { locale, dict } = useLocale()
   const { slug } = useParams()
-  const comparison = COMPARISONS.find((c) => c.slug === slug)
+  const isKnownSlug = COMPARISON_SLUGS.includes(slug as ComparisonSlug)
 
-  if (!comparison) {
-    return <Navigate to="/" replace />
+  if (!isKnownSlug) {
+    return <Navigate to={withLocale('/', locale)} replace />
   }
 
+  const comparisonSlug = slug as ComparisonSlug
+  const comparison = dict.comparisons[comparisonSlug]
+  const t = dict.compare
+
   usePageMeta({
-    title: `Frame vs ${comparison.name} — code screenshot & mockup tools compared`,
+    title: t.metaTitleTemplate(comparison.name),
     description: comparison.intro,
-    path: `/vs/${comparison.slug}`,
-    image: `https://portfolioframe.com/og/vs-${comparison.slug}.png`,
+    path: `/vs/${comparisonSlug}`,
+    locale,
+    image: `https://portfolioframe.com/og/vs-${comparisonSlug}.png`,
   })
 
   return (
@@ -25,10 +34,8 @@ export default function Compare() {
       <Nav />
       <main>
         <section className={styles.hero}>
-          <p className={styles.eyebrow}>Comparison</p>
-          <h1 className={styles.title}>
-            Frame vs {comparison.name}
-          </h1>
+          <p className={styles.eyebrow}>{t.eyebrow}</p>
+          <h1 className={styles.title}>{t.titleTemplate(comparison.name)}</h1>
           <p className={styles.intro}>{comparison.intro}</p>
         </section>
 
@@ -36,8 +43,8 @@ export default function Compare() {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Feature</th>
-                <th>Frame</th>
+                <th>{t.tableHeaders.feature}</th>
+                <th>{t.tableHeaders.frame}</th>
                 <th>{comparison.name}</th>
               </tr>
             </thead>
@@ -54,19 +61,23 @@ export default function Compare() {
         </section>
 
         <section className={styles.noteSection}>
-          <p className={styles.noteLabel}>Being honest about it</p>
+          <p className={styles.noteLabel}>{t.honestLabel}</p>
           <p className={styles.note}>{comparison.honestNote}</p>
-          <Link to="/#pricing" className={styles.cta}>
-            Try Frame — it's free
+          <Link to={withLocale('/#pricing', locale)} className={styles.cta}>
+            {t.ctaText}
           </Link>
         </section>
 
         <section className={styles.otherSection}>
-          <p className={styles.otherLabel}>Other comparisons</p>
+          <p className={styles.otherLabel}>{t.otherLabel}</p>
           <div className={styles.otherLinks}>
-            {COMPARISONS.filter((c) => c.slug !== comparison.slug).map((c) => (
-              <Link key={c.slug} to={`/vs/${c.slug}`} className={styles.otherLink}>
-                Frame vs {c.name}
+            {COMPARISON_SLUGS.filter((s) => s !== comparisonSlug).map((s) => (
+              <Link
+                key={s}
+                to={withLocale(`/vs/${s}`, locale)}
+                className={styles.otherLink}
+              >
+                {t.otherLinkTemplate(dict.comparisons[s].name)}
               </Link>
             ))}
           </div>

@@ -3,15 +3,16 @@ import iphone from '../../assets/devices/iphone.png'
 import watch from '../../assets/devices/watch.png'
 import macbook from '../../assets/devices/macbook.png'
 import styles from './DeviceShowcase.module.css'
+import { useLocale } from '../../i18n/LocaleContext'
 
 type Frame = 'device' | 'browser' | 'terminal'
 type Device = 'macbook' | 'iphone' | 'watch'
 type Tilt = 'flat' | 'angled' | 'deep'
 
-const DEVICES: Record<Device, { src: string; label: string }> = {
-  macbook: { src: macbook, label: 'MacBook Pro 16"' },
-  iphone: { src: iphone, label: 'iPhone 14 Pro' },
-  watch: { src: watch, label: 'Apple Watch' },
+const DEVICE_IMAGES: Record<Device, string> = {
+  macbook,
+  iphone,
+  watch,
 }
 
 const TILT_TRANSFORM: Record<Tilt, string> = {
@@ -27,6 +28,9 @@ const TILT_DEG: Record<Tilt, string> = {
 }
 
 export default function DeviceShowcase() {
+  const { dict } = useLocale()
+  const t = dict.showcases.device
+  const common = dict.showcases.common
   const [frame, setFrame] = useState<Frame>('device')
   const [device, setDevice] = useState<Device>('macbook')
   const [tilt, setTilt] = useState<Tilt>('flat')
@@ -34,7 +38,7 @@ export default function DeviceShowcase() {
   return (
     <div className={styles.panel}>
       <div className={styles.controls}>
-        <div className={styles.toggleGroup} role="group" aria-label="Frame type">
+        <div className={styles.toggleGroup} role="group" aria-label={t.ariaFrameType}>
           {(['device', 'browser', 'terminal'] as const).map((f) => (
             <button
               key={f}
@@ -43,13 +47,13 @@ export default function DeviceShowcase() {
               data-active={frame === f}
               onClick={() => setFrame(f)}
             >
-              {f === 'device' ? 'Device' : f === 'browser' ? 'Browser' : 'Terminal'}
+              {t.frameTypeLabels[f]}
             </button>
           ))}
         </div>
 
         {frame === 'device' && (
-          <div className={styles.toggleGroup} role="group" aria-label="Device">
+          <div className={styles.toggleGroup} role="group" aria-label={t.ariaDevice}>
             {(['macbook', 'iphone', 'watch'] as const).map((d) => (
               <button
                 key={d}
@@ -58,22 +62,22 @@ export default function DeviceShowcase() {
                 data-active={device === d}
                 onClick={() => setDevice(d)}
               >
-                {d === 'macbook' ? 'MacBook' : d === 'iphone' ? 'iPhone' : 'Watch'}
+                {t.deviceLabels[d]}
               </button>
             ))}
           </div>
         )}
 
-        <div className={styles.toggleGroup} role="group" aria-label="Tilt">
-          {(['flat', 'angled', 'deep'] as const).map((t) => (
+        <div className={styles.toggleGroup} role="group" aria-label={common.ariaTilt}>
+          {(['flat', 'angled', 'deep'] as const).map((tt) => (
             <button
-              key={t}
+              key={tt}
               type="button"
               className={styles.toggleBtn}
-              data-active={tilt === t}
-              onClick={() => setTilt(t)}
+              data-active={tilt === tt}
+              onClick={() => setTilt(tt)}
             >
-              {t === 'flat' ? 'Flat' : t === 'angled' ? 'Angled' : 'Deep'}
+              {common.tiltLabels[tt]}
             </button>
           ))}
         </div>
@@ -83,7 +87,7 @@ export default function DeviceShowcase() {
         {frame === 'device' && (
           <img
             key={device}
-            src={DEVICES[device].src}
+            src={DEVICE_IMAGES[device]}
             alt=""
             className={styles.deviceImg}
             data-device={device}
@@ -130,10 +134,10 @@ export default function DeviceShowcase() {
 
       <p className={styles.caption}>
         {frame === 'device'
-          ? `${DEVICES[device].label}, one of the full device library.`
+          ? `${t.deviceFullNames[device]}${t.deviceCaptionSuffix}`
           : frame === 'browser'
-          ? 'Light & dark browser shells for Chrome and Safari.'
-          : 'A customizable terminal frame with a configurable file path.'}
+          ? t.browserCaption
+          : t.terminalCaption}
       </p>
     </div>
   )

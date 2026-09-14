@@ -2,6 +2,12 @@
 // pipeline (no separate SSR build needed for a route count this small),
 // renders each route to a string, and writes it into a route-specific
 // index.html under dist/ — real crawlable markup, not just a JS shell.
+//
+// Routes are generated for every (locale × page) combination: English is
+// unprefixed (default locale), es/fr/de are prefixed (/es, /fr, /de). Each
+// generated page gets hreflang alternates for every locale plus x-default,
+// and dist/sitemap.xml is generated from the same route list so it can't
+// drift out of sync with the actual locale URLs.
 import { createServer } from "vite";
 import fs from "node:fs";
 import path from "node:path";
@@ -10,6 +16,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const distDir = path.join(root, "dist");
+const SITE_URL = "https://portfolioframe.com";
 
 function replaceTag(html, pattern, value) {
   return html.replace(pattern, value);
@@ -38,6 +45,11 @@ function resolveDevAssetUrls(html) {
   );
 }
 
+function fileForUrl(url) {
+  if (url === "/") return "index.html";
+  return `${url.slice(1)}/index.html`;
+}
+
 async function main() {
   const template = fs.readFileSync(path.join(distDir, "index.html"), "utf-8");
 
@@ -48,99 +60,168 @@ async function main() {
   });
 
   const { render } = await vite.ssrLoadModule("/src/entry-server.tsx");
-  const { COMPARISONS } = await vite.ssrLoadModule("/src/data/comparisons.ts");
+  const { COMPARISON_SLUGS } = await vite.ssrLoadModule("/src/data/comparisons.ts");
+  const { LOCALES, HREFLANG_CODES } = await vite.ssrLoadModule("/src/i18n/config.ts");
+  const { localizePath } = await vite.ssrLoadModule("/src/i18n/paths.ts");
 
-  const routes = [
-    {
-      url: "/",
-      file: "index.html",
-      title: "Portfolio Frame — a darkroom for screenshots and code",
-      description:
-        "Frame is a Chrome extension that turns raw screenshots and code into press-ready visuals. No account, no upload — everything stays on your device.",
-      image: "https://portfolioframe.com/og-image.png",
-    },
-    ...COMPARISONS.map((c) => ({
-      url: `/vs/${c.slug}`,
-      file: `vs/${c.slug}/index.html`,
-      title: `Frame vs ${c.name} — code screenshot & mockup tools compared`,
-      description: c.intro,
-      image: `https://portfolioframe.com/og/vs-${c.slug}.png`,
-    })),
-    {
-      url: "/privacy",
-      file: "privacy/index.html",
-      title: "Privacy Policy — Portfolio Frame",
-      description:
-        "How Portfolio Frame handles data: everything is processed locally in your browser, nothing is uploaded, and license activation only talks to Dodo Payments.",
-      image: "https://portfolioframe.com/og-image.png",
-    },
-  ];
+  const dictionaries = {};
+  for (const locale of LOCALES) {
+    const mod = await vite.ssrLoadModule(`/src/i18n/locales/${locale}.ts`);
+    dictionaries[locale] = mod[locale];
+  }
 
-  for (const route of routes) {
-    const appHtml = resolveDevAssetUrls(render(route.url));
-    const canonicalUrl = `https://portfolioframe.com${route.url}`;
+  // basePath is the locale-independent path ("/", "/vs/carbon", "/privacy"),
+  // used to derive every locale's URL for a given logical page.
+  const pages = [];
+  for (const locale of LOCALES) {
+    const dict = dictionaries[locale];
+
+    pages.push({
+      basePath: "/",
+      locale,
+      title: dict.meta.home.title,
+      description: dict.meta.home.description,
+      image: `${SITE_URL}/og-image.png`,
+      inSitemap: true,
+      changefreq: "weekly",
+      priority: "1.0",
+    });
+
+    for (const slug of COMPARISON_SLUGS) {
+      const comparison = dict.comparisons[slug];
+      pages.push({
+        basePath: `/vs/${slug}`,
+        locale,
+        title: dict.compare.metaTitleTemplate(comparison.name),
+        description: comparison.intro,
+        image: `${SITE_URL}/og/vs-${slug}.png`,
+        inSitemap: true,
+        changefreq: "monthly",
+        priority: "0.7",
+      });
+    }
+
+    pages.push({
+      basePath: "/privacy",
+      locale,
+      title: dict.meta.privacy.title,
+      description: dict.meta.privacy.description,
+      image: `${SITE_URL}/og-image.png`,
+      inSitemap: false,
+    });
+  }
+
+  for (const page of pages) {
+    const url = localizePath(page.basePath, page.locale);
+    const file = fileForUrl(url);
+    const canonicalUrl = `${SITE_URL}${url}`;
+
+    const appHtml = resolveDevAssetUrls(render(url));
+
+    const hreflangTags = LOCALES.map((locale) => {
+      const href = `${SITE_URL}${localizePath(page.basePath, locale)}`;
+      return `<link rel="alternate" hreflang="${HREFLANG_CODES[locale]}" href="${href}" />`;
+    });
+    hreflangTags.push(
+      `<link rel="alternate" hreflang="x-default" href="${SITE_URL}${page.basePath}" />`,
+    );
 
     let html = template;
-    html = replaceTag(
-      html,
-      /<title>.*?<\/title>/,
-      `<title>${route.title}</title>`,
-    );
+    html = replaceTag(html, /<html lang="[^"]*">/, `<html lang="${page.locale}">`);
+    html = replaceTag(html, /<title>.*?<\/title>/, `<title>${page.title}</title>`);
     html = replaceTag(
       html,
       /(<meta\s+name="description"\s+content=")[^"]*(")/s,
-      `$1${route.description}$2`,
+      `$1${page.description}$2`,
     );
     html = replaceTag(
       html,
-      /(<link rel="canonical" href=")[^"]*(")/,
+      /(<link\s+rel="canonical"\s+href=")[^"]*(")/s,
       `$1${canonicalUrl}$2`,
     );
     html = replaceTag(
       html,
-      /(<meta property="og:url" content=")[^"]*(")/,
+      /(<meta\s+property="og:url"\s+content=")[^"]*(")/s,
       `$1${canonicalUrl}$2`,
     );
     html = replaceTag(
       html,
-      /(<meta property="og:title" content=")[^"]*(")/,
-      `$1${route.title}$2`,
+      /(<meta\s+property="og:title"\s+content=")[^"]*(")/s,
+      `$1${page.title}$2`,
     );
     html = replaceTag(
       html,
       /(<meta\s+property="og:description"\s+content=")[^"]*(")/s,
-      `$1${route.description}$2`,
+      `$1${page.description}$2`,
     );
     html = replaceTag(
       html,
-      /(<meta property="og:image" content=")[^"]*(")/,
-      `$1${route.image}$2`,
+      /(<meta\s+property="og:image"\s+content=")[^"]*(")/s,
+      `$1${page.image}$2`,
     );
     html = replaceTag(
       html,
-      /(<meta name="twitter:title" content=")[^"]*(")/,
-      `$1${route.title}$2`,
+      /(<meta\s+name="twitter:title"\s+content=")[^"]*(")/s,
+      `$1${page.title}$2`,
     );
     html = replaceTag(
       html,
       /(<meta\s+name="twitter:description"\s+content=")[^"]*(")/s,
-      `$1${route.description}$2`,
+      `$1${page.description}$2`,
     );
     html = replaceTag(
       html,
-      /(<meta name="twitter:image" content=")[^"]*(")/,
-      `$1${route.image}$2`,
+      /(<meta\s+name="twitter:image"\s+content=")[^"]*(")/s,
+      `$1${page.image}$2`,
+    );
+    html = html.replace(
+      "</head>",
+      `    ${hreflangTags.join("\n    ")}\n  </head>`,
     );
     html = html.replace(
       '<div id="root"></div>',
       `<div id="root">${appHtml}</div>`,
     );
 
-    const outPath = path.join(distDir, route.file);
+    const outPath = path.join(distDir, file);
     fs.mkdirSync(path.dirname(outPath), { recursive: true });
     fs.writeFileSync(outPath, html);
-    console.log("prerendered", route.url, "->", route.file);
+    console.log("prerendered", url, "->", file);
   }
+
+  // Sitemap, generated from the same route list so locale URLs can't drift
+  // out of sync with what's actually prerendered.
+  const sitemapEntries = pages
+    .filter((p) => p.inSitemap)
+    .map((page) => {
+      const alternates = LOCALES.map((locale) => {
+        const href = `${SITE_URL}${localizePath(page.basePath, locale)}`;
+        return `    <xhtml:link rel="alternate" hreflang="${HREFLANG_CODES[locale]}" href="${href}" />`;
+      });
+      alternates.push(
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${page.basePath}" />`,
+      );
+      const loc = `${SITE_URL}${localizePath(page.basePath, page.locale)}`;
+      return [
+        "  <url>",
+        `    <loc>${loc}</loc>`,
+        ...alternates,
+        `    <changefreq>${page.changefreq}</changefreq>`,
+        `    <priority>${page.priority}</priority>`,
+        "  </url>",
+      ].join("\n");
+    });
+
+  const sitemap = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+    ...sitemapEntries,
+    "</urlset>",
+    "",
+  ].join("\n");
+
+  fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemap);
+  console.log("wrote sitemap.xml with", sitemapEntries.length, "urls");
 
   await vite.close();
 }

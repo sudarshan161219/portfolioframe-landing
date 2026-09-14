@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./TweetSnapShowcase.module.css";
+import { useLocale } from "../../i18n/LocaleContext";
 
 function BirdIcon() {
   return (
@@ -30,6 +31,8 @@ function XIcon() {
 }
 
 export default function TweetSnapShowcase() {
+  const { dict } = useLocale();
+  const t = dict.showcases.tweetSnap;
   const [logoStyle, setLogoStyle] = useState<"bird" | "x">("x");
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
@@ -39,7 +42,7 @@ export default function TweetSnapShowcase() {
         <div
           className={styles.toggleGroup}
           role="group"
-          aria-label="Logo style"
+          aria-label={t.ariaLogoStyle}
         >
           <button
             type="button"
@@ -47,7 +50,7 @@ export default function TweetSnapShowcase() {
             data-active={logoStyle === "bird"}
             onClick={() => setLogoStyle("bird")}
           >
-            <BirdIcon /> Classic
+            <BirdIcon /> {t.classic}
           </button>
           <button
             type="button"
@@ -55,18 +58,18 @@ export default function TweetSnapShowcase() {
             data-active={logoStyle === "x"}
             onClick={() => setLogoStyle("x")}
           >
-            <XIcon /> Current
+            <XIcon /> {t.current}
           </button>
         </div>
 
-        <div className={styles.toggleGroup} role="group" aria-label="Theme">
+        <div className={styles.toggleGroup} role="group" aria-label={t.ariaTheme}>
           <button
             type="button"
             className={styles.toggleBtn}
             data-active={theme === "light"}
             onClick={() => setTheme("light")}
           >
-            Light
+            {t.light}
           </button>
           <button
             type="button"
@@ -74,7 +77,7 @@ export default function TweetSnapShowcase() {
             data-active={theme === "dark"}
             onClick={() => setTheme("dark")}
           >
-            Dark
+            {t.dark}
           </button>
         </div>
       </div>
@@ -93,32 +96,26 @@ export default function TweetSnapShowcase() {
             <span className={styles.handle}>@buildwithsud</span>
           </div>
         </div>
-        <p className={styles.body}>
-          shipped Twitter Snap today, turn any tweet into a clean, styled card.
-          no screenshot, no cropping, no ugly UI chrome.
-        </p>
+        <p className={styles.body}>{t.tweetBody}</p>
         <span className={styles.timestamp}>9:41 AM · Aug 21, 2026</span>
 
         <div className={styles.stats}>
           <span className={styles.statField}>
-            128 Replies
+            128 {t.repliesLabel}
             <span className={styles.editDot} />
           </span>
           <span className={`${styles.statField} ${styles.statActive}`}>
-            842 Reposts
+            842 {t.repostsLabel}
             <span className={styles.cursor} />
           </span>
           <span className={styles.statField}>
-            3.4K Likes
+            3.4K {t.likesLabel}
             <span className={styles.editDot} />
           </span>
         </div>
       </div>
 
-      <p className={styles.caption}>
-        Twitter Snap: old bird or the current mark, light or dark, every stat
-        editable
-      </p>
+      <p className={styles.caption}>{t.caption}</p>
     </div>
   );
 }

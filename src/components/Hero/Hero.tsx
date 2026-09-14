@@ -1,22 +1,20 @@
 import styles from "./Hero.module.css";
+import { useLocale } from "../../i18n/LocaleContext";
 
 export default function Hero() {
+  const { dict } = useLocale();
+  const t = dict.hero;
+
   return (
     <section className={styles.hero} id="top">
       <div className={styles.copy}>
-        <p className={styles.eyebrow}>
-          A local-first studio for screenshots &amp; code
-        </p>
+        <p className={styles.eyebrow}>{t.eyebrow}</p>
         <h1 className={styles.headline}>
-          Develop your screenshots
+          {t.headlineLine1}
           <br />
-          like prints.
+          {t.headlineLine2}
         </h1>
-        <p className={styles.sub}>
-          Portfolio Frame turns a raw screenshot or a slab of code into
-          something worth sharing, windowed, lit, annotated, and sized for
-          wherever it's going. No account, no upload, no server in between.
-        </p>
+        <p className={styles.sub}>{t.sub}</p>
 
         <div className={styles.actions}>
           <a
@@ -25,25 +23,25 @@ export default function Hero() {
             rel="noreferrer"
             className={styles.primaryCta}
           >
-            Add to Chrome, it's free
+            {t.primaryCta}
           </a>
           <a href="#code" className={styles.secondaryCta}>
-            See it on code ↓
+            {t.secondaryCta}
           </a>
         </div>
 
         <dl className={styles.trustRow}>
           <div>
-            <dt>Setup</dt>
-            <dd>Zero. Open the extension and start.</dd>
+            <dt>{t.trust.setupLabel}</dt>
+            <dd>{t.trust.setupValue}</dd>
           </div>
           <div>
-            <dt>Storage</dt>
-            <dd>100% on your device, local storage &amp; IndexedDB.</dd>
+            <dt>{t.trust.storageLabel}</dt>
+            <dd>{t.trust.storageValue}</dd>
           </div>
           <div>
-            <dt>Servers</dt>
-            <dd>None. Your work never leaves your browser.</dd>
+            <dt>{t.trust.serversLabel}</dt>
+            <dd>{t.trust.serversValue}</dd>
           </div>
         </dl>
       </div>
@@ -51,7 +49,7 @@ export default function Hero() {
       <div
         className={styles.stage}
         role="img"
-        aria-label="A code snippet card and a browser screenshot card, arranged like proof prints on a darkroom light table"
+        aria-label={t.stageAriaLabel}
       >
         <div className={styles.sheet}>
           <span className={styles.tick} data-corner="tl" />
@@ -66,7 +64,7 @@ export default function Hero() {
               <div className={styles.browserUrl}>portfolio.dev</div>
             </div>
             <div className={styles.browserBody}>
-              <div className={styles.badge}>Shipped v2.4</div>
+              <div className={styles.badge}>{t.shippedBadge}</div>
               <div className={styles.blockLg} />
               <div className={styles.blockRow}>
                 <div className={styles.blockSm} />
@@ -101,9 +99,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <p className={styles.sheetCaption}>
-            Proof 03: background / screenshot / chrome
-          </p>
+          <p className={styles.sheetCaption}>{t.sheetCaption}</p>
         </div>
       </div>
     </section>

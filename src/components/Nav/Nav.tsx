@@ -1,21 +1,27 @@
 import styles from "./Nav.module.css";
+import { useLocale } from "../../i18n/LocaleContext";
+import { withLocale } from "../../i18n/paths";
+import LocaleSwitcher from "../LocaleSwitcher/LocaleSwitcher";
+import type { NavSectionId } from "../../i18n/types";
 
-const RAIL_LINKS = [
-  { href: "/#editor", label: "Editor" },
-  { href: "/#code", label: "Code" },
-  { href: "/#twitter-snap", label: "Twitter Snap" },
-  { href: "/#mockups", label: "Mockups" },
-  { href: "/#annotate", label: "Annotate" },
-  { href: "/#brand", label: "Brand" },
-  { href: "/#pricing", label: "Pricing" },
-  { href: "/#faq", label: "FAQ" },
+const RAIL_SECTIONS: NavSectionId[] = [
+  "editor",
+  "code",
+  "twitter-snap",
+  "mockups",
+  "annotate",
+  "brand",
+  "pricing",
+  "faq",
 ];
 
 export default function Nav() {
+  const { locale, dict } = useLocale();
+
   return (
     <header className={styles.nav}>
       <div className={styles.inner}>
-        <a href="/#top" className={styles.wordmark}>
+        <a href={withLocale("/#top", locale)} className={styles.wordmark}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 72 72"
@@ -115,12 +121,18 @@ export default function Nav() {
         </a>
 
         <nav className={styles.rail} aria-label="Sections">
-          {RAIL_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className={styles.railLink}>
-              {link.label}
+          {RAIL_SECTIONS.map((id) => (
+            <a
+              key={id}
+              href={withLocale(`/#${id}`, locale)}
+              className={styles.railLink}
+            >
+              {dict.nav.links[id]}
             </a>
           ))}
         </nav>
+
+        <LocaleSwitcher />
 
         <a
           className={styles.cta}
@@ -128,7 +140,7 @@ export default function Nav() {
           target="_blank"
           rel="noreferrer"
         >
-          Add to Chrome
+          {dict.nav.cta}
         </a>
       </div>
     </header>
