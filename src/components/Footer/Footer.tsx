@@ -163,12 +163,31 @@ export default function Footer() {
             height="48"
           />
         </a>
+
+        <a
+          href="https://www.indieneed.com/api/badge/click/1f9c1fc0-74e5-4d89-be46-a791894e34f3?to=review"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://www.indieneed.com/api/badge/1f9c1fc0-74e5-4d89-be46-a791894e34f3?variant=review"
+            width="250"
+            height="54"
+            alt="Leave a review for Portfolio Frame on Indie Need"
+            style={{
+              // width: "250px",
+              height: "48px",
+            }}
+          />
+        </a>
       </div>
 
       <div className={styles.baseline}>
         <span>© {new Date().getFullYear()} Portfolio Frame</span>
         <span>{dict.footer.noAccountLine}</span>
-        <Link to={withLocale("/privacy", locale)}>{dict.footer.privacyLink}</Link>
+        <Link to={withLocale("/privacy", locale)}>
+          {dict.footer.privacyLink}
+        </Link>
       </div>
     </footer>
   );
