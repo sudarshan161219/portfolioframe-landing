@@ -139,6 +139,32 @@ export default function Footer() {
         </div>
       </div>
 
+      <div className={styles.badges}>
+        <a
+          href="https://www.producthunt.com/products/portfolio-frame?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-portfolio-frame"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            alt="Portfolio Frame - Frame, annotate, and export screenshots that look designed | Product Hunt"
+            width="250"
+            height="54"
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1250975&theme=dark&t=1789453556854"
+          />
+        </a>
+        <a
+          href="https://forg.to/projects/portfolio-frame"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://forg.to/api/badges/featured/portfolio-frame?theme=dark&shape=square"
+            alt="Portfolio Frame - Featured on Forg on forg."
+            height="48"
+          />
+        </a>
+      </div>
+
       <div className={styles.baseline}>
         <span>© {new Date().getFullYear()} Portfolio Frame</span>
         <span>{dict.footer.noAccountLine}</span>

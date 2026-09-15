@@ -63,6 +63,20 @@
   color: var(--text-primary);
 }
 
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 32px;
+}
+
+.badges img {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
 .baseline {
   display: flex;
   justify-content: space-between;
