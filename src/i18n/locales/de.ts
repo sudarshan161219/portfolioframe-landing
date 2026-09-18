@@ -3,9 +3,9 @@ import type { Dictionary } from '../types'
 export const de = {
   meta: {
     home: {
-      title: 'Portfolio Frame — eine Dunkelkammer für Screenshots und Code',
+      title: 'Screenshot- & Code-Mockup-Editor für Chrome | Portfolio Frame',
       description:
-        'Frame ist eine Chrome-Erweiterung, die aus rohen Screenshots und Code druckreife Bilder macht. Kein Account, kein Upload — alles bleibt auf deinem Gerät.',
+        'Portfolio Frame ist eine Chrome-Erweiterung, die Screenshots und Code in Mockups verwandelt: Geräterahmen, Annotationen, Wasserzeichen. Alles bleibt lokal.',
     },
     privacy: {
       title: 'Datenschutzerklärung — Portfolio Frame',
@@ -29,7 +29,7 @@ export const de = {
   },
 
   hero: {
-    eyebrow: 'Ein local-first Studio für Screenshots & Code',
+    eyebrow: 'Chrome-Erweiterung für Screenshot- und Code-Mockups',
     headlineLine1: 'Entwickle deine Screenshots',
     headlineLine2: 'wie Abzüge.',
     sub: 'Portfolio Frame macht aus einem rohen Screenshot oder einem Batzen Code etwas, das sich zu teilen lohnt: gerahmt, ausgeleuchtet, kommentiert und im richtigen Format für jeden Zweck. Kein Account, kein Upload, kein Server dazwischen.',
@@ -52,7 +52,7 @@ export const de = {
   featureRail: {
     sections: {
       editor: {
-        tag: 'Layout · Quelle',
+        tag: 'Doppel-Editor',
         title: 'Eine Arbeitsfläche, zwei Einstiege',
         description:
           'Screenshot reinziehen oder einen Codeblock einfügen. Dieselbe Arbeitsfläche, dieselben Export-Optionen und Formatvorlagen für beides.',
@@ -72,7 +72,7 @@ export const de = {
         ],
       },
       code: {
-        tag: 'Frame',
+        tag: 'Code-Screenshots',
         title: 'Code, richtig gedruckt',
         description:
           'Syntax-Highlighting und Fensterrahmen, gemacht zum Lesen, nicht nur zum Zeigen.',
@@ -100,7 +100,7 @@ export const de = {
         ],
       },
       'twitter-snap': {
-        tag: 'Social',
+        tag: 'Tweet-Karten',
         title: 'Tweets, ganz ohne Screenshot',
         description:
           'Tweet einfügen, saubere gestylte Karte zurückbekommen. Kein abgeschnittener Browser-Rahmen, kein Cookie-Banner in der Ecke.',
@@ -120,7 +120,7 @@ export const de = {
         ],
       },
       mockups: {
-        tag: 'Hintergrund',
+        tag: 'Geräte- & Browser-Mockups',
         title: 'Die richtige Kulisse',
         description:
           'Echte Geräte- und Browser-Rahmen statt flacher Rechtecke, denn der Kontext ist die halbe Miete.',
@@ -144,7 +144,7 @@ export const de = {
         ],
       },
       annotate: {
-        tag: 'Markierungen',
+        tag: 'Annotationswerkzeuge',
         title: "Zeig, worauf's ankommt",
         description:
           'Text, Formen und Schritte direkt auf der Fläche – ganz ohne ein zweites Tool.',
@@ -164,7 +164,7 @@ export const de = {
         ],
       },
       brand: {
-        tag: 'Marke',
+        tag: 'Wasserzeichen',
         title: 'Signier deine Arbeit',
         description: "Kennzeichne sie als deine – oder mach's schwer, sie ohne Credit zu klauen.",
         features: [

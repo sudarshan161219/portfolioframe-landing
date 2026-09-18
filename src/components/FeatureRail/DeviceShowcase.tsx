@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import iphone from '../../assets/devices/iphone.png'
-import watch from '../../assets/devices/watch.png'
-import macbook from '../../assets/devices/macbook.png'
+import iphone from '../../assets/devices/iphone.webp'
+import watch from '../../assets/devices/watch.webp'
+import macbook from '../../assets/devices/macbook.webp'
 import styles from './DeviceShowcase.module.css'
 import { useLocale } from '../../i18n/LocaleContext'
 
@@ -14,6 +14,11 @@ const DEVICE_IMAGES: Record<Device, string> = {
   iphone,
   watch,
 }
+
+// Every device render is 1200x800 with transparent padding around the hardware.
+// Declaring it lets the browser reserve the box before the bytes land.
+const DEVICE_WIDTH = 1200
+const DEVICE_HEIGHT = 800
 
 const TILT_TRANSFORM: Record<Tilt, string> = {
   flat: 'none',
@@ -85,6 +90,10 @@ export default function DeviceShowcase() {
 
       <div className={styles.stage}>
         {frame === 'device' && (
+          // This image is the page's LCP element in field data, so it must stay
+          // eagerly loaded and high priority. It was previously loading="lazy",
+          // which hid it from the preload scanner and pushed LCP past 35s on
+          // slow connections.
           <img
             key={device}
             src={DEVICE_IMAGES[device]}
@@ -92,7 +101,9 @@ export default function DeviceShowcase() {
             className={styles.deviceImg}
             data-device={device}
             style={{ transform: TILT_TRANSFORM[tilt] }}
-            loading="lazy"
+            width={DEVICE_WIDTH}
+            height={DEVICE_HEIGHT}
+            fetchPriority="high"
           />
         )}
 

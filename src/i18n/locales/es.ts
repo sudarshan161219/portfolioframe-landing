@@ -3,9 +3,9 @@ import type { Dictionary } from '../types'
 export const es = {
   meta: {
     home: {
-      title: 'Portfolio Frame — un cuarto oscuro para capturas y código',
+      title: 'Editor de mockups de capturas y código | Portfolio Frame',
       description:
-        'Frame es una extensión de Chrome que convierte capturas de pantalla y código en bruto en imágenes listas para publicar. Sin cuenta, sin subir nada: todo se queda en tu dispositivo.',
+        'Portfolio Frame es una extensión de Chrome que convierte capturas y código en mockups pulidos: marcos de dispositivo, anotaciones y marcas de agua. Todo local.',
     },
     privacy: {
       title: 'Política de Privacidad — Portfolio Frame',
@@ -29,7 +29,7 @@ export const es = {
   },
 
   hero: {
-    eyebrow: 'Un estudio 100% local para capturas y código',
+    eyebrow: 'Extensión de Chrome para mockups de capturas y código',
     headlineLine1: 'Revela tus capturas',
     headlineLine2: 'como copias.',
     sub: 'Portfolio Frame convierte una captura en bruto o un bloque de código en algo que vale la pena compartir: enmarcado, iluminado, anotado y con el tamaño justo para donde vaya. Sin cuenta, sin subir nada, sin servidor de por medio.',
@@ -52,7 +52,7 @@ export const es = {
   featureRail: {
     sections: {
       editor: {
-        tag: 'Diseño · Fuente',
+        tag: 'Editor doble',
         title: 'Un lienzo, dos puntos de entrada',
         description:
           'Arrastra una captura o pega un bloque de código. El mismo lienzo, los mismos controles de exportación y los mismos ajustes de tamaño valen para ambos.',
@@ -72,7 +72,7 @@ export const es = {
         ],
       },
       code: {
-        tag: 'Frame',
+        tag: 'Capturas de código',
         title: 'Código, impreso como se debe',
         description:
           'Resaltado de sintaxis y marcos de ventana pensados para leerse, no solo para decorar.',
@@ -100,7 +100,7 @@ export const es = {
         ],
       },
       'twitter-snap': {
-        tag: 'Social',
+        tag: 'Tarjetas de tuits',
         title: 'Tweets, sin necesidad de captura',
         description:
           'Pega un tweet y recibe una tarjeta limpia y con estilo. Sin bordes de navegador recortados, sin banner de cookies en la esquina.',
@@ -120,7 +120,7 @@ export const es = {
         ],
       },
       mockups: {
-        tag: 'Fondo',
+        tag: 'Mockups de dispositivo y navegador',
         title: 'Crea el escenario',
         description:
           'Marcos reales de dispositivos y navegadores, no simples rectángulos planos, porque el contexto es la mitad de la historia.',
@@ -144,7 +144,7 @@ export const es = {
         ],
       },
       annotate: {
-        tag: 'Anotar',
+        tag: 'Herramientas de anotación',
         title: 'Señala lo que importa',
         description:
           'Texto, formas y pasos superpuestos directamente en el lienzo, nada que requiera una segunda herramienta.',
@@ -164,7 +164,7 @@ export const es = {
         ],
       },
       brand: {
-        tag: 'Marca',
+        tag: 'Marcas de agua',
         title: 'Firma tu trabajo',
         description: 'Márcalo como tuyo, o haz que sea difícil de robar sin dar crédito.',
         features: [

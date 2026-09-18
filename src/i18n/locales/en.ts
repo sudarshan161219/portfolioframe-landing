@@ -3,9 +3,9 @@ import type { Dictionary } from '../types'
 export const en = {
   meta: {
     home: {
-      title: 'Portfolio Frame — a darkroom for screenshots and code',
+      title: 'Screenshot & code mockup editor for Chrome | Portfolio Frame',
       description:
-        'Frame is a Chrome extension that turns raw screenshots and code into press-ready visuals. No account, no upload — everything stays on your device.',
+        'Portfolio Frame is a Chrome extension that turns screenshots and code into polished mockups: device frames, annotations, watermarks. Nothing leaves your device.',
     },
     privacy: {
       title: 'Privacy Policy — Portfolio Frame',
@@ -29,7 +29,7 @@ export const en = {
   },
 
   hero: {
-    eyebrow: 'A local-first studio for screenshots & code',
+    eyebrow: 'A local-first screenshot & code mockup editor for Chrome',
     headlineLine1: 'Develop your screenshots',
     headlineLine2: 'like prints.',
     sub: "Portfolio Frame turns a raw screenshot or a slab of code into something worth sharing, windowed, lit, annotated, and sized for wherever it's going. No account, no upload, no server in between.",
@@ -52,7 +52,7 @@ export const en = {
   featureRail: {
     sections: {
       editor: {
-        tag: 'Layout · Source',
+        tag: 'Dual editor',
         title: 'One canvas, two ways in',
         description:
           'Drop in a screenshot or paste a block of code. The same canvas, export controls, and sizing presets carry across both.',
@@ -72,7 +72,7 @@ export const en = {
         ],
       },
       code: {
-        tag: 'Frame',
+        tag: 'Code screenshots',
         title: 'Code, printed properly',
         description:
           'Syntax highlighting and window chrome built for reading, not just decoration.',
@@ -100,7 +100,7 @@ export const en = {
         ],
       },
       'twitter-snap': {
-        tag: 'Social',
+        tag: 'Tweet cards',
         title: 'Tweets, without the screenshot',
         description:
           'Paste a tweet, get a clean styled card back. No cropped browser chrome, no cookie banner in the corner.',
@@ -120,7 +120,7 @@ export const en = {
         ],
       },
       mockups: {
-        tag: 'Background',
+        tag: 'Device & browser mockups',
         title: 'Set the scene',
         description:
           'Real device and browser frames, not flat rectangles, because context is half the story.',
@@ -144,7 +144,7 @@ export const en = {
         ],
       },
       annotate: {
-        tag: 'Annotate',
+        tag: 'Annotation tools',
         title: 'Point at what matters',
         description:
           'Text, shapes, and steps layered directly on the canvas, nothing that requires a second tool.',
@@ -164,7 +164,7 @@ export const en = {
         ],
       },
       brand: {
-        tag: 'Brand',
+        tag: 'Watermarks',
         title: 'Sign your work',
         description: 'Mark it as yours, or make it hard to lift without credit.',
         features: [

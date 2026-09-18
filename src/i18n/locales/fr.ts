@@ -3,9 +3,9 @@ import type { Dictionary } from '../types'
 export const fr = {
   meta: {
     home: {
-      title: 'Portfolio Frame — une chambre noire pour tes captures d’écran et ton code',
+      title: 'Éditeur de mockups captures et code | Portfolio Frame',
       description:
-        'Frame est une extension Chrome qui transforme captures d’écran brutes et code en visuels prêts à publier. Pas de compte, pas d’upload — tout reste sur ton appareil.',
+        'Portfolio Frame est une extension Chrome qui transforme captures d’écran et code en mockups : cadres d’appareils, annotations, filigranes. Tout reste local.',
     },
     privacy: {
       title: 'Politique de confidentialité — Portfolio Frame',
@@ -29,7 +29,7 @@ export const fr = {
   },
 
   hero: {
-    eyebrow: 'Un studio local-first pour tes captures d’écran & ton code',
+    eyebrow: 'Extension Chrome pour mockups de captures d’écran et code',
     headlineLine1: 'Développe tes captures d’écran',
     headlineLine2: 'comme des tirages photo.',
     sub: 'Portfolio Frame transforme une capture d’écran brute ou un bloc de code en quelque chose qui vaut le coup d’être partagé : encadré, éclairé, annoté, et à la bonne taille pour sa destination. Pas de compte, pas d’upload, pas de serveur entre les deux.',
@@ -52,7 +52,7 @@ export const fr = {
   featureRail: {
     sections: {
       editor: {
-        tag: 'Mise en page · Source',
+        tag: 'Double éditeur',
         title: 'Un seul canevas, deux points d’entrée',
         description:
           'Dépose une capture d’écran ou colle un bloc de code. Le même canevas, les mêmes réglages d’export et les mêmes formats prédéfinis s’appliquent aux deux.',
@@ -72,7 +72,7 @@ export const fr = {
         ],
       },
       code: {
-        tag: 'Frame',
+        tag: 'Captures de code',
         title: 'Le code, imprimé comme il faut',
         description:
           'Coloration syntaxique et habillage de fenêtre pensés pour la lecture, pas juste pour la déco.',
@@ -100,7 +100,7 @@ export const fr = {
         ],
       },
       'twitter-snap': {
-        tag: 'Social',
+        tag: 'Cartes de tweets',
         title: 'Des tweets, sans la capture d’écran',
         description:
           'Colle un tweet, récupère une carte propre et stylée. Pas d’habillage de navigateur mal cadré, pas de bannière de cookies dans le coin.',
@@ -120,7 +120,7 @@ export const fr = {
         ],
       },
       mockups: {
-        tag: 'Arrière-plan',
+        tag: 'Mockups appareils et navigateurs',
         title: 'Plante le décor',
         description:
           'De vrais cadres d’appareils et de navigateurs, pas de simples rectangles plats, parce que le contexte, c’est la moitié de l’histoire.',
@@ -144,7 +144,7 @@ export const fr = {
         ],
       },
       annotate: {
-        tag: 'Annoter',
+        tag: 'Outils d’annotation',
         title: 'Montre ce qui compte',
         description:
           'Texte, formes et étapes superposés directement sur le canevas, sans avoir besoin d’un second outil.',
@@ -164,7 +164,7 @@ export const fr = {
         ],
       },
       brand: {
-        tag: 'Marque',
+        tag: 'Filigranes',
         title: 'Signe ton travail',
         description: 'Marque-le comme étant à toi, ou rends-le difficile à réutiliser sans créditer la source.',
         features: [
