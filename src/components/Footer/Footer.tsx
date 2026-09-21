@@ -181,13 +181,21 @@ export default function Footer() {
           />
         </a>
 
+        <a href="https://www.betterlaunch.co/product/portfolio-frame">
+          <img
+            src="https://www.betterlaunch.co/badge-live-dark.svg"
+            alt="Better Launch"
+            height="48"
+          />
+        </a>
+
         <a
-          href="https://www.shipnlaunch.com/"
+          href="https://www.shipnlaunch.com/products/portfolio-frame-screenshot-beautifier-mo-yed8m"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
-            src="https://www.shipnlaunch.com/badges/featured-light.svg"
+            src="https://www.shipnlaunch.com/badges/featured-dark.svg"
             alt="Featured on ShipNLaunch"
             height="48"
           />
