@@ -180,6 +180,18 @@ export default function Footer() {
             }}
           />
         </a>
+
+        <a
+          href="https://www.shipnlaunch.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://www.shipnlaunch.com/badges/featured-light.svg"
+            alt="Featured on ShipNLaunch"
+            height="48"
+          />
+        </a>
       </div>
 
       <div className={styles.baseline}>

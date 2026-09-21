@@ -352,9 +352,14 @@ export const en = {
         "Carbon popularized the code-screenshot format — the biggest theme and language library out there, and it's free. Here's how it compares to Frame.",
       rows: [
         {
-          feature: 'Where code is rendered',
-          frame: 'Locally, in your browser',
-          competitor: "Sent to Carbon's server",
+          feature: 'How the image is rendered',
+          frame: 'Canvas compositing, in your browser',
+          competitor: 'DOM rasterisation via dom-to-image, also in your browser',
+        },
+        {
+          feature: 'Where your code lives',
+          frame: 'Extension storage on your own machine',
+          competitor: 'A hosted web app. Exporting stays local; saving or tweeting a snippet uploads it',
         },
         {
           feature: 'Syntax themes',
@@ -393,7 +398,7 @@ export const en = {
         },
       ],
       honestNote:
-        "If you only need a quick code screenshot and want the widest theme selection, Carbon is hard to beat, and it costs nothing. Frame trades some of that theme breadth for local-only rendering, device mockups, and annotation tools — worth it if you're sharing full product shots, not just code.",
+        "If you only need a quick code screenshot and want the widest theme selection, Carbon is hard to beat, and it costs nothing. Both tools export in your browser, so this is not a privacy trade. The real difference is method and scope: Carbon rasterises the DOM, which is quick to build and shows its limits on shadows and custom fonts, while Frame composites on canvas and adds device mockups, annotations and watermarks. Reach for Carbon for a code snippet, Frame for a full product shot.",
     },
     'ray-so': {
       name: 'Ray.so',
@@ -401,9 +406,14 @@ export const en = {
         "Ray.so (by Raycast) is the fastest path from a code selection to a clean, gradient-backed PNG. Here's how it compares to Frame.",
       rows: [
         {
-          feature: 'Where code is rendered',
-          frame: 'Locally, in your browser',
-          competitor: "Sent to Ray.so's server",
+          feature: 'How the image is rendered',
+          frame: 'Canvas compositing, in your browser',
+          competitor: 'DOM rasterisation via html-to-image, also in your browser',
+        },
+        {
+          feature: 'Where your code lives',
+          frame: 'Extension storage on your own machine',
+          competitor: 'A hosted web app you paste into',
         },
         {
           feature: 'Syntax themes',
@@ -442,7 +452,7 @@ export const en = {
         },
       ],
       honestNote:
-        "Ray.so is genuinely the fastest one-click tool if all you need is a clean code image, and it's free. Frame asks a little more of you upfront — it's a full editor, not a one-click generator — but adds mockups, annotations, and local-only processing that Ray.so doesn't do.",
+        "Ray.so is genuinely the fastest path from a code selection to a clean image, and it's free. It also renders in your browser, so neither tool ships your code somewhere to make a picture of it. Frame asks more of you upfront, being a full editor rather than a one-click generator, and gives back device mockups, annotations, watermarks and an image editor that Ray.so does not set out to provide.",
     },
     screely: {
       name: 'Screely',

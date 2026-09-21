@@ -3,9 +3,9 @@ import type { Dictionary } from '../types'
 export const de = {
   meta: {
     home: {
-      title: 'Screenshot- & Code-Mockup-Editor für Chrome | Portfolio Frame',
+      title: 'Portfolio Frame — eine Dunkelkammer für Screenshots und Code',
       description:
-        'Portfolio Frame ist eine Chrome-Erweiterung, die Screenshots und Code in Mockups verwandelt: Geräterahmen, Annotationen, Wasserzeichen. Alles bleibt lokal.',
+        'Frame ist eine Chrome-Erweiterung, die aus rohen Screenshots und Code druckreife Bilder macht. Kein Account, kein Upload — alles bleibt auf deinem Gerät.',
     },
     privacy: {
       title: 'Datenschutzerklärung — Portfolio Frame',
@@ -29,7 +29,7 @@ export const de = {
   },
 
   hero: {
-    eyebrow: 'Chrome-Erweiterung für Screenshot- und Code-Mockups',
+    eyebrow: 'Ein local-first Studio für Screenshots & Code',
     headlineLine1: 'Entwickle deine Screenshots',
     headlineLine2: 'wie Abzüge.',
     sub: 'Portfolio Frame macht aus einem rohen Screenshot oder einem Batzen Code etwas, das sich zu teilen lohnt: gerahmt, ausgeleuchtet, kommentiert und im richtigen Format für jeden Zweck. Kein Account, kein Upload, kein Server dazwischen.',
@@ -52,7 +52,7 @@ export const de = {
   featureRail: {
     sections: {
       editor: {
-        tag: 'Doppel-Editor',
+        tag: 'Layout · Quelle',
         title: 'Eine Arbeitsfläche, zwei Einstiege',
         description:
           'Screenshot reinziehen oder einen Codeblock einfügen. Dieselbe Arbeitsfläche, dieselben Export-Optionen und Formatvorlagen für beides.',
@@ -72,7 +72,7 @@ export const de = {
         ],
       },
       code: {
-        tag: 'Code-Screenshots',
+        tag: 'Frame',
         title: 'Code, richtig gedruckt',
         description:
           'Syntax-Highlighting und Fensterrahmen, gemacht zum Lesen, nicht nur zum Zeigen.',
@@ -100,7 +100,7 @@ export const de = {
         ],
       },
       'twitter-snap': {
-        tag: 'Tweet-Karten',
+        tag: 'Social',
         title: 'Tweets, ganz ohne Screenshot',
         description:
           'Tweet einfügen, saubere gestylte Karte zurückbekommen. Kein abgeschnittener Browser-Rahmen, kein Cookie-Banner in der Ecke.',
@@ -120,7 +120,7 @@ export const de = {
         ],
       },
       mockups: {
-        tag: 'Geräte- & Browser-Mockups',
+        tag: 'Hintergrund',
         title: 'Die richtige Kulisse',
         description:
           'Echte Geräte- und Browser-Rahmen statt flacher Rechtecke, denn der Kontext ist die halbe Miete.',
@@ -144,7 +144,7 @@ export const de = {
         ],
       },
       annotate: {
-        tag: 'Annotationswerkzeuge',
+        tag: 'Markierungen',
         title: "Zeig, worauf's ankommt",
         description:
           'Text, Formen und Schritte direkt auf der Fläche – ganz ohne ein zweites Tool.',
@@ -164,7 +164,7 @@ export const de = {
         ],
       },
       brand: {
-        tag: 'Wasserzeichen',
+        tag: 'Marke',
         title: 'Signier deine Arbeit',
         description: "Kennzeichne sie als deine – oder mach's schwer, sie ohne Credit zu klauen.",
         features: [
@@ -352,9 +352,14 @@ export const de = {
         'Carbon hat das Format Code-Screenshot bekannt gemacht — die größte Theme- und Sprachbibliothek überhaupt, und kostenlos noch dazu. Hier siehst du, wie es im Vergleich zu Frame abschneidet.',
       rows: [
         {
-          feature: 'Wo Code gerendert wird',
-          frame: 'Lokal, in deinem Browser',
-          competitor: 'Wird an Carbons Server gesendet',
+          feature: 'Wie das Bild gerendert wird',
+          frame: 'Canvas-Compositing, in deinem Browser',
+          competitor: 'DOM-Rasterisierung per dom-to-image, ebenfalls in deinem Browser',
+        },
+        {
+          feature: 'Wo dein Code liegt',
+          frame: 'Im Extension-Speicher auf deinem eigenen Rechner',
+          competitor: 'Eine gehostete Web-App. Der Export bleibt lokal; ein gespeicherter oder getweeteter Snippet wird hochgeladen',
         },
         {
           feature: 'Syntax-Themes',
@@ -393,7 +398,7 @@ export const de = {
         },
       ],
       honestNote:
-        'Wenn du nur schnell einen Code-Screenshot brauchst und die größte Theme-Auswahl willst, ist Carbon kaum zu schlagen — und kostet nichts. Frame tauscht einen Teil dieser Theme-Vielfalt gegen rein lokales Rendering, Geräte-Mockups und Markierungs-Tools ein — lohnt sich, wenn du komplette Produktaufnahmen teilst und nicht nur Code.',
+        'Wenn du nur schnell einen Code-Screenshot brauchst und die größte Theme-Auswahl willst, ist Carbon kaum zu schlagen, und es kostet nichts. Beide Tools exportieren in deinem Browser, hier gibst du also keine Privatsphäre auf. Der Unterschied liegt in Methode und Umfang: Carbon rasterisiert das DOM, was schnell gebaut ist und bei Schatten und eigenen Schriften an Grenzen stößt, während Frame auf Canvas komponiert und Geräte-Mockups, Markierungen und Wasserzeichen mitbringt. Nimm Carbon für einen Code-Ausschnitt und Frame für eine komplette Produktaufnahme.',
     },
     'ray-so': {
       name: 'Ray.so',
@@ -401,9 +406,14 @@ export const de = {
         'Ray.so (von Raycast) ist der schnellste Weg von einer Code-Auswahl zu einem sauberen PNG mit Farbverlauf-Hintergrund. Hier siehst du, wie es im Vergleich zu Frame abschneidet.',
       rows: [
         {
-          feature: 'Wo Code gerendert wird',
-          frame: 'Lokal, in deinem Browser',
-          competitor: 'Wird an Ray.sos Server gesendet',
+          feature: 'Wie das Bild gerendert wird',
+          frame: 'Canvas-Compositing, in deinem Browser',
+          competitor: 'DOM-Rasterisierung per html-to-image, ebenfalls in deinem Browser',
+        },
+        {
+          feature: 'Wo dein Code liegt',
+          frame: 'Im Extension-Speicher auf deinem eigenen Rechner',
+          competitor: 'Eine gehostete Web-App, in die du deinen Code einfügst',
         },
         {
           feature: 'Syntax-Themes',
@@ -442,7 +452,7 @@ export const de = {
         },
       ],
       honestNote:
-        'Ray.so ist wirklich das schnellste One-Click-Tool, wenn du nur ein sauberes Code-Bild brauchst, und es ist kostenlos. Frame verlangt am Anfang etwas mehr von dir — es ist ein vollwertiger Editor, kein One-Click-Generator — bringt dafür aber Mockups, Markierungen und rein lokale Verarbeitung mit, die Ray.so nicht bietet.',
+        'Ray.so ist wirklich der schnellste Weg von einer Code-Auswahl zu einem sauberen Bild, und es ist kostenlos. Auch Ray.so rendert in deinem Browser, keines der beiden Tools schickt deinen Code irgendwohin, um ein Bild daraus zu machen. Frame verlangt am Anfang etwas mehr von dir, weil es ein vollwertiger Editor und kein One-Click-Generator ist, und gibt dir dafür Geräte-Mockups, Markierungen, Wasserzeichen und einen Bildeditor, den Ray.so gar nicht abdecken will.',
     },
     screely: {
       name: 'Screely',
