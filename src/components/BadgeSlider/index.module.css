@@ -1,0 +1,50 @@
+.sliderContainer {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding-bottom: 1rem;
+  /* Add mask to fade edges (optional but looks great) */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.sliderTrack {
+  display: flex;
+  width: max-content;
+  animation: slide 30s linear infinite;
+}
+
+/* Pause animation when user hovers */
+.sliderTrack:hover {
+  animation-play-state: paused;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Space between individual badges */
+  padding-right: 2rem; /* Ensures consistent spacing where the two sets meet */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate exactly half the width of the track (one full set of badges) */
+    transform: translateX(-50%);
+  }
+}
