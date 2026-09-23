@@ -40,11 +40,35 @@ export interface ComparisonRow {
   competitor: string
 }
 
+export interface ComparisonSection {
+  heading: string
+  body: string[]
+}
+
+export interface ComparisonVerdict {
+  competitorHeading: string
+  competitorBody: string
+  frameHeading: string
+  frameBody: string
+}
+
+export interface ComparisonFaq {
+  q: string
+  a: string
+}
+
 export interface Comparison {
   name: string
   intro: string
   rows: ComparisonRow[]
   honestNote: string
+  // Long-form blocks below the table. Optional on purpose: a locale that has
+  // not been translated yet renders the short version instead of failing the
+  // build, so English can ship ahead of es/fr/de.
+  sections?: ComparisonSection[]
+  verdict?: ComparisonVerdict
+  faqHeading?: string
+  faq?: ComparisonFaq[]
 }
 
 export interface Dictionary {

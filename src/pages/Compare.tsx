@@ -60,6 +60,34 @@ export default function Compare() {
           </table>
         </section>
 
+        {comparison.sections && comparison.sections.length > 0 && (
+          <section className={styles.prose}>
+            {comparison.sections.map((section) => (
+              <div key={section.heading} className={styles.proseSection}>
+                <h2 className={styles.proseHeading}>{section.heading}</h2>
+                {section.body.map((para, i) => (
+                  <p key={i} className={styles.proseBody}>
+                    {para}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </section>
+        )}
+
+        {comparison.verdict && (
+          <section className={styles.verdictSection}>
+            <div className={styles.verdictCard}>
+              <h2 className={styles.verdictHeading}>{comparison.verdict.competitorHeading}</h2>
+              <p className={styles.verdictBody}>{comparison.verdict.competitorBody}</p>
+            </div>
+            <div className={styles.verdictCard}>
+              <h2 className={styles.verdictHeading}>{comparison.verdict.frameHeading}</h2>
+              <p className={styles.verdictBody}>{comparison.verdict.frameBody}</p>
+            </div>
+          </section>
+        )}
+
         <section className={styles.noteSection}>
           <p className={styles.noteLabel}>{t.honestLabel}</p>
           <p className={styles.note}>{comparison.honestNote}</p>
@@ -67,6 +95,18 @@ export default function Compare() {
             {t.ctaText}
           </Link>
         </section>
+
+        {comparison.faq && comparison.faq.length > 0 && (
+          <section className={styles.faqSection}>
+            <h2 className={styles.faqHeading}>{comparison.faqHeading ?? 'Questions'}</h2>
+            {comparison.faq.map((item) => (
+              <div key={item.q} className={styles.faqItem}>
+                <h3 className={styles.faqQ}>{item.q}</h3>
+                <p className={styles.faqA}>{item.a}</p>
+              </div>
+            ))}
+          </section>
+        )}
 
         <section className={styles.otherSection}>
           <p className={styles.otherLabel}>{t.otherLabel}</p>

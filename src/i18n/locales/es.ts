@@ -3,9 +3,9 @@ import type { Dictionary } from '../types'
 export const es = {
   meta: {
     home: {
-      title: 'Portfolio Frame — un cuarto oscuro para capturas y código',
+      title: 'Editor de mockups de capturas y código | Portfolio Frame',
       description:
-        'Frame es una extensión de Chrome que convierte capturas de pantalla y código en bruto en imágenes listas para publicar. Sin cuenta, sin subir nada: todo se queda en tu dispositivo.',
+        'Portfolio Frame es una extensión de Chrome que convierte capturas y código en mockups pulidos: marcos de dispositivo, anotaciones y marcas de agua. Todo local.',
     },
     privacy: {
       title: 'Política de Privacidad — Portfolio Frame',
@@ -29,7 +29,7 @@ export const es = {
   },
 
   hero: {
-    eyebrow: 'Un estudio 100% local para capturas y código',
+    eyebrow: 'Extensión de Chrome para mockups de capturas y código',
     headlineLine1: 'Revela tus capturas',
     headlineLine2: 'como copias.',
     sub: 'Portfolio Frame convierte una captura en bruto o un bloque de código en algo que vale la pena compartir: enmarcado, iluminado, anotado y con el tamaño justo para donde vaya. Sin cuenta, sin subir nada, sin servidor de por medio.',
@@ -52,7 +52,7 @@ export const es = {
   featureRail: {
     sections: {
       editor: {
-        tag: 'Diseño · Fuente',
+        tag: 'Editor doble',
         title: 'Un lienzo, dos puntos de entrada',
         description:
           'Arrastra una captura o pega un bloque de código. El mismo lienzo, los mismos controles de exportación y los mismos ajustes de tamaño valen para ambos.',
@@ -72,7 +72,7 @@ export const es = {
         ],
       },
       code: {
-        tag: 'Frame',
+        tag: 'Capturas de código',
         title: 'Código, impreso como se debe',
         description:
           'Resaltado de sintaxis y marcos de ventana pensados para leerse, no solo para decorar.',
@@ -100,7 +100,7 @@ export const es = {
         ],
       },
       'twitter-snap': {
-        tag: 'Social',
+        tag: 'Tarjetas de tuits',
         title: 'Tweets, sin necesidad de captura',
         description:
           'Pega un tweet y recibe una tarjeta limpia y con estilo. Sin bordes de navegador recortados, sin banner de cookies en la esquina.',
@@ -120,7 +120,7 @@ export const es = {
         ],
       },
       mockups: {
-        tag: 'Fondo',
+        tag: 'Mockups de dispositivo y navegador',
         title: 'Crea el escenario',
         description:
           'Marcos reales de dispositivos y navegadores, no simples rectángulos planos, porque el contexto es la mitad de la historia.',
@@ -144,7 +144,7 @@ export const es = {
         ],
       },
       annotate: {
-        tag: 'Anotar',
+        tag: 'Herramientas de anotación',
         title: 'Señala lo que importa',
         description:
           'Texto, formas y pasos superpuestos directamente en el lienzo, nada que requiera una segunda herramienta.',
@@ -164,7 +164,7 @@ export const es = {
         ],
       },
       brand: {
-        tag: 'Marca',
+        tag: 'Marcas de agua',
         title: 'Firma tu trabajo',
         description: 'Márcalo como tuyo, o haz que sea difícil de robar sin dar crédito.',
         features: [
@@ -399,6 +399,57 @@ export const es = {
       ],
       honestNote:
         'Si solo necesitas una captura de código rápida y quieres la mayor variedad de temas, Carbon es difícil de superar, y no cuesta nada. Las dos herramientas exportan en tu navegador, así que aquí no hay una cesión de privacidad. La diferencia real está en el método y el alcance: Carbon rasteriza el DOM, algo rápido de construir que enseña sus límites con sombras y fuentes propias, mientras que Frame compone en canvas y añade maquetas de dispositivos, anotaciones y marcas de agua. Usa Carbon para un fragmento de código y Frame para una captura de producto completa.',
+      sections: [
+        {
+          heading: "Los dos renderizan en tu navegador",
+          body: [
+            "Esta página decía antes que Carbon enviaba tu código a un servidor. Era falso, y conviene corregirlo sin rodeos. El editor de Carbon pasa el nodo del DOM directamente a dom-to-image y recibe un PNG o un SVG sin que el código salga de la página. En el repositorio hay un renderizador de servidor, pero solo atiende a los rastreadores de Twitter y Slack para que las vistas previas de enlaces tengan algo que mostrar, y devuelve un 401 a todos los demás.",
+            "Lo que de verdad cambia es el método. dom-to-image recorre el DOM, incrusta los estilos calculados y rasteriza el resultado a través de un foreignObject de SVG. Frame compone en canvas: cada capa se dibuja en orden sobre una superficie de mapa de bits que controla él mismo.",
+            "Suena académico hasta que exportas algo con una tipografía propia y una sombra suave. La rasterización con foreignObject depende de que el navegador coincida contigo en cómo se pintan esas cosas al exportar, y los navegadores no siempre coinciden. La composición en canvas lo decide por su cuenta. Fueron dos semanas peleando con el primer enfoque las que llevaron al segundo.",
+          ],
+        },
+        {
+          heading: "Carbon es una herramienta de código. Frame es de código y de capturas.",
+          body: [
+            "Carbon hace una sola cosa y la hace desde 2018. Pegas código, eliges un tema, obtienes una imagen. No hay importación de imágenes, ni marcos de dispositivo, ni capa de anotaciones, porque nada de eso es lo que se propuso hacer.",
+            "Los dos editores de Frame comparten un mismo lienzo, un mismo juego de ajustes de exportación y un mismo sistema de tamaños. Una nota de versión que necesita una maqueta de navegador de la función y un fragmento resaltado de la llamada a la API es una sola herramienta y una sola cola de exportación, en lugar de dos.",
+          ],
+        },
+        {
+          heading: "Donde Carbon va claramente por delante",
+          body: [
+            "En temas y lenguajes no hay comparación. Carbon trae más de 30 temas y más de 100 lenguajes frente a los cinco temas seleccionados y los cinco lenguajes con distintivo de Frame. Si tu fragmento es de Elixir o de Haskell, Carbon te cubre y Frame no.",
+            "Además es de código abierto con licencia MIT y más de 36.000 estrellas, así que puedes leer exactamente cómo funciona, alojarlo tú mismo o bifurcarlo. Frame no es de código abierto. Y Carbon es gratis sin ningún tipo de plan, mientras que Frame deja las maquetas de dispositivo, las marcas de agua y la exportación por lotes detrás de un pago único.",
+          ],
+        },
+      ],
+      verdict: {
+        competitorHeading: "Elige Carbon si",
+        competitorBody:
+          "Solo compartes código, quieres la mayor variedad posible de temas y lenguajes, o te importa usar algo de código abierto que podrías alojar tú mismo. Es gratis, es maduro y para una captura de código pura es excelente.",
+        frameHeading: "Elige Frame si",
+        frameBody:
+          "Compartes capturas más o menos tan a menudo como código y estás cansado de usar una herramienta para fragmentos y otra para imágenes de producto. Los marcos de dispositivo, las anotaciones y las marcas de agua son justo lo que Carbon nunca intentó darte.",
+      },
+      faqHeading: "Preguntas sobre Carbon y Frame",
+      faq: [
+        {
+          q: "¿Carbon sube mi código a un servidor?",
+          a: "Al exportar no. Eso ocurre en tu navegador. Sí lo sube si guardas un fragmento en tu cuenta de Carbon o usas el botón de tuitear integrado, y las dos cosas son acciones deliberadas, no parte de exportar.",
+        },
+        {
+          q: "¿Frame es de código abierto como Carbon?",
+          a: "No. Carbon tiene licencia MIT y puedes leerlo o alojarlo tú mismo. Frame es de código cerrado, con un plan gratuito y una licencia de pago único para el resto.",
+        },
+        {
+          q: "¿Frame puede igualar los temas de sintaxis de Carbon?",
+          a: "No, y no lo pretende. Frame trae cinco temas seleccionados sobre Prism frente a los más de treinta de Carbon. Si lo que optimizas es la variedad de temas, Carbon gana esa comparación sin discusión.",
+        },
+        {
+          q: "¿Carbon puede meter una captura dentro de un marco de dispositivo?",
+          a: "No. Carbon trabaja solo con código. Esa es la razón principal por la que estas dos herramientas acaban instaladas a la vez en lugar de sustituirse la una a la otra.",
+        },
+      ],
     },
     'ray-so': {
       name: 'Ray.so',
@@ -453,6 +504,57 @@ export const es = {
       ],
       honestNote:
         'Ray.so es de verdad el camino más rápido entre una selección de código y una imagen limpia, y es gratis. También renderiza en tu navegador, así que ninguna de las dos manda tu código a otro sitio para convertirlo en imagen. Frame te pide algo más de entrada, porque es un editor completo y no un generador de un clic, y a cambio te da maquetas de dispositivos, anotaciones, marcas de agua y un editor de imágenes que Ray.so no pretende cubrir.',
+      sections: [
+        {
+          heading: "Ray.so también renderiza en local",
+          body: [
+            "Igual que Carbon, Ray.so exporta en el navegador. Su botón de exportar llama a html-to-image sobre el nodo renderizado y te devuelve un PNG o un SVG. Raycast publica todo el proyecto en GitHub con licencia MIT, así que esto se puede comprobar en lugar de tener que fiarte de ninguno de los dos.",
+            "Por tanto, la diferencia entre ambos no está en adónde va tu código. Está en que Ray.so rasteriza el DOM mientras Frame compone en canvas, y en que Ray.so es deliberadamente una herramienta de una sola pantalla mientras Frame es un editor.",
+          ],
+        },
+        {
+          heading: "Generador de un clic frente a editor",
+          body: [
+            "Ray.so es el camino más rápido de toda esta categoría entre una selección de código y algo que puedes pegar en un hilo. Eliges un degradado, eliges un tema, copias. No hay casi nada que aprender ni casi nada que decidir, y ese es precisamente el objetivo.",
+            "Frame te pide más. Hay paneles, ajustes, capas y opciones de exportación, porque da por hecho que quieres controlar el resultado en lugar de aceptar un buen valor por defecto. Si lo que necesitas de verdad es una imagen de código limpia en diez segundos, toda esa superficie extra es un coste, no una ventaja.",
+            "Donde compensa es en todo lo que Ray.so no intenta: meter una captura en un marco de MacBook, dibujar una flecha señalando aquello de lo que hablas, tapar una clave de API o estampar tu identidad en un trabajo antes de publicarlo.",
+          ],
+        },
+        {
+          heading: "El contexto de Raycast",
+          body: [
+            "Ray.so es una de las herramientas que Raycast mantiene junto a su lanzador, y eso le beneficia. Es gratis, es rápido, se mantiene al día y, si ya vives dentro de Raycast, lo tienes a una pulsación de distancia.",
+            "Frame es un proyecto en solitario con una licencia de pago único y sin ningún lanzador al que engancharse. Se gana un sitio en tu equipo cubriendo más terreno, no siendo mejor en el trabajo concreto de Ray.so.",
+          ],
+        },
+      ],
+      verdict: {
+        competitorHeading: "Elige Ray.so si",
+        competitorBody:
+          "La rapidez es todo el requisito. Quieres una imagen de código limpia y con buen aspecto sin configurar nada, no cuesta nada y nunca necesitas meter una captura dentro de un dispositivo.",
+        frameHeading: "Elige Frame si",
+        frameBody:
+          "Necesitas que el resultado sea concreto y no solo bonito: un dispositivo determinado, una anotación señalando una línea, una censura sobre una clave, una marca de agua. Eso es trabajo de editor, y Ray.so no es un editor.",
+      },
+      faqHeading: "Preguntas sobre Ray.so y Frame",
+      faq: [
+        {
+          q: "¿Ray.so envía mi código a algún sitio?",
+          a: "No para generar la imagen. La exportación se ejecuta en tu navegador con html-to-image, y el código fuente es público en GitHub si quieres confirmarlo.",
+        },
+        {
+          q: "¿Necesito Raycast para usar Ray.so?",
+          a: "No. Funciona como una web normal. Tener Raycast instalado solo hace que llegues antes.",
+        },
+        {
+          q: "¿Frame es más lento de usar que Ray.so?",
+          a: "Para un fragmento de código simple, sí. Frame abre un editor en lugar de una sola pantalla. A cambio obtienes control sobre la exportación y la opción de hacer cosas que Ray.so ni contempla.",
+        },
+        {
+          q: "¿Ray.so puede anotar o enmarcar una captura?",
+          a: "No. Es un generador de imágenes de código. Las capturas, los marcos de dispositivo y las anotaciones quedan fuera de su alcance.",
+        },
+      ],
     },
     screely: {
       name: 'Screely',
@@ -497,6 +599,63 @@ export const es = {
       ],
       honestNote:
         'Screely es excelente en exactamente aquello para lo que fue creado: pulir capturas de páginas web hasta convertirlas en maquetas de navegador, y comparte con Frame ese enfoque local y sin subidas. Donde Frame se diferencia es en el lado del código: resaltado de sintaxis, insignias de lenguaje y estilos de ventana pensados específicamente para compartir código, que no es para lo que Screely fue diseñado.',
+      sections: [
+        {
+          heading: "Screely se mudó, y ahora también es una extensión",
+          body: [
+            "Si tienes un marcador antiguo de screely.com, deja de usarlo. Ese dominio ya no pertenece al proyecto y hoy aloja un sitio de apuestas deportivas sin relación alguna. Screely está en screely.app.",
+            "El cambio de fondo es en qué se ha convertido. Screely es ahora una aplicación web y también una extensión de Chrome, y la extensión captura además de editar: área visible, selección personalizada, página completa o un único elemento. También graba la pestaña activa en MP4 durante hasta tres minutos a 720p o 1080p con audio. Su ficha en la tienda muestra unos mil usuarios y una valoración de 5.0, con una actualización tan reciente como agosto.",
+            "Eso lo convierte en lo más parecido a un competidor directo que tiene Frame y, por cualquier medida que cuente hoy, en el más asentado de los dos.",
+          ],
+        },
+        {
+          heading: "Dos herramientas que tomaron la misma decisión de arquitectura",
+          body: [
+            "La documentación de Screely dice que las imágenes se procesan por completo dentro del navegador usando canvas y que nunca se suben, transmiten ni almacenan. Es la misma postura que toma Frame, a la que se llegó por separado.",
+            "Así que ser local no es un factor diferencial entre estos dos. Los dos componen en canvas, los dos dejan tus capturas en tu equipo y ninguno exige una cuenta. Si tu motivo para buscar es la privacidad, los dos te responden.",
+            "Screely va más lejos en un aspecto: es completamente gratis, sin registro, sin marca de agua y sin límites de exportación. Frame tiene un plan gratuito, pero las maquetas de dispositivo más allá de lo básico, las marcas de agua, la herramienta de censura y la exportación por lotes están detrás de una licencia de pago único.",
+          ],
+        },
+        {
+          heading: "Dónde se separan de verdad",
+          body: [
+            "El código es la línea más clara. Screely no tiene editor de fragmentos, ni resaltado de sintaxis, ni distintivos de lenguaje, porque se construyó en torno a capturas de webs y de aplicaciones. El segundo editor de Frame existe justo para eso, con temas de Prism, resaltado de líneas y ventanas pensadas para leer código.",
+            "Los marcos difieren en tipo, no en cantidad. Screely te da ventanas de macOS y de Windows. Frame te da maquetas de dispositivos físicos, un MacBook, un iPhone, un Apple Watch, además de marcos de navegador y de terminal, y inclinación 3D sobre cualquiera de ellos.",
+            "Frame hace también tarjetas de tuit y marcas de agua, y Screely no ofrece ninguna de las dos. Screely graba pantalla y exporta a PDF, y Frame no hace ninguna de las dos. Son carencias reales en ambos lados, no asimetrías de marketing.",
+          ],
+        },
+      ],
+      verdict: {
+        competitorHeading: "Elige Screely si",
+        competitorBody:
+          "Quieres capturar y editar en el mismo sitio, necesitas grabar una pestaña en vídeo, o prefieres algo gratis y sin planes de ningún tipo. Es maduro, se mantiene al día y no cuesta nada.",
+        frameHeading: "Elige Frame si",
+        frameBody:
+          "Compartes código además de capturas, o necesitas maquetas de dispositivos físicos, tarjetas de tuit o marcas de agua. Eso es lo que Screely no se propone hacer.",
+      },
+      faqHeading: "Preguntas sobre Screely y Frame",
+      faq: [
+        {
+          q: "¿screely.com sigue siendo Screely?",
+          a: "No. El proyecto está ahora en screely.app. El antiguo dominio .com ha cambiado de manos y aloja algo sin relación, así que actualiza tus marcadores.",
+        },
+        {
+          q: "¿Screely es gratis de verdad?",
+          a: "Sí. Su web dice sin registro, sin marca de agua y sin límites de exportación. Es la opción más barata, y ese es un punto justo en contra del plan de pago de Frame.",
+        },
+        {
+          q: "¿Screely puede hacer capturas de código?",
+          a: "No. No tiene resaltado de sintaxis ni editor de código. Si las imágenes de código son parte habitual de lo que publicas, ese es el motivo principal para mirar Frame.",
+        },
+        {
+          q: "¿Frame puede grabar mi pantalla?",
+          a: "No. Frame edita imágenes fijas. Screely graba la pestaña activa en MP4, que es una capacidad real que Frame no tiene.",
+        },
+        {
+          q: "¿Los dos mantienen privadas mis capturas?",
+          a: "Sí. Los dos procesan las imágenes en local en el navegador con canvas y ninguno las sube. La privacidad no es el eje en el que se diferencian.",
+        },
+      ],
     },
     'shots-so': {
       name: 'Shots.so',
@@ -541,6 +700,58 @@ export const es = {
       ],
       honestNote:
         'Si necesitas la biblioteca de dispositivos más grande o quieres exportaciones animadas generales más allá de las tarjetas de tweet, se nota la madurez de Shots.so, es la mejor opción si esa es tu prioridad. Frame es más específico por diseño: una extensión de Chrome para desarrolladores que combina capturas de código con maquetas de dispositivos en una sola herramienta, con un precio único en lugar de una suscripción.',
+      sections: [
+        {
+          heading: "Una aplicación web madura con una suscripción detrás",
+          body: [
+            "Shots.so lleva años de desarrollo encima y su catálogo de dispositivos lo demuestra: iPhone, Android, iPad, iMac, Apple Watch y marcos de navegador, con fondos que van de degradados y efectos de cristal a fotos de Unsplash y rellenos generados por IA a partir de los colores de tu imagen.",
+            "Funciona como aplicación web alojada, no como extensión, y su precio es una suscripción. Hay un plan gratuito, y los de pago rondan los ocho y los doce dólares al mes, con exportaciones de mayor resolución, WebP, vídeo transparente y las maquetas animadas por las que se le conoce.",
+            "Frame es una extensión de Chrome con un plan gratuito y un único pago. A lo largo de un par de años esa diferencia se acumula, pero también compras menos: el trabajo de animación de Shots.so no tiene equivalente en Frame.",
+          ],
+        },
+        {
+          heading: "La animación es la carencia real",
+          body: [
+            "Lo que Shots.so hace y Frame sencillamente no puede hacer es movimiento. Las maquetas animadas, los efectos de zoom en vídeo y los ajustes de movimiento son su rasgo distintivo, y si produces vídeos de lanzamiento o piezas sociales animadas es la elección evidente.",
+            "Frame exporta imágenes fijas, con una única excepción estrecha: una tarjeta de tuit con un vídeo adjunto se puede exportar como MP4. Eso no es una función general de animación y presentarlo como tal sería engañoso.",
+          ],
+        },
+        {
+          heading: "Lo que aporta Frame y Shots.so no",
+          body: [
+            "Código, antes que nada. Shots.so no tiene editor de fragmentos ni resaltado de sintaxis. El segundo editor de Frame está hecho para eso.",
+            "La anotación es la otra carencia. Shots.so es una herramienta de maquetas y fondos, no de marcado, así que no hay flechas, ni pasos numerados, ni censura. Si tus capturas necesitan señalar algo, o tapar una clave de API antes de publicar, ese trabajo tiene que ocurrir en otro sitio.",
+            "Y Frame se ejecuta donde ya están tus capturas. Una extensión en el navegador en el que estás trabajando elimina el viaje de ida y vuelta de subir y descargar que exige una aplicación web alojada.",
+          ],
+        },
+      ],
+      verdict: {
+        competitorHeading: "Elige Shots.so si",
+        competitorBody:
+          "Necesitas maquetas animadas o en vídeo, o quieres el catálogo de dispositivos más amplio disponible. Su madurez es real y una suscripción es razonable si produces este tipo de piezas con regularidad.",
+        frameHeading: "Elige Frame si",
+        frameBody:
+          "Quieres capturas de código e imágenes de producto desde una sola herramienta, necesitas anotación y censura, o prefieres pagar una vez antes que cada mes por algo que usas unas pocas veces al mes.",
+      },
+      faqHeading: "Preguntas sobre Shots.so y Frame",
+      faq: [
+        {
+          q: "¿Shots.so es gratis?",
+          a: "Hay un plan gratuito, y los de pago rondan los ocho a doce dólares al mes por exportaciones de mayor resolución, más formatos y las funciones de animación. Consulta su página de precios para ver las cifras actuales.",
+        },
+        {
+          q: "¿Frame puede exportar animaciones?",
+          a: "En general no. Una tarjeta de tuit con vídeo adjunto se exporta como MP4, pero no hay maquetas animadas ni ajustes de movimiento. Shots.so es la herramienta adecuada para eso.",
+        },
+        {
+          q: "¿Shots.so maneja fragmentos de código?",
+          a: "No. Está hecho para maquetas de dispositivo y fondos. Las imágenes de código quedan fuera de su alcance.",
+        },
+        {
+          q: "¿Cuál sale más barato?",
+          a: "Frame, si lo usas más de unos meses, porque Pro es un pago único. Shots.so cobra cada mes. Que eso importe depende de si necesitas las funciones de animación que Frame no tiene.",
+        },
+      ],
     },
   },
 
