@@ -36,6 +36,7 @@ export const es = {
       "Un embellecedor de capturas de pantalla y generador de maquetas de dispositivos para Chrome. Convierte capturas, fragmentos de código y tweets en imágenes pulidas sin subir nada.",
     sub: 'Portfolio Frame convierte una captura en bruto o un bloque de código en algo que vale la pena compartir: enmarcado, iluminado, anotado y con el tamaño justo para donde vaya. Sin cuenta, sin subir nada, sin servidor de por medio.',
     primaryCta: 'Añadir a Chrome, es gratis',
+    webCta: "Pruébalo en la web",
     secondaryCta: 'Míralo con código ↓',
     trust: {
       setupLabel: 'Instalación',
@@ -282,6 +283,17 @@ export const es = {
       licenseVerified: 'Verificado con Dodo Payments',
       cta: 'Consigue una licencia Pro',
     },
+  },
+
+  reviews: {
+    tag: "Reseñas",
+    title: "Reseñas, sin retocar.",
+    description:
+      "Reseñas escritas en la Chrome Web Store, copiadas palabra por palabra.",
+    ratingSummary: (average: string, count: number) =>
+      `${average} de 5 con ${count} valoraciones en la Chrome Web Store`,
+    starsLabel: (rating: number) => `${rating} de 5 estrellas`,
+    storeLink: "Léelas en la Chrome Web Store ↗",
   },
 
   faq: {

@@ -36,6 +36,7 @@ export const en = {
       'A screenshot beautifier and device mockup generator for Chrome. Turn screenshots, code snippets and tweets into polished images without uploading anything.',
     sub: "Portfolio Frame turns a raw screenshot or a slab of code into something worth sharing, windowed, lit, annotated, and sized for wherever it's going. No account, no upload, no server in between.",
     primaryCta: "Add to Chrome, it's free",
+    webCta: "Try it on the web",
     secondaryCta: 'See it on code ↓',
     trust: {
       setupLabel: 'Setup',
@@ -282,6 +283,17 @@ export const en = {
       licenseVerified: 'Verified via Dodo Payments',
       cta: 'Get a Pro license',
     },
+  },
+
+  reviews: {
+    tag: "Reviews",
+    title: "Reviews, unretouched.",
+    description:
+      "Written reviews from the Chrome Web Store, copied word for word.",
+    ratingSummary: (average: string, count: number) =>
+      `${average} out of 5 from ${count} ratings on the Chrome Web Store`,
+    starsLabel: (rating: number) => `${rating} out of 5 stars`,
+    storeLink: "Read them on the Chrome Web Store ↗",
   },
 
   faq: {

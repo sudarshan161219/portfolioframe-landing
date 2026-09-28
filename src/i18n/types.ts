@@ -95,6 +95,7 @@ export interface Dictionary {
     subhead: string
     sub: string
     primaryCta: string
+    webCta: string
     secondaryCta: string
     trust: {
       setupLabel: string
@@ -187,6 +188,15 @@ export interface Dictionary {
       licenseVerified: string
       cta: string
     }
+  }
+
+  reviews: {
+    tag: string
+    title: string
+    description: string
+    ratingSummary: (average: string, count: number) => string
+    starsLabel: (rating: number) => string
+    storeLink: string
   }
 
   faq: {

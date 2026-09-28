@@ -36,6 +36,7 @@ export const de = {
       "Ein Screenshot-Verschönerer und Geräte-Mockup-Generator für Chrome. Verwandle Screenshots, Code-Snippets und Tweets in polierte Bilder, ohne etwas hochzuladen.",
     sub: 'Portfolio Frame macht aus einem rohen Screenshot oder einem Batzen Code etwas, das sich zu teilen lohnt: gerahmt, ausgeleuchtet, kommentiert und im richtigen Format für jeden Zweck. Kein Account, kein Upload, kein Server dazwischen.',
     primaryCta: 'Zu Chrome hinzufügen – kostenlos',
+    webCta: "Im Web ausprobieren",
     secondaryCta: "Zeig's mir am Code ↓",
     trust: {
       setupLabel: 'Setup',
@@ -282,6 +283,17 @@ export const de = {
       licenseVerified: 'Verifiziert über Dodo Payments',
       cta: 'Pro-Lizenz holen',
     },
+  },
+
+  reviews: {
+    tag: "Bewertungen",
+    title: "Bewertungen, unretuschiert.",
+    description:
+      "Schriftliche Bewertungen aus dem Chrome Web Store, Wort für Wort übernommen.",
+    ratingSummary: (average: string, count: number) =>
+      `${average} von 5 bei ${count} Bewertungen im Chrome Web Store`,
+    starsLabel: (rating: number) => `${rating} von 5 Sternen`,
+    storeLink: "Im Chrome Web Store lesen ↗",
   },
 
   faq: {

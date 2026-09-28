@@ -26,6 +26,14 @@ export default function Hero() {
           >
             {t.primaryCta}
           </a>
+          <a
+            href="https://app.portfolioframe.com/"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.webCta}
+          >
+            {t.webCta}
+          </a>
           <a href="#code" className={styles.secondaryCta}>
             {t.secondaryCta}
           </a>

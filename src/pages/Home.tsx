@@ -1,6 +1,7 @@
 import Nav from "../components/Nav/Nav";
 import Hero from "../components/Hero/Hero";
 import FeatureRail from "../components/FeatureRail/FeatureRail";
+import Reviews from "../components/Reviews/Reviews";
 import Pricing from "../components/Pricing/Pricing";
 import FAQ from "../components/FAQ/FAQ";
 import Footer from "../components/Footer/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
       <main>
         <Hero />
         <FeatureRail />
+        <Reviews />
         <Pricing />
         <FAQ />
       </main>

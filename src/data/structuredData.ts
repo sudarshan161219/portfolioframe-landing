@@ -1,8 +1,9 @@
 // JSON-LD injected into <head> by scripts/prerender.mjs. Kept here rather
 // than in index.html so each route gets only the blocks that describe it.
 //
-// No aggregateRating on purpose: only add one once there are real Chrome Web
-// Store reviews AND the rating is shown as visible text on the page.
+// No aggregateRating on purpose. The page shows the Chrome Web Store rating,
+// but Google's review snippet guidelines say not to mark up ratings
+// aggregated from other websites, so it stays visible text only.
 
 export const softwareApplication = {
   '@context': 'https://schema.org',

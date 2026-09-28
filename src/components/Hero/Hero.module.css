@@ -65,6 +65,22 @@
   transform: translateY(-1px);
 }
 
+.webCta {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  padding: 13px 21px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.webCta:hover {
+  border-color: var(--mint);
+  transform: translateY(-1px);
+}
+
 .secondaryCta {
   text-decoration: none;
   font-weight: 500;
