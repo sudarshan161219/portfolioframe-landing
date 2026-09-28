@@ -1,0 +1,14 @@
+// Cloudflare Workers static-assets deploy of the prerendered site.
+// `name` must match the Worker's name in the Cloudflare dashboard, or
+// Workers Builds refuses the deploy.
+{
+  "name": "portfolioframe-landing",
+  "compatibility_date": "2026-09-26",
+  "assets": {
+    "directory": "./dist",
+    // Serve /vs/carbon from vs/carbon/index.html and redirect /vs/carbon/ to
+    // it, so live URLs match the canonical, hreflang and sitemap URLs (all
+    // without a trailing slash). The default would redirect the other way.
+    "html_handling": "drop-trailing-slash"
+  }
+}
