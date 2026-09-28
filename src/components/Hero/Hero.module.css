@@ -26,6 +26,14 @@
   color: var(--text-primary);
 }
 
+.subhead {
+  margin-top: 20px;
+  max-width: 46ch;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
 .sub {
   margin-top: 22px;
   max-width: 46ch;

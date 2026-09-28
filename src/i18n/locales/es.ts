@@ -32,6 +32,8 @@ export const es = {
     eyebrow: 'Extensión de Chrome para mockups de capturas y código',
     headlineLine1: 'Revela tus capturas',
     headlineLine2: 'como copias.',
+    subhead:
+      "Un embellecedor de capturas de pantalla y generador de maquetas de dispositivos para Chrome. Convierte capturas, fragmentos de código y tweets en imágenes pulidas sin subir nada.",
     sub: 'Portfolio Frame convierte una captura en bruto o un bloque de código en algo que vale la pena compartir: enmarcado, iluminado, anotado y con el tamaño justo para donde vaya. Sin cuenta, sin subir nada, sin servidor de por medio.',
     primaryCta: 'Añadir a Chrome, es gratis',
     secondaryCta: 'Míralo con código ↓',
@@ -335,9 +337,6 @@ export const es = {
 
   compare: {
     eyebrow: 'Comparativa',
-    titleTemplate: (name: string) => `Frame frente a ${name}`,
-    metaTitleTemplate: (name: string) =>
-      `Frame frente a ${name} — herramientas de capturas de código y maquetas comparadas`,
     tableHeaders: { feature: 'Característica', frame: 'Frame' },
     honestLabel: 'Siendo honestos',
     ctaText: 'Prueba Frame — es gratis',
@@ -348,8 +347,19 @@ export const es = {
   comparisons: {
     carbon: {
       name: 'Carbon',
+      metaTitle: "Alternativa a Carbon: Portfolio Frame vs Carbon.now.sh",
+      metaDescription:
+        "¿Buscas una alternativa a Carbon.now.sh? Portfolio Frame crea capturas de código en el navegador, sin servidor, con maquetas y anotaciones que Carbon no tiene.",
+      h1: "Alternativa a Carbon: Portfolio Frame frente a Carbon.now.sh",
       intro:
-        'Carbon popularizó el formato de captura de código: la biblioteca de temas y lenguajes más grande que existe, y encima es gratis. Así se compara con Frame.',
+        "Si buscas una alternativa a Carbon, conviene tener claro lo que Carbon hace bien: es gratis, es de código abierto y tiene la mayor cobertura de temas y lenguajes de cualquier herramienta de capturas de código. Portfolio Frame es una extensión de Chrome que también renderiza capturas de código en tu navegador, y añade lo que Carbon no intenta: maquetas de dispositivos, anotaciones, marcas de agua y un editor de capturas junto al de código.",
+      why: {
+        heading: "Por qué la gente busca una alternativa a Carbon",
+        body: [
+          "Carbon hace un solo trabajo, entra código y sale una imagen, y lo hace bien. Los motivos para mirar más allá suelen tener que ver con el alcance, no con la calidad. No tiene modo de imagen, así que una captura de la funcionalidad necesita una segunda herramienta. No tiene marcos de dispositivo, ni flechas ni pasos numerados, ni forma de censurar una clave o estampar una marca de agua antes de publicar la imagen.",
+          "Si solo compartes código, nada de eso importa y Carbon es la mejor opción. Si tus notas de versión mezclan código con capturas de producto, ahí es donde la segunda herramienta empieza a costarte.",
+        ],
+      },
       rows: [
         {
           feature: 'Cómo se renderiza la imagen',
@@ -453,8 +463,19 @@ export const es = {
     },
     'ray-so': {
       name: 'Ray.so',
+      metaTitle: "Alternativa a Ray.so: Portfolio Frame frente a Ray.so",
+      metaDescription:
+        "¿Buscas una alternativa a Ray.so? Portfolio Frame hace capturas de código, maquetas, anotaciones y marcas de agua, sin conexión, con una licencia única de $19.",
+      h1: "Alternativa a Ray.so: Portfolio Frame frente a Ray.so",
       intro:
-        'Ray.so (de Raycast) es el camino más rápido para convertir una selección de código en un PNG limpio con fondo degradado. Así se compara con Frame.',
+        "Ray.so es la forma más rápida de convertir una selección de código en una imagen limpia con fondo degradado, y es gratis. Si buscas una alternativa a Ray.so, normalmente es porque necesitas más de lo que da esa única pantalla. Portfolio Frame es una extensión de Chrome que también hace capturas de código y añade maquetas de dispositivos, anotaciones, marcas de agua y un editor de capturas, todo renderizado localmente en tu navegador.",
+      why: {
+        heading: "Por qué la gente busca una alternativa a Ray.so",
+        body: [
+          "Ray.so es minimalista a propósito: eliges un degradado, eliges un tema, copias. Ese es todo su atractivo, y también es donde la gente choca con su límite. No hay forma de meter una captura en un dispositivo, dibujar una flecha hacia la línea que importa o tapar una clave de API antes de publicar.",
+          "Cuando el resultado tiene que ser concreto y no solo pulcro, hace falta un editor, y ese es el hueco que la gente intenta cubrir.",
+        ],
+      },
       rows: [
         {
           feature: 'Cómo se renderiza la imagen',
@@ -558,8 +579,19 @@ export const es = {
     },
     screely: {
       name: 'Screely',
+      metaTitle: "Alternativa a Screely: Portfolio Frame frente a Screely",
+      metaDescription:
+        "¿Buscas una alternativa a Screely? Portfolio Frame enmarca capturas y código en local desde Chrome, sin subidas y con una licencia única de $19.",
+      h1: "Alternativa a Screely: Portfolio Frame frente a Screely",
       intro:
-        'Screely convierte capturas de páginas web en maquetas de navegador pulidas y, al igual que Frame, mantiene todo local en tu dispositivo. Aquí es donde realmente se diferencian.',
+        "Screely es una buena herramienta gratuita para convertir capturas de páginas web en maquetas de navegador y, como Portfolio Frame, lo procesa todo en local. Quien busca una alternativa a Screely suele necesitar algo para lo que no fue diseñado. Portfolio Frame es una extensión de Chrome que añade un editor de fragmentos de código, maquetas de dispositivos físicos, tarjetas de tweet y marcas de agua, con una licencia única de $19 para las funciones Pro.",
+      why: {
+        heading: "Por qué la gente busca una alternativa a Screely",
+        body: [
+          "Screely cubre la captura, los marcos de ventana de navegador y el marcado con texto, flechas y desenfoque, y no cuesta nada, así que el precio y la privacidad rara vez son el motivo. Los motivos tienen que ver con el alcance. No tiene editor de código ni resaltado de sintaxis, sus marcos son ventanas y no dispositivos, y no tiene marcas de agua.",
+          "Si publicas código tan a menudo como capturas, o quieres que la imagen aparezca dentro de un MacBook o un iPhone, ahí es cuando la gente suele empezar a comparar.",
+        ],
+      },
       rows: [
         {
           feature: 'Dónde se procesan las capturas',
@@ -659,8 +691,19 @@ export const es = {
     },
     'shots-so': {
       name: 'Shots.so',
+      metaTitle: "Alternativa a Shots.so: Portfolio Frame frente a Shots.so",
+      metaDescription:
+        "¿Buscas una alternativa a Shots.so? Portfolio Frame reúne maquetas, marcos de código y anotaciones en Chrome, con una licencia única de $19 y sin suscripción.",
+      h1: "Alternativa a Shots.so: Portfolio Frame frente a Shots.so",
       intro:
-        'Shots.so lleva cuatro años de desarrollo detrás — una gran biblioteca de dispositivos, escenas 3D y exportaciones animadas en los planes de pago. Así se compara con Frame.',
+        "Shots.so es una aplicación web madura con una gran biblioteca de dispositivos y maquetas animadas, y para el trabajo con movimiento es la herramienta más fuerte. Quien busca una alternativa a Shots.so suele querer capturas de código, anotaciones o dejar de pagar cada mes. Portfolio Frame es una extensión de Chrome que reúne maquetas de dispositivos, marcos de código y anotaciones en un solo editor, con una licencia única de $19 en lugar de una suscripción.",
+      why: {
+        heading: "Por qué la gente busca una alternativa a Shots.so",
+        body: [
+          "Shots.so es una herramienta de maquetas y fondos, y muy buena. Lo que no hace es código: no hay editor de fragmentos ni resaltado de sintaxis. Tampoco tiene flechas, pasos numerados ni censura, así que todo lo que haya que señalar o tapar se hace en otro sitio.",
+          "El otro motivo es la factura. Shots.so se cobra como suscripción, y para algo que usas unas pocas veces al mes, pagar una sola vez puede tener más sentido.",
+        ],
+      },
       rows: [
         {
           feature: 'Biblioteca de dispositivos',

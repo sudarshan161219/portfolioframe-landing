@@ -22,8 +22,8 @@ export default function Compare() {
   const t = dict.compare
 
   usePageMeta({
-    title: t.metaTitleTemplate(comparison.name),
-    description: comparison.intro,
+    title: comparison.metaTitle,
+    description: comparison.metaDescription,
     path: `/vs/${comparisonSlug}`,
     locale,
     image: `https://portfolioframe.com/og/vs-${comparisonSlug}.png`,
@@ -35,8 +35,17 @@ export default function Compare() {
       <main>
         <section className={styles.hero}>
           <p className={styles.eyebrow}>{t.eyebrow}</p>
-          <h1 className={styles.title}>{t.titleTemplate(comparison.name)}</h1>
+          <h1 className={styles.title}>{comparison.h1}</h1>
           <p className={styles.intro}>{comparison.intro}</p>
+        </section>
+
+        <section className={styles.whySection}>
+          <h2 className={styles.proseHeading}>{comparison.why.heading}</h2>
+          {comparison.why.body.map((para, i) => (
+            <p key={i} className={styles.proseBody}>
+              {para}
+            </p>
+          ))}
         </section>
 
         <section className={styles.tableSection}>

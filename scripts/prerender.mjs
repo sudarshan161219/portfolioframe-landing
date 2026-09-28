@@ -18,8 +18,23 @@ const root = path.resolve(__dirname, "..");
 const distDir = path.join(root, "dist");
 const SITE_URL = "https://portfolioframe.com";
 
+// Both helpers use function replacers so a "$" in copy (e.g. "$19") is
+// inserted literally instead of being read as a replacement pattern.
 function replaceTag(html, pattern, value) {
-  return html.replace(pattern, value);
+  return html.replace(pattern, () => value);
+}
+
+// `pattern` captures the text before and after an attribute value.
+function replaceAttr(html, pattern, value) {
+  return html.replace(pattern, (_, before, after) => `${before}${value}${after}`);
+}
+
+function escapeHtml(value) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
 // Vite's SSR module loader (used below to render each route) resolves local
@@ -63,6 +78,9 @@ async function main() {
   const { COMPARISON_SLUGS } = await vite.ssrLoadModule("/src/data/comparisons.ts");
   const { LOCALES, HREFLANG_CODES } = await vite.ssrLoadModule("/src/i18n/config.ts");
   const { localizePath } = await vite.ssrLoadModule("/src/i18n/paths.ts");
+  const { softwareApplication, faqPage, jsonLdScript } = await vite.ssrLoadModule(
+    "/src/data/structuredData.ts",
+  );
 
   const dictionaries = {};
   for (const locale of LOCALES) {
@@ -82,6 +100,7 @@ async function main() {
       title: dict.meta.home.title,
       description: dict.meta.home.description,
       image: `${SITE_URL}/og-image.png`,
+      jsonLd: [softwareApplication, faqPage(dict.faq.items)],
       inSitemap: true,
       changefreq: "weekly",
       priority: "1.0",
@@ -92,9 +111,12 @@ async function main() {
       pages.push({
         basePath: `/vs/${slug}`,
         locale,
-        title: dict.compare.metaTitleTemplate(comparison.name),
-        description: comparison.intro,
+        title: comparison.metaTitle,
+        description: comparison.metaDescription,
         image: `${SITE_URL}/og/vs-${slug}.png`,
+        jsonLd: comparison.faq?.length
+          ? [faqPage(comparison.faq.map((f) => ({ question: f.q, answer: f.a })))]
+          : [],
         inSitemap: true,
         changefreq: "monthly",
         priority: "0.7",
@@ -107,6 +129,7 @@ async function main() {
       title: dict.meta.privacy.title,
       description: dict.meta.privacy.description,
       image: `${SITE_URL}/og-image.png`,
+      jsonLd: [],
       inSitemap: false,
     });
   }
@@ -118,6 +141,9 @@ async function main() {
 
     const appHtml = resolveDevAssetUrls(render(url));
 
+    const title = escapeHtml(page.title);
+    const description = escapeHtml(page.description);
+
     const hreflangTags = LOCALES.map((locale) => {
       const href = `${SITE_URL}${localizePath(page.basePath, locale)}`;
       return `<link rel="alternate" hreflang="${HREFLANG_CODES[locale]}" href="${href}" />`;
@@ -128,59 +154,60 @@ async function main() {
 
     let html = template;
     html = replaceTag(html, /<html lang="[^"]*">/, `<html lang="${page.locale}">`);
-    html = replaceTag(html, /<title>.*?<\/title>/, `<title>${page.title}</title>`);
-    html = replaceTag(
+    html = replaceTag(html, /<title>.*?<\/title>/, `<title>${title}</title>`);
+    html = replaceAttr(
       html,
       /(<meta\s+name="description"\s+content=")[^"]*(")/s,
-      `$1${page.description}$2`,
+      description,
     );
-    html = replaceTag(
+    html = replaceAttr(
       html,
       /(<link\s+rel="canonical"\s+href=")[^"]*(")/s,
-      `$1${canonicalUrl}$2`,
+      canonicalUrl,
     );
-    html = replaceTag(
+    html = replaceAttr(
       html,
       /(<meta\s+property="og:url"\s+content=")[^"]*(")/s,
-      `$1${canonicalUrl}$2`,
+      canonicalUrl,
     );
-    html = replaceTag(
+    html = replaceAttr(
       html,
       /(<meta\s+property="og:title"\s+content=")[^"]*(")/s,
-      `$1${page.title}$2`,
+      title,
     );
-    html = replaceTag(
+    html = replaceAttr(
       html,
       /(<meta\s+property="og:description"\s+content=")[^"]*(")/s,
-      `$1${page.description}$2`,
+      description,
     );
-    html = replaceTag(
+    html = replaceAttr(
       html,
       /(<meta\s+property="og:image"\s+content=")[^"]*(")/s,
-      `$1${page.image}$2`,
+      page.image,
     );
-    html = replaceTag(
+    html = replaceAttr(
       html,
       /(<meta\s+name="twitter:title"\s+content=")[^"]*(")/s,
-      `$1${page.title}$2`,
+      title,
     );
-    html = replaceTag(
+    html = replaceAttr(
       html,
       /(<meta\s+name="twitter:description"\s+content=")[^"]*(")/s,
-      `$1${page.description}$2`,
+      description,
     );
-    html = replaceTag(
+    html = replaceAttr(
       html,
       /(<meta\s+name="twitter:image"\s+content=")[^"]*(")/s,
-      `$1${page.image}$2`,
+      page.image,
     );
+    const headTags = [...hreflangTags, ...page.jsonLd.map(jsonLdScript)];
     html = html.replace(
       "</head>",
-      `    ${hreflangTags.join("\n    ")}\n  </head>`,
+      () => `    ${headTags.join("\n    ")}\n  </head>`,
     );
     html = html.replace(
       '<div id="root"></div>',
-      `<div id="root">${appHtml}</div>`,
+      () => `<div id="root">${appHtml}</div>`,
     );
 
     const outPath = path.join(distDir, file);

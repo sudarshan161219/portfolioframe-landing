@@ -14,6 +14,7 @@ export default function Hero() {
           <br />
           {t.headlineLine2}
         </h1>
+        <p className={styles.subhead}>{t.subhead}</p>
         <p className={styles.sub}>{t.sub}</p>
 
         <div className={styles.actions}>

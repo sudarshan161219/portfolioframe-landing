@@ -32,6 +32,8 @@ export const fr = {
     eyebrow: 'Extension Chrome pour mockups de captures d’écran et code',
     headlineLine1: 'Développe tes captures d’écran',
     headlineLine2: 'comme des tirages photo.',
+    subhead:
+      "Un outil pour embellir tes captures d’écran et un générateur de maquettes d’appareils pour Chrome. Transforme captures d’écran, extraits de code et tweets en images soignées sans rien uploader.",
     sub: 'Portfolio Frame transforme une capture d’écran brute ou un bloc de code en quelque chose qui vaut le coup d’être partagé : encadré, éclairé, annoté, et à la bonne taille pour sa destination. Pas de compte, pas d’upload, pas de serveur entre les deux.',
     primaryCta: 'Ajouter à Chrome, c’est gratuit',
     secondaryCta: 'Voir avec du code ↓',
@@ -335,9 +337,6 @@ export const fr = {
 
   compare: {
     eyebrow: 'Comparaison',
-    titleTemplate: (name: string) => `Frame face à ${name}`,
-    metaTitleTemplate: (name: string) =>
-      `Frame face à ${name} — comparatif des outils de capture de code & de maquettes`,
     tableHeaders: { feature: 'Fonctionnalité', frame: 'Frame' },
     honestLabel: 'En toute honnêteté',
     ctaText: 'Essaie Frame — c’est gratuit',
@@ -348,8 +347,19 @@ export const fr = {
   comparisons: {
     carbon: {
       name: 'Carbon',
+      metaTitle: "Alternative à Carbon : Portfolio Frame face à Carbon.now.sh",
+      metaDescription:
+        "Une alternative à Carbon.now.sh ? Portfolio Frame génère tes captures de code dans le navigateur, sans serveur, avec maquettes et annotations en plus.",
+      h1: "Alternative à Carbon : Portfolio Frame face à Carbon.now.sh",
       intro:
-        'Carbon a popularisé le format de la capture d’écran de code — la plus grande bibliothèque de thèmes et de langages du marché, et c’est gratuit. Voici comment ça se compare à Frame.',
+        "Si tu cherches une alternative à Carbon, autant être clair sur ce que Carbon fait bien : il est gratuit, open source, et offre la plus large couverture de thèmes et de langages de tous les outils de capture de code. Portfolio Frame est une extension Chrome qui fait aussi le rendu des captures de code dans ton navigateur, puis ajoute ce que Carbon ne tente pas : maquettes d’appareils, annotations, filigranes et un éditeur de captures à côté de celui pour le code.",
+      why: {
+        heading: "Pourquoi les gens cherchent une alternative à Carbon",
+        body: [
+          "Carbon fait une seule chose, du code en entrée et une image en sortie, et il la fait bien. Les raisons de regarder ailleurs tiennent en général à la portée, pas à la qualité. Il n’a pas de mode image, donc une capture de la fonctionnalité demande un deuxième outil. Pas de cadres d’appareils, pas de flèches ni d’étapes numérotées, et aucun moyen de masquer une clé ou d’apposer un filigrane avant publication.",
+          "Si tu ne partages que du code, rien de tout cela ne compte et Carbon est le meilleur choix. Si tes notes de version mélangent code et visuels produit, c’est là que le deuxième outil commence à te coûter.",
+        ],
+      },
       rows: [
         {
           feature: 'Comment l’image est rendue',
@@ -453,8 +463,19 @@ export const fr = {
     },
     'ray-so': {
       name: 'Ray.so',
+      metaTitle: "Alternative à Ray.so : Portfolio Frame face à Ray.so",
+      metaDescription:
+        "Une alternative à Ray.so ? Portfolio Frame fait captures de code, maquettes d’appareils, annotations et filigranes, hors ligne, pour $19 en achat unique.",
+      h1: "Alternative à Ray.so : Portfolio Frame face à Ray.so",
       intro:
-        'Ray.so (par Raycast) est le chemin le plus rapide entre une sélection de code et un PNG propre avec fond en dégradé. Voici comment ça se compare à Frame.',
+        "Ray.so est le moyen le plus rapide de transformer une sélection de code en image propre sur fond dégradé, et c’est gratuit. Si tu cherches une alternative à Ray.so, c’est en général parce qu’il te faut plus que ce que cet écran unique propose. Portfolio Frame est une extension Chrome qui fait aussi des captures de code, et ajoute maquettes d’appareils, annotations, filigranes et un éditeur de captures, le tout rendu localement dans ton navigateur.",
+      why: {
+        heading: "Pourquoi les gens cherchent une alternative à Ray.so",
+        body: [
+          "Ray.so est minimaliste par choix : tu choisis un dégradé, un thème, tu copies. C’est tout son intérêt, et c’est aussi là que l’on bute sur ses limites. Impossible de placer une capture dans un appareil, de tracer une flèche vers la ligne qui compte ou de masquer une clé d’API avant de publier.",
+          "Quand le rendu doit être précis et pas seulement soigné, il faut un éditeur, et c’est ce manque que l’on cherche à combler.",
+        ],
+      },
       rows: [
         {
           feature: 'Comment l’image est rendue',
@@ -558,8 +579,19 @@ export const fr = {
     },
     screely: {
       name: 'Screely',
+      metaTitle: "Alternative à Screely : Portfolio Frame face à Screely",
+      metaDescription:
+        "Une alternative à Screely ? Portfolio Frame encadre captures d’écran et code en local dans Chrome, sans upload, avec une licence unique à $19.",
+      h1: "Alternative à Screely : Portfolio Frame face à Screely",
       intro:
-        'Screely transforme des captures d’écran de pages web en maquettes de navigateur soignées, et — comme Frame — garde tout en local sur ton appareil. Voici où les deux diffèrent vraiment.',
+        "Screely est un bon outil gratuit pour transformer des captures de pages web en maquettes de navigateur et, comme Portfolio Frame, il traite tout en local. Ceux qui cherchent une alternative à Screely ont généralement besoin de quelque chose pour lequel il n’a pas été conçu. Portfolio Frame est une extension Chrome qui ajoute un éditeur d’extraits de code, des maquettes d’appareils physiques, des cartes de tweet et des filigranes, avec une licence unique à $19 pour les fonctions Pro.",
+      why: {
+        heading: "Pourquoi les gens cherchent une alternative à Screely",
+        body: [
+          "Screely couvre la capture, les fenêtres de navigateur et le marquage par texte, flèches et flou, et il ne coûte rien : le prix et la confidentialité sont donc rarement la raison. Les raisons tiennent à la portée. Il n’a ni éditeur de code ni coloration syntaxique, ses cadres sont des fenêtres et non des appareils, et il ne propose pas de filigrane.",
+          "Si tu publies du code aussi souvent que des captures, ou si tu veux que le visuel s’affiche dans un MacBook ou un iPhone, c’est en général là que l’on commence à comparer.",
+        ],
+      },
       rows: [
         {
           feature: 'Où les captures d’écran sont traitées',
@@ -659,8 +691,19 @@ export const fr = {
     },
     'shots-so': {
       name: 'Shots.so',
+      metaTitle: "Alternative à Shots.so : Portfolio Frame face à Shots.so",
+      metaDescription:
+        "Une alternative à Shots.so ? Portfolio Frame réunit maquettes d’appareils, cadres de code et annotations dans Chrome, pour $19 une fois, sans abonnement.",
+      h1: "Alternative à Shots.so : Portfolio Frame face à Shots.so",
       intro:
-        'Shots.so a quatre ans de développement derrière lui — une grande bibliothèque d’appareils, des scènes 3D, et des exports animés sur les forfaits payants. Voici comment ça se compare à Frame.',
+        "Shots.so est une application web mature, avec une grande bibliothèque d’appareils et des maquettes animées, et pour tout ce qui bouge c’est l’outil le plus solide. Ceux qui cherchent une alternative à Shots.so veulent en général des captures de code, des annotations, ou arrêter de payer tous les mois. Portfolio Frame est une extension Chrome qui réunit maquettes d’appareils, cadres de code et annotations dans un seul éditeur, avec une licence unique à $19 plutôt qu’un abonnement.",
+      why: {
+        heading: "Pourquoi les gens cherchent une alternative à Shots.so",
+        body: [
+          "Shots.so est un outil de maquettes et d’arrière-plans, et un très bon. Ce qu’il ne fait pas, c’est le code : pas d’éditeur d’extraits, pas de coloration syntaxique. Pas de flèches, d’étapes numérotées ni de masquage non plus, donc tout ce qu’il faut pointer ou cacher se fait ailleurs.",
+          "L’autre raison, c’est la facture. Shots.so fonctionne par abonnement, et pour un outil que tu utilises quelques fois par mois, payer une seule fois peut avoir plus de sens.",
+        ],
+      },
       rows: [
         {
           feature: 'Bibliothèque d’appareils',

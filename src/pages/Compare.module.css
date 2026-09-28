@@ -29,6 +29,18 @@
   color: var(--text-muted);
 }
 
+/* "Why people look for an X alternative": sits under the hero, on the same
+   left edge, before the table. */
+.whySection {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--edge) clamp(32px, 5vw, 56px);
+}
+
+.whySection > * {
+  max-width: 62ch;
+}
+
 .tableSection {
   max-width: var(--container);
   margin: 0 auto;

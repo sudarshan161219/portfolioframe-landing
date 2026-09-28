@@ -32,6 +32,8 @@ export const de = {
     eyebrow: 'Chrome-Erweiterung für Screenshot- und Code-Mockups',
     headlineLine1: 'Entwickle deine Screenshots',
     headlineLine2: 'wie Abzüge.',
+    subhead:
+      "Ein Screenshot-Verschönerer und Geräte-Mockup-Generator für Chrome. Verwandle Screenshots, Code-Snippets und Tweets in polierte Bilder, ohne etwas hochzuladen.",
     sub: 'Portfolio Frame macht aus einem rohen Screenshot oder einem Batzen Code etwas, das sich zu teilen lohnt: gerahmt, ausgeleuchtet, kommentiert und im richtigen Format für jeden Zweck. Kein Account, kein Upload, kein Server dazwischen.',
     primaryCta: 'Zu Chrome hinzufügen – kostenlos',
     secondaryCta: "Zeig's mir am Code ↓",
@@ -335,9 +337,6 @@ export const de = {
 
   compare: {
     eyebrow: 'Vergleich',
-    titleTemplate: (name: string) => `Frame vs. ${name}`,
-    metaTitleTemplate: (name: string) =>
-      `Frame vs. ${name} — Tools für Code-Screenshots & Mockups im Vergleich`,
     tableHeaders: { feature: 'Feature', frame: 'Frame' },
     honestLabel: 'Ehrlich gesagt',
     ctaText: 'Frame ausprobieren — kostenlos',
@@ -348,8 +347,19 @@ export const de = {
   comparisons: {
     carbon: {
       name: 'Carbon',
+      metaTitle: "Carbon-Alternative: Portfolio Frame vs. Carbon.now.sh",
+      metaDescription:
+        "Auf der Suche nach einer Carbon.now.sh-Alternative? Portfolio Frame rendert Code-Screenshots im Browser, ohne Server, plus Mockups und Markierungen.",
+      h1: "Carbon-Alternative: Portfolio Frame vs. Carbon.now.sh",
       intro:
-        'Carbon hat das Format Code-Screenshot bekannt gemacht — die größte Theme- und Sprachbibliothek überhaupt, und kostenlos noch dazu. Hier siehst du, wie es im Vergleich zu Frame abschneidet.',
+        "Wenn du eine Carbon-Alternative suchst, lohnt sich ein klarer Blick darauf, was Carbon gut macht: Es ist kostenlos, Open Source und hat die breiteste Theme- und Sprachabdeckung aller Code-Screenshot-Tools. Portfolio Frame ist eine Chrome-Erweiterung, die Code-Screenshots ebenfalls in deinem Browser rendert und dazu liefert, was Carbon gar nicht versucht: Geräte-Mockups, Markierungen, Wasserzeichen und einen Screenshot-Editor neben dem für Code.",
+      why: {
+        heading: "Warum Leute eine Carbon-Alternative suchen",
+        body: [
+          "Carbon macht eine Sache, Code rein und Bild raus, und das gut. Die Gründe, weiterzusuchen, haben meist mit dem Umfang zu tun, nicht mit der Qualität. Es gibt keinen Bildmodus, ein Screenshot des Features braucht also ein zweites Tool. Es gibt keine Geräterahmen, keine Pfeile oder nummerierten Schritte und keine Möglichkeit, einen Key zu schwärzen oder ein Wasserzeichen zu setzen, bevor das Bild rausgeht.",
+          "Wenn du nur Code teilst, spielt das alles keine Rolle, und Carbon ist die bessere Wahl. Wenn deine Release-Notes Code und Produktaufnahmen mischen, fängt das zweite Tool an, dich etwas zu kosten.",
+        ],
+      },
       rows: [
         {
           feature: 'Wie das Bild gerendert wird',
@@ -453,8 +463,19 @@ export const de = {
     },
     'ray-so': {
       name: 'Ray.so',
+      metaTitle: "Ray.so-Alternative: Portfolio Frame vs. Ray.so",
+      metaDescription:
+        "Auf der Suche nach einer Ray.so-Alternative? Portfolio Frame macht Code-Screenshots, Geräte-Mockups, Markierungen und Wasserzeichen, offline, einmalig $19.",
+      h1: "Ray.so-Alternative: Portfolio Frame vs. Ray.so",
       intro:
-        'Ray.so (von Raycast) ist der schnellste Weg von einer Code-Auswahl zu einem sauberen PNG mit Farbverlauf-Hintergrund. Hier siehst du, wie es im Vergleich zu Frame abschneidet.',
+        "Ray.so ist der schnellste Weg von einer Code-Auswahl zu einem sauberen Bild mit Farbverlauf, und es ist kostenlos. Wer eine Ray.so-Alternative sucht, braucht meist mehr, als dieser eine Bildschirm hergibt. Portfolio Frame ist eine Chrome-Erweiterung, die ebenfalls Code-Screenshots macht und dazu Geräte-Mockups, Markierungen, Wasserzeichen und einen Screenshot-Editor mitbringt, alles lokal in deinem Browser gerendert.",
+      why: {
+        heading: "Warum Leute eine Ray.so-Alternative suchen",
+        body: [
+          "Ray.so ist bewusst minimal: Farbverlauf wählen, Theme wählen, kopieren. Genau das macht es attraktiv, und genau dort stößt man an seine Grenze. Es gibt keine Möglichkeit, einen Screenshot in ein Gerät zu setzen, einen Pfeil auf die entscheidende Zeile zu zeichnen oder einen API-Key vor dem Veröffentlichen abzudecken.",
+          "Wenn das Ergebnis konkret sein muss und nicht nur ordentlich, braucht es einen Editor, und genau diese Lücke wollen die Leute schließen.",
+        ],
+      },
       rows: [
         {
           feature: 'Wie das Bild gerendert wird',
@@ -558,8 +579,19 @@ export const de = {
     },
     screely: {
       name: 'Screely',
+      metaTitle: "Screely-Alternative: Portfolio Frame vs. Screely",
+      metaDescription:
+        "Auf der Suche nach einer Screely-Alternative? Portfolio Frame rahmt Screenshots und Code lokal in Chrome, ohne Uploads, mit einmaliger Lizenz für $19.",
+      h1: "Screely-Alternative: Portfolio Frame vs. Screely",
       intro:
-        'Screely macht aus Webseiten-Screenshots polierte Browser-Mockups und bleibt — wie Frame — komplett lokal auf deinem Gerät. Hier unterscheiden sich die beiden wirklich.',
+        "Screely ist ein gutes, kostenloses Tool, um Webseiten-Screenshots in Browser-Mockups zu verwandeln, und verarbeitet wie Portfolio Frame alles lokal. Wer eine Screely-Alternative sucht, braucht meist etwas, wofür es nicht gebaut wurde. Portfolio Frame ist eine Chrome-Erweiterung mit Code-Snippet-Editor, physischen Geräte-Mockups, Tweet-Karten und Wasserzeichen, und einer einmaligen Lizenz für $19 für die Pro-Funktionen.",
+      why: {
+        heading: "Warum Leute eine Screely-Alternative suchen",
+        body: [
+          "Screely deckt Aufnahme, Browser-Fensterrahmen und Markierungen mit Text, Pfeilen und Weichzeichner ab und kostet nichts, Preis und Privatsphäre sind also selten der Grund. Die Gründe liegen im Umfang. Es gibt keinen Code-Editor und kein Syntax-Highlighting, die Rahmen sind Fenster statt Geräte, und Wasserzeichen fehlen.",
+          "Wenn du Code so oft veröffentlichst wie Screenshots, oder die Aufnahme in einem MacBook oder iPhone sitzen soll, fangen die meisten an zu vergleichen.",
+        ],
+      },
       rows: [
         {
           feature: 'Wo Screenshots verarbeitet werden',
@@ -659,8 +691,19 @@ export const de = {
     },
     'shots-so': {
       name: 'Shots.so',
+      metaTitle: "Shots.so-Alternative: Portfolio Frame vs. Shots.so",
+      metaDescription:
+        "Auf der Suche nach einer Shots.so-Alternative? Portfolio Frame vereint Geräte-Mockups, Code-Rahmen und Markierungen in Chrome, einmalig $19 statt Abo.",
+      h1: "Shots.so-Alternative: Portfolio Frame vs. Shots.so",
       intro:
-        'Shots.so hat vier Jahre Entwicklung hinter sich — eine große Geräte-Bibliothek, 3D-Szenen und animierte Exporte in den bezahlten Plänen. Hier siehst du, wie es im Vergleich zu Frame abschneidet.',
+        "Shots.so ist eine ausgereifte Web-App mit großer Gerätebibliothek und animierten Mockups, und für alles mit Bewegung ist es das stärkere Tool. Wer eine Shots.so-Alternative sucht, will meist Code-Screenshots, Markierungen oder einfach nicht mehr monatlich zahlen. Portfolio Frame ist eine Chrome-Erweiterung, die Geräte-Mockups, Code-Rahmen und Markierungen in einem Editor vereint, mit einmaliger Lizenz für $19 statt Abo.",
+      why: {
+        heading: "Warum Leute eine Shots.so-Alternative suchen",
+        body: [
+          "Shots.so ist ein Tool für Mockups und Hintergründe, und ein sehr gutes. Was es nicht macht, ist Code: kein Snippet-Editor, kein Syntax-Highlighting. Auch Pfeile, nummerierte Schritte oder Schwärzen fehlen, alles, worauf gezeigt oder was verdeckt werden muss, passiert also woanders.",
+          "Der andere Grund ist die Rechnung. Shots.so läuft als Abo, und für etwas, das du ein paar Mal im Monat nutzt, ist eine einmalige Zahlung oft sinnvoller.",
+        ],
+      },
       rows: [
         {
           feature: 'Geräte-Bibliothek',

@@ -59,6 +59,12 @@ export interface ComparisonFaq {
 
 export interface Comparison {
   name: string
+  // Search-facing copy. Each page targets "<competitor> alternative", so the
+  // phrase appears once in each of these plus once in `intro`.
+  metaTitle: string
+  metaDescription: string
+  h1: string
+  why: ComparisonSection
   intro: string
   rows: ComparisonRow[]
   honestNote: string
@@ -86,6 +92,7 @@ export interface Dictionary {
     eyebrow: string
     headlineLine1: string
     headlineLine2: string
+    subhead: string
     sub: string
     primaryCta: string
     secondaryCta: string
@@ -199,8 +206,6 @@ export interface Dictionary {
 
   compare: {
     eyebrow: string
-    titleTemplate: (name: string) => string
-    metaTitleTemplate: (name: string) => string
     tableHeaders: { feature: string; frame: string }
     honestLabel: string
     ctaText: string

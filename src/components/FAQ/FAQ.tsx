@@ -7,25 +7,8 @@ export default function FAQ() {
   const t = dict.faq;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: t.items.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
-
   return (
     <section id="faq" className={styles.section}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <div className={styles.inner}>
         <p className={styles.tag}>{t.tag}</p>
         <h2 className={styles.title}>{t.title}</h2>
@@ -39,6 +22,7 @@ export default function FAQ() {
                   type="button"
                   className={styles.question}
                   aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${i}`}
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                 >
                   {item.question}
@@ -46,7 +30,11 @@ export default function FAQ() {
                     +
                   </span>
                 </button>
-                {isOpen && <p className={styles.answer}>{item.answer}</p>}
+                {/* Always in the DOM (just hidden when closed) so the answers
+                    are in the prerendered HTML that FAQPage markup points at. */}
+                <p id={`faq-answer-${i}`} className={styles.answer} hidden={!isOpen}>
+                  {item.answer}
+                </p>
               </li>
             );
           })}

@@ -3,7 +3,7 @@ import type { Dictionary } from '../types'
 export const en = {
   meta: {
     home: {
-      title: 'Screenshot & code mockup editor for Chrome | Portfolio Frame',
+      title: 'Screenshot Beautifier & Code Mockup Editor for Chrome | Portfolio Frame',
       description:
         'Portfolio Frame is a Chrome extension that turns screenshots and code into polished mockups: device frames, annotations, watermarks. Nothing leaves your device.',
     },
@@ -32,6 +32,8 @@ export const en = {
     eyebrow: 'A local-first screenshot & code mockup editor for Chrome',
     headlineLine1: 'Develop your screenshots',
     headlineLine2: 'like prints.',
+    subhead:
+      'A screenshot beautifier and device mockup generator for Chrome. Turn screenshots, code snippets and tweets into polished images without uploading anything.',
     sub: "Portfolio Frame turns a raw screenshot or a slab of code into something worth sharing, windowed, lit, annotated, and sized for wherever it's going. No account, no upload, no server in between.",
     primaryCta: "Add to Chrome, it's free",
     secondaryCta: 'See it on code ↓',
@@ -335,9 +337,6 @@ export const en = {
 
   compare: {
     eyebrow: 'Comparison',
-    titleTemplate: (name: string) => `Frame vs ${name}`,
-    metaTitleTemplate: (name: string) =>
-      `Frame vs ${name} — code screenshot & mockup tools compared`,
     tableHeaders: { feature: 'Feature', frame: 'Frame' },
     honestLabel: 'Being honest about it',
     ctaText: "Try Frame — it's free",
@@ -348,8 +347,19 @@ export const en = {
   comparisons: {
     carbon: {
       name: 'Carbon',
+      metaTitle: "Carbon Alternative: Portfolio Frame vs Carbon.now.sh",
+      metaDescription:
+        "Looking for a Carbon.now.sh alternative? Portfolio Frame renders code screenshots in the browser with no server round trip, plus mockups and annotations Carbon does not have.",
+      h1: "Carbon alternative: Portfolio Frame vs Carbon.now.sh",
       intro:
-        "Carbon popularized the code-screenshot format — the biggest theme and language library out there, and it's free. Here's how it compares to Frame.",
+        "If you are after a Carbon alternative, it helps to be clear about what Carbon does well: it is free, open source, and has the widest theme and language coverage of any code screenshot tool. Portfolio Frame is a Chrome extension that also renders code screenshots in your browser, then adds what Carbon does not attempt: device mockups, annotations, watermarks and a screenshot editor alongside the code one.",
+      why: {
+        heading: "Why people look for a Carbon alternative",
+        body: [
+          "Carbon does one job, code in and image out, and it does it well. The reasons people go looking past it are usually about scope rather than quality. It has no image mode, so a screenshot of the feature needs a second tool. It has no device frames, no arrows or numbered steps, and no way to redact a key or stamp a watermark before the image goes out.",
+          "If all you share is code, none of that matters and Carbon is the better pick. If your release notes mix code with product shots, that is where the second tool starts to cost you.",
+        ],
+      },
       rows: [
         {
           feature: 'How the image is rendered',
@@ -454,8 +464,19 @@ export const en = {
     },
     'ray-so': {
       name: 'Ray.so',
+      metaTitle: "Ray.so Alternative: Portfolio Frame vs Ray.so",
+      metaDescription:
+        "Looking for a Ray.so alternative? Portfolio Frame does code screenshots plus device mockups, annotations and watermarks, offline, for a $19 one-time licence.",
+      h1: "Ray.so alternative: Portfolio Frame vs Ray.so",
       intro:
-        "Ray.so (by Raycast) is the fastest path from a code selection to a clean, gradient-backed PNG. Here's how it compares to Frame.",
+        "Ray.so is the quickest way to turn a code selection into a clean, gradient-backed image, and it is free. If you are looking for a Ray.so alternative, it is usually because you need more than that one screen gives you. Portfolio Frame is a Chrome extension that does code screenshots too, then adds device mockups, annotations, watermarks and a screenshot editor, all rendered locally in your browser.",
+      why: {
+        heading: "Why people look for a Ray.so alternative",
+        body: [
+          "Ray.so is deliberately minimal: pick a gradient, pick a theme, copy. That is the whole appeal, and it is also where people hit the edge of it. There is no way to put a screenshot in a device, draw an arrow at the line you mean, or cover an API key before you publish.",
+          "When the output needs to be specific rather than just tidy, you need an editor, and that is the gap people are trying to fill.",
+        ],
+      },
       rows: [
         {
           feature: 'How the image is rendered',
@@ -560,8 +581,19 @@ export const en = {
     },
     screely: {
       name: 'Screely',
+      metaTitle: "Screely Alternative: Portfolio Frame vs Screely",
+      metaDescription:
+        "Looking for a Screely alternative? Portfolio Frame is a Chrome extension that frames screenshots and code locally, with a $19 one-time licence and no uploads. Here is how the two compare.",
+      h1: "Screely alternative: Portfolio Frame vs Screely",
       intro:
-        "Screely turns webpage screenshots into polished browser mockups, and — like Frame — keeps everything local to your device. Here's where the two actually differ.",
+        "Screely is a good, free tool for turning webpage screenshots into browser mockups, and like Portfolio Frame it processes everything locally. People looking for a Screely alternative usually need something it was not built for. Portfolio Frame is a Chrome extension that adds a code snippet editor, physical device mockups, tweet cards and watermarking, with a $19 one-time licence for the Pro features.",
+      why: {
+        heading: "Why people look for a Screely alternative",
+        body: [
+          "Screely covers capture, browser window chrome, and text, arrow and blur markup, and it costs nothing, so price and privacy are rarely the reason. The reasons are about scope. It has no code editor or syntax highlighting, its frames are window chrome rather than devices, and it has no watermarking.",
+          "If you publish code as often as screenshots, or you want the shot to sit inside a MacBook or an iPhone, that is usually when people start comparing.",
+        ],
+      },
       rows: [
         {
           feature: 'Where screenshots are processed',
@@ -662,8 +694,19 @@ export const en = {
     },
     'shots-so': {
       name: 'Shots.so',
+      metaTitle: "Shots.so Alternative: Portfolio Frame vs Shots.so",
+      metaDescription:
+        "Looking for a Shots.so alternative? Portfolio Frame gives you device mockups, code frames and annotations in one Chrome extension, with a $19 one-time licence instead of a subscription.",
+      h1: "Shots.so alternative: Portfolio Frame vs Shots.so",
       intro:
-        "Shots.so has four years of development behind it — a large device library, 3D scenes, and animated exports on paid plans. Here's how it compares to Frame.",
+        "Shots.so is a mature web app with a large device library and animated mockups, and for motion work it is the stronger tool. People searching for a Shots.so alternative tend to want code screenshots, annotation, or a way to stop paying monthly. Portfolio Frame is a Chrome extension that puts device mockups, code frames and annotations in one editor, with a $19 one-time licence instead of a subscription.",
+      why: {
+        heading: "Why people look for a Shots.so alternative",
+        body: [
+          "Shots.so is a mockup and background tool, and a very good one. What it does not do is code: there is no snippet editor and no syntax highlighting. It has no arrows, numbered steps or redaction either, so anything that needs pointing at or covering up happens somewhere else.",
+          "The other reason is the bill. Shots.so is priced as a subscription, and for something you use a few times a month, paying once can make more sense.",
+        ],
+      },
       rows: [
         {
           feature: 'Device library',
