@@ -3,6 +3,7 @@ import styles from "./Footer.module.css";
 import { BadgeSlider } from "../BadgeSlider/BadgeSlider";
 import { useLocale } from "../../i18n/LocaleContext";
 import { withLocale } from "../../i18n/paths";
+import { COMPARISON_SLUGS } from "../../data/comparisons";
 
 export default function Footer() {
   const { locale, dict } = useLocale();
@@ -137,6 +138,15 @@ export default function Footer() {
           >
             {dict.footer.proLicenseLink}
           </a>
+        </div>
+
+        <div className={styles.linkGroup}>
+          <p className={styles.groupLabel}>{dict.footer.compareLabel}</p>
+          {COMPARISON_SLUGS.map((slug) => (
+            <Link key={slug} to={withLocale(`/vs/${slug}`, locale)}>
+              {dict.footer.compareLinkTemplate(dict.comparisons[slug].name)}
+            </Link>
+          ))}
         </div>
       </div>
 

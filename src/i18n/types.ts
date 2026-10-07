@@ -212,6 +212,8 @@ export interface Dictionary {
     proLicenseLink: string
     noAccountLine: string
     privacyLink: string
+    compareLabel: string
+    compareLinkTemplate: (name: string) => string
   }
 
   compare: {

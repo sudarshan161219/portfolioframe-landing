@@ -345,6 +345,8 @@ export const fr = {
     proLicenseLink: 'Licence Pro',
     noAccountLine: 'Pas de compte. Pas d’upload. Pas de serveur.',
     privacyLink: 'Politique de confidentialité',
+    compareLabel: "Alternatives",
+    compareLinkTemplate: (name: string) => `Alternative à ${name}`,
   },
 
   compare: {
