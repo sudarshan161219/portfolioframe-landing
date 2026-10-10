@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+<Layout
+  title="Portfolio Frame Blog: screenshots, code images and mockups"
+  description="Guides on making beautiful screenshots, code images, device mockups and marketing visuals for developers and indie makers."
+>
+  <h1>Blog</h1>
+  <p class="lede">Guides on beautiful screenshots, code images and mockups for developers and makers.</p>
+  {posts.length === 0 && <p>First posts are on the way.</p>}
+  <ul class="posts">
+    {posts.map((post) => (
+      <li>
+        <a href={`/blog/${post.id}/`}>
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+          <time datetime={post.data.pubDate.toISOString()}>{fmt(post.data.pubDate)}</time>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Layout>
+
+<style>
+  .lede { color: var(--muted); margin-bottom: 32px; }
+  .posts { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+  .posts a { display: block; text-decoration: none; background: var(--cream); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .posts a:hover { border-color: var(--ink); color: var(--ink); }
+  .posts h2 { margin: 0 0 6px; font-size: 1.25rem; }
+  .posts p { margin: 0 0 8px; color: var(--muted); font-size: .98rem; }
+  .posts time { font-size: .85rem; color: var(--muted); }
+</style>
