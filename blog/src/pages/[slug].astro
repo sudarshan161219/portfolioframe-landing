@@ -24,7 +24,7 @@ const schema: object[] = [
     datePublished: pubDate.toISOString(),
     dateModified: (updatedDate ?? pubDate).toISOString(),
     mainEntityOfPage: url,
-    author: { '@type': 'Person', name: 'Sud', url: 'https://buildwithsud.com' },
+    author: { '@type': 'Person', name: 'Sud', url: 'https://x.com/buildwithSud' },
     publisher: { '@type': 'Organization', name: 'Portfolio Frame', url: 'https://portfolioframe.com' },
   },
 ];
@@ -40,7 +40,7 @@ if (faq.length) {
   <article>
     <p class="crumbs"><a href="/blog/">Blog</a></p>
     <h1>{title}</h1>
-    <p class="meta">By <a href="https://buildwithsud.com" rel="author">Sud</a> · <time datetime={pubDate.toISOString()}>{fmt(pubDate)}</time></p>
+    <p class="meta">By <a href="https://x.com/buildwithSud" rel="author">Sud</a> · <time datetime={pubDate.toISOString()}>{fmt(pubDate)}</time></p>
     <Content />
 
     {faq.length > 0 && (
