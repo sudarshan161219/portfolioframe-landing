@@ -10,6 +10,7 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     keyword: z.string().optional(),
     pillar: z.string().optional(),
+    product: z.enum(['portfolio-frame', 'cutout']).default('portfolio-frame'),
     tags: z.array(z.string()).default([]),
     faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     cover: z.string().optional(),

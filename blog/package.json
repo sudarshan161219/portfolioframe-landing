@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.0",
-    "astro": "^5.13.0"
+    "astro": "^5.13.0",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0"
   }
 }
