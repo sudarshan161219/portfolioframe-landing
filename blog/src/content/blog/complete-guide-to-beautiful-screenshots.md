@@ -15,7 +15,7 @@ faq:
   - q: "How do I fix double-sized (2x Retina) screenshots on Mac?"
     a: "macOS Retina screens capture at double pixel density, meaning a 1,200px window produces a 2,400px image file. To stop layout blowouts on websites, either downscale the image export to 1x dimensions (50% scale) or retain the high-resolution asset while explicitly setting the HTML display width using `<img width=\"1200\" ...>` or responsive `srcset` attributes."
   - q: "How do I capture a full-page scrolling screenshot without extra software?"
-    a: "In Google Chrome or Microsoft Edge, press Cmd + Option + I (macOS) or Ctrl + Shift + I (Windows) to open Developer Tools. Press Cmd + Shift + P (macOS) or Ctrl + Shift + P (Windows) to open the Command Menu. Type 'screenshot', select 'Capture full size screenshot', and press Enter. The browser will render and download the entire scrolled DOM as a single PNG file."
+    a: "In Google Chrome or Microsoft Edge, press F12 to open Developer Tools and click once inside the DevTools panel. Then press Cmd + Shift + P (macOS) or Ctrl + Shift + P (Windows and Linux) to open the Command Menu, or use the three-dot menu and choose Run command. Type 'screenshot', select 'Capture full size screenshot', and press Enter. Chrome saves the whole page as a single PNG in your Downloads folder. If only the visible area is captured, the site scrolls inside a container: select that element in the Elements tab and use 'Capture node screenshot' instead."
 draft: false
 ---
 A beautiful screenshot turns a raw screen capture into a professional visual asset through intentional preparation, framing, and styling. The formula relies on removing on-screen clutter, framing the subject inside an elevated container with generous canvas padding (32px to 64px) and soft multi-layered drop shadows, and exporting in lossless formats optimized for modern displays. Whether you write technical documentation, publish product updates, or share code on social media, this resource serves as **the complete guide to beautiful screenshots** to help you produce clean, engaging graphics.
@@ -93,13 +93,16 @@ Operating systems offer built-in utilities:
 While native tools work well for quick grabs, they lack the ability to isolate specific DOM elements or wrap images in responsive background frames.
 
 ### Full-Page Scrolling Captures
-Capturing an entire landing page, billing invoice, or audit report requires full-page scrolling captures. Rather than installing heavy third-party screen extensions, you can use the native feature built into Chrome:
+Capturing an entire landing page, billing invoice, or audit report requires full-page scrolling captures. Rather than installing heavy third-party screen extensions, you can use the native feature built into Chrome and Edge:
 
-1. Press `Cmd + Option + I` (macOS) or `Ctrl + Shift + I` (Windows) to open Developer Tools.
-2. Press `Cmd + Shift + P` (macOS) or `Ctrl + Shift + P` (Windows) to open the Command palette.
-3. Type `Capture full size screenshot` and hit Enter.
+1. Press `F12`, or `Cmd + Option + I` (macOS) / `Ctrl + Shift + I` (Windows and Linux), to open Developer Tools.
+2. **Click once inside the DevTools panel.** The next shortcut only works while DevTools has focus, which is the step most people miss.
+3. Press `Cmd + Shift + P` (macOS) or `Ctrl + Shift + P` (Windows and Linux) to open the Command Menu. If nothing appears, click the **⋮** menu in the top-right corner of DevTools and choose **Run command** instead.
+4. Type `screenshot`, select **Capture full size screenshot** (not "Capture screenshot", which only grabs the visible area), and press Enter.
 
-Chrome will render the entire page from top to bottom and download an uncompressed PNG file.
+Chrome renders the page from top to bottom and saves a full-resolution PNG straight to your Downloads folder, with no confirmation popup. Press `Ctrl + J` (or `Cmd + Shift + J` on macOS) to find it.
+
+**If you only get the visible part of the page:** many web apps and dashboards scroll inside a container instead of the page itself, so Chrome thinks the page is one screen tall. Open the **Elements** tab, select the element that scrolls (often a `<main>` or a large `<div>`), and run **Capture node screenshot** from the Command Menu. Very long pages (above roughly 16,000 pixels) can also get cut off, so capture those in sections.
 
 ![TODO: Chrome DevTools command menu showing Capture full size screenshot option](/blog/images/chrome-devtools-full-page-capture.png)
 
@@ -177,7 +180,7 @@ One of the most dangerous habits in documentation is using Gaussian blur or mosa
 ### The Security Hazard of Blur and Pixelation
 Blur filters do not delete pixel data. They apply mathematical averaging functions across adjacent pixels. Modern optical character recognition (OCR) engines, automated de-blurring algorithms, and open-source depix tools can easily invert standard blur filters and reconstruct passwords, authentication tokens, API keys, and email addresses.
 
-![TODO: Diagram demonstrating how blurred text can be reverse-engineered compared to an opaque redaction block](/blog/images/blur-vs-opaque-redaction.png)
+![Diagram: a blurred API key that software can reconstruct, next to a solid opaque block that leaves nothing to recover](/blog/images/blur-vs-opaque-redaction.png)
 
 If you need to hide sensitive information, follow the golden rule of redaction: **always use 100% opaque, solid color boxes**.
 
@@ -234,7 +237,7 @@ Ensure annotations meet WCAG AA contrast standards. Text labels placed on custom
 ### Solving Dark Mode Contrast Traps
 When you place a dark mode screenshot inside an article that also uses a dark theme, the edges blend together. The image loses its container boundary, making the page look disjointed.
 
-![TODO: Dark-on-dark interface edge blending solved by a 1px border stroke](/blog/images/dark-mode-border-contrast.png)
+![A dark app screenshot blending into a dark page with no border, next to the same screenshot with a faint 1px light border and soft shadow that defines its edge](/blog/images/dark-mode-border-contrast.png)
 
 To fix this blending trap without ruining the dark aesthetic, apply a subtle 1px semi-transparent white stroke around the window container:
 
