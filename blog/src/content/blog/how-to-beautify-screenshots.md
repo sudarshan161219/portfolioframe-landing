@@ -21,7 +21,7 @@ If you want to know how to beautify screenshots, here is the short answer: trans
 
 Raw captures often fail because they expose harsh edges, distracting desktop clutter, and poor contrast. When you post a raw screen grab on Twitter, LinkedIn, or in a pitch deck, it looks unfinished. With a few quick adjustments, you can make any UI capture look intentional and visually sharp.
 
-![TODO: Before and after comparison of a raw screenshot versus a beautified screenshot with padding and shadow](/blog/images/TODO-before-after.png)
+![Before and after comparison of a raw screenshot versus a beautified screenshot with padding and shadow](/blog/images/TODO-before-after.png)
 
 ## 1. The Anatomy of a High-Converting, Beautified Screenshot
 
@@ -64,7 +64,7 @@ Whenever possible, pick tools that process everything locally in your browser us
 ### Masking and Blurring Secrets
 Never rely on black highlighter markers that might have semi-transparency. Use dedicated box-blur tools or solid redact blocks over sensitive text before sharing. If your screenshot contains emails, production metrics, or database IDs, cover them before you export.
 
-![TODO: Example showing how to redact an API key or email before applying background styling](/blog/images/TODO-redaction-example.png)
+![Example showing how to redact an API key or email before applying background styling](/blog/images/TODO-redaction-example.png)
 
 ## 3. How to Beautify Screenshots in 4 Steps
 
@@ -108,7 +108,7 @@ Guide your viewer's attention directly to the focal point. Use simple visual aid
 
 Keep annotations minimal. Adding ten arrows and text labels recreates the exact visual clutter you are trying to eliminate.
 
-![TODO: Selective component crop with a clean callout box instead of a full dashboard](/blog/images/TODO-selective-crop.png)
+![Selective component crop with a clean callout box instead of a full dashboard](/blog/images/TODO-selective-crop.png)
 
 ## 5. Tool Breakdown: Choosing the Right Beautifier
 

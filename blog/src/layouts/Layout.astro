@@ -97,6 +97,14 @@ const year = new Date().getFullYear();
         <span>Built by <a href="https://x.com/buildwithSud" rel="noopener">@buildwithSud</a></span>
       </div>
     </footer>
+    <script is:inline>
+      // Hide only images whose file is missing (e.g. a placeholder not uploaded yet). Real images always show.
+      document.querySelectorAll('.prose img, .deck img').forEach(function (img) {
+        function hide() { img.style.display = 'none'; }
+        if (img.complete && img.naturalWidth === 0) hide();
+        img.addEventListener('error', hide);
+      });
+    </script>
   </body>
 </html>
 
@@ -151,8 +159,6 @@ const year = new Date().getFullYear();
   :focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
   ::selection { background: var(--sage); color: var(--void); }
 
-  /* Images still marked TODO stay hidden until a real image replaces them */
-  img[alt^="TODO"], .prose img[alt^="TODO"] { display: none !important; }
 
   /* ---------- Nav (matches landing Nav.module.css) ---------- */
   .nav { position: sticky; top: 0; z-index: 40; background: rgba(11, 12, 13, .86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--hairline); }
