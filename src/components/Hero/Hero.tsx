@@ -27,6 +27,14 @@ export default function Hero() {
             {t.primaryCta}
           </a>
           <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/portfolio-frame-screenshots/"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.webCta}
+          >
+            {t.firefoxCta}
+          </a>
+          <a
             href="https://app.portfolioframe.com/"
             target="_blank"
             rel="noreferrer"

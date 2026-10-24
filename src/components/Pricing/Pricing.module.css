@@ -168,6 +168,10 @@
   border: 1px solid var(--hairline-strong);
 }
 
+.ctaGhost + .ctaGhost {
+  margin-top: 10px;
+}
+
 .ctaGhost:hover {
   background: rgba(255, 246, 222, 0.06);
 }

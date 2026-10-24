@@ -26,6 +26,7 @@ export const en = {
       faq: 'FAQ',
     },
     cta: 'Add to Chrome',
+    ctaFirefox: 'Add to Firefox',
   },
 
   hero: {
@@ -37,6 +38,7 @@ export const en = {
     sub: "Portfolio Frame turns a raw screenshot or a slab of code into something worth sharing, windowed, lit, annotated, and sized for wherever it's going. No account, no upload, no server in between.",
     primaryCta: "Add to Chrome, it's free",
     webCta: "Try it on the web",
+    firefoxCta: 'Get it for Firefox',
     secondaryCta: 'See it on code ↓',
     trust: {
       setupLabel: 'Setup',

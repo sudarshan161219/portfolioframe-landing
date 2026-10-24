@@ -86,6 +86,7 @@ export interface Dictionary {
   nav: {
     links: Record<NavSectionId, string>
     cta: string
+    ctaFirefox: string
   }
 
   hero: {
@@ -96,6 +97,7 @@ export interface Dictionary {
     sub: string
     primaryCta: string
     webCta: string
+    firefoxCta: string
     secondaryCta: string
     trust: {
       setupLabel: string

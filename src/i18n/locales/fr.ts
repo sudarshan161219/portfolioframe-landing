@@ -26,6 +26,7 @@ export const fr = {
       faq: 'FAQ',
     },
     cta: 'Ajouter à Chrome',
+    ctaFirefox: 'Ajouter à Firefox',
   },
 
   hero: {
@@ -37,6 +38,7 @@ export const fr = {
     sub: 'Portfolio Frame transforme une capture d’écran brute ou un bloc de code en quelque chose qui vaut le coup d’être partagé : encadré, éclairé, annoté, et à la bonne taille pour sa destination. Pas de compte, pas d’upload, pas de serveur entre les deux.',
     primaryCta: 'Ajouter à Chrome, c’est gratuit',
     webCta: "Essaie-le sur le web",
+    firefoxCta: 'Obtenir pour Firefox',
     secondaryCta: 'Voir avec du code ↓',
     trust: {
       setupLabel: 'Installation',

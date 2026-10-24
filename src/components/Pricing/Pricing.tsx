@@ -36,6 +36,14 @@ export default function Pricing() {
           >
             {t.free.cta}
           </a>
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/portfolio-frame-screenshots/"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.ctaGhost}
+          >
+            {dict.nav.ctaFirefox}
+          </a>
         </div>
 
         <div className={`${styles.card} ${styles.cardPro}`}>

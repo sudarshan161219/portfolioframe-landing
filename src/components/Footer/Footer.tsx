@@ -132,6 +132,13 @@ export default function Footer() {
             {dict.nav.cta}
           </a>
           <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/portfolio-frame-screenshots/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {dict.nav.ctaFirefox}
+          </a>
+          <a
             href="https://checkout.dodopayments.com/buy/pdt_0NmQH2p48Kq2fePwLLuKX?quantity=1"
             target="_blank"
             rel="noreferrer"

@@ -26,6 +26,7 @@ export const de = {
       faq: 'FAQ',
     },
     cta: 'Zu Chrome hinzufügen',
+    ctaFirefox: 'Zu Firefox hinzufügen',
   },
 
   hero: {
@@ -37,6 +38,7 @@ export const de = {
     sub: 'Portfolio Frame macht aus einem rohen Screenshot oder einem Batzen Code etwas, das sich zu teilen lohnt: gerahmt, ausgeleuchtet, kommentiert und im richtigen Format für jeden Zweck. Kein Account, kein Upload, kein Server dazwischen.',
     primaryCta: 'Zu Chrome hinzufügen – kostenlos',
     webCta: "Im Web ausprobieren",
+    firefoxCta: 'Für Firefox holen',
     secondaryCta: "Zeig's mir am Code ↓",
     trust: {
       setupLabel: 'Setup',

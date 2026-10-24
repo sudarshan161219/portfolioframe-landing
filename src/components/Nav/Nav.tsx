@@ -3,6 +3,7 @@ import { useLocale } from "../../i18n/LocaleContext";
 import { withLocale } from "../../i18n/paths";
 import LocaleSwitcher from "../LocaleSwitcher/LocaleSwitcher";
 import type { NavSectionId } from "../../i18n/types";
+import { ChromeIcon, FirefoxIcon } from "./BrowserIcons";
 
 const RAIL_SECTIONS: NavSectionId[] = [
   "editor",
@@ -134,14 +135,28 @@ export default function Nav() {
 
         <LocaleSwitcher />
 
-        <a
-          className={styles.cta}
-          href="https://chromewebstore.google.com/detail/kgpdfalcolcdidglbdnfnelgihlocmkf?utm_source=item-share-cb"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {dict.nav.cta}
-        </a>
+        <div className={styles.browsers}>
+          <a
+            className={styles.browserBtn}
+            href="https://chromewebstore.google.com/detail/kgpdfalcolcdidglbdnfnelgihlocmkf?utm_source=item-share-cb"
+            target="_blank"
+            rel="noreferrer"
+            aria-label={dict.nav.cta}
+            title={dict.nav.cta}
+          >
+            <ChromeIcon />
+          </a>
+          <a
+            className={styles.browserBtn}
+            href="https://addons.mozilla.org/en-US/firefox/addon/portfolio-frame-screenshots/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label={dict.nav.ctaFirefox}
+            title={dict.nav.ctaFirefox}
+          >
+            <FirefoxIcon />
+          </a>
+        </div>
       </div>
     </header>
   );

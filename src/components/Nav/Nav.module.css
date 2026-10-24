@@ -77,24 +77,29 @@
   background: rgba(255, 246, 222, 0.06);
 }
 
-.cta {
+.browsers {
   flex-shrink: 0;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-  color: var(--void);
-  background: var(--mint);
-  padding: 10px 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.browserBtn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--hairline-strong);
   border-radius: var(--radius-sm);
-  font-weight: 600;
   transition:
+    border-color 0.15s ease,
     background 0.15s ease,
     transform 0.15s ease;
 }
 
-.cta:hover {
-  background: var(--sage);
+.browserBtn:hover {
+  border-color: var(--mint);
+  background: rgba(255, 246, 222, 0.06);
   transform: translateY(-1px);
 }
 
