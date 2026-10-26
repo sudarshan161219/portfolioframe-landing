@@ -70,7 +70,7 @@ I built [Portfolio Frame](https://portfolioframe.com/) after dealing with these 
 
 Portfolio Frame runs as a lightweight Chrome extension and as a standalone web app at [app.portfolioframe.com](https://app.portfolioframe.com/). Everything runs locally in your browser. No server uploads, no accounts, and no data tracking. That makes it completely safe for proprietary enterprise code.
 
-![TODO: Portfolio Frame code screenshot editor with social presets and annotations](/blog/images/TODO.png)
+![TODO: Portfolio Frame code screenshot editor with social presets and annotations](/blog/images/ray-SO-alternative.png)
 
 **Where it beats Ray.so:**
 * **Standard Social Presets:** One click sets your canvas to 16:9 (X/Twitter), 1.91:1 (LinkedIn), or 1:1 / 4:5 (Instagram). Your code stays centered and perfectly padded inside a thumbnail-safe bounding box.
