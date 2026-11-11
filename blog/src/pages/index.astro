@@ -22,7 +22,7 @@ const productLabel = { 'portfolio-frame': 'Portfolio Frame', cutout: 'Cutout' } 
     <ul>
       {posts.map((post) => (
         <li>
-          <a class="post-card" href={`/blog/${post.id}/`}>
+          <a class="post-card" href={`/blog/${post.id}`}>
             <span class="post-meta">
               <span>{productLabel[post.data.product]}</span>
               <span aria-hidden="true">·</span>

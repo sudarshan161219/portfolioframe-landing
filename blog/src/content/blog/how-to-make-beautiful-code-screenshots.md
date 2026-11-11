@@ -85,7 +85,7 @@ Center your code window inside an outer canvas to give the text room to breathe:
 * **Backgrounds:** Use subtle gradients, soft solid studio colors, or clean dark palettes that complement your syntax theme.
 * **Aspect Ratios:** Select a pre-configured preset such as 16:9 for landscape decks or 4:5 for vertical feeds.
 
-For a deeper look into layout rules, check out our [complete guide to beautiful screenshots](https://portfolioframe.com/blog/complete-guide-to-beautiful-screenshots/).
+For a deeper look into layout rules, check out our [complete guide to beautiful screenshots](https://portfolioframe.com/blog/complete-guide-to-beautiful-screenshots).
 
 ### Step 5: Export for Your Target Platform
 Hit export to download your high-resolution PNG. If you have the Pro license, you can export an SVG vector or use the batch export feature to download all common aspect ratios packed into a single zip file.

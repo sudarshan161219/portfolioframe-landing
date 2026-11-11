@@ -17,7 +17,8 @@ interface Props {
   schema?: object | object[];
 }
 const { title, description, image = 'https://portfolioframe.com/og-image.png', type = 'website', schema } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// No trailing slash: the host redirects /blog/x/ to /blog/x
+const canonical = new URL(Astro.url.pathname.replace(/\/+$/, '') || '/', Astro.site).href;
 const CWS = 'https://chromewebstore.google.com/detail/kgpdfalcolcdidglbdnfnelgihlocmkf?utm_source=blog';
 const CUTOUT_CWS = 'https://chromewebstore.google.com/detail/bbabbmnpeiapnfikblfhdjkbodpgiolb?utm_source=blog';
 const year = new Date().getFullYear();
@@ -52,7 +53,7 @@ const year = new Date().getFullYear();
           <span>Portfolio Frame</span>
         </a>
         <nav class="rail" aria-label="Site">
-          <a class="rail-link" href="/blog/" aria-current={Astro.url.pathname.startsWith('/blog') ? 'page' : undefined}>Blog</a>
+          <a class="rail-link" href="/blog" aria-current={Astro.url.pathname.startsWith('/blog') ? 'page' : undefined}>Blog</a>
           <a class="rail-link" href="/#editor">Features</a>
           <a class="rail-link" href="/#pricing">Pricing</a>
           <a class="rail-link" href="https://cutout.portfolioframe.com/">Cutout</a>
@@ -87,7 +88,7 @@ const year = new Date().getFullYear();
         </div>
         <div class="link-group">
           <p class="group-label">Read</p>
-          <a href="/blog/">Blog</a>
+          <a href="/blog">Blog</a>
           <a href="/vs/shots-so">Compare tools</a>
           <a href="/privacy">Privacy</a>
         </div>

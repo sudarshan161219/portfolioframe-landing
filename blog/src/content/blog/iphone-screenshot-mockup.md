@@ -74,7 +74,7 @@ Here are the native resolutions for modern iPhones rendered at their native Reti
 
 Modern iPhones with the Dynamic Island use taller aspect ratios (roughly 19.5:9) compared to older rectangular displays. If you capture a screen on an older device or resize an asset haphazardly, your mockup tool will either stretch the graphic or leave awkward gaps along the rounded screen corners.
 
-For an in-depth breakdown of maintaining visual fidelity across different screen formats, see our article on [The Complete Guide to Beautiful Screenshots](https://portfolioframe.com/blog/complete-guide-to-beautiful-screenshots/).
+For an in-depth breakdown of maintaining visual fidelity across different screen formats, see our article on [The Complete Guide to Beautiful Screenshots](https://portfolioframe.com/blog/complete-guide-to-beautiful-screenshots).
 
 ## 3. Three Ways to Create an iPhone Screenshot Mockup
 
@@ -93,7 +93,7 @@ Here is the step-by-step workflow:
 3. **Adjust Composition:** Add a 3D tilt, customize background padding, and configure a directional drop shadow to give the phone depth.
 4. **Export:** Download the composition as a full-resolution, transparent PNG or compressed JPEG.
 
-Other browser-based tools include Shots.so, which offers solid social templates (you can read our [Portfolio Frame vs Shots.so](https://portfolioframe.com/vs/shots-so) comparison for details), and general utilities reviewed across industry sites like [TheAppLaunchpad mockup analysis](https://theapplaunchpad.com/blog/iphone-mockup-generators/). If you need a desktop-style wrapper instead of mobile, we also provide a guide on how to [add browser frame to screenshot](https://portfolioframe.com/blog/add-browser-frame-to-screenshot/) assets.
+Other browser-based tools include Shots.so, which offers solid social templates (you can read our [Portfolio Frame vs Shots.so](https://portfolioframe.com/vs/shots-so) comparison for details), and general utilities reviewed across industry sites like [TheAppLaunchpad mockup analysis](https://theapplaunchpad.com/blog/iphone-mockup-generators/). If you need a desktop-style wrapper instead of mobile, we also provide a guide on how to add browser frame to screenshot assets.
 
 ![TODO: Screenshot of Portfolio Frame wrapping an iPhone screen with drop shadow and background controls](/blog/images/portfolio-frame-iphone-editor.png)
 

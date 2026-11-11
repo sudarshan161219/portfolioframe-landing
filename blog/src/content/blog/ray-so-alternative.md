@@ -32,7 +32,7 @@ Raycast built Ray.so as a standalone web utility. It looks slick and produces cl
 ### 1. The Social Feed Crop Issue
 Ray.so lets you pick padding increments: 16px, 32px, 64px, or 128px. It wraps this padding directly around your text block. 
 
-The problem is social platforms do not care about your code snippet's width. Feed algorithms on X (formerly Twitter) default to a 16:9 aspect ratio (`1200 × 675 px`), while LinkedIn post feeds prefer 1.91:1 (`1200 × 627 px`). If your code image has arbitrary dimensions, LinkedIn and X crop the sides or top in feed previews. Readers only see your full snippet if they click to expand the thumbnail. For a deeper breakdown of this issue, check out our guide on creating a [code screenshot for LinkedIn](https://portfolioframe.com/blog/code-screenshot-for-linkedin/).
+The problem is social platforms do not care about your code snippet's width. Feed algorithms on X (formerly Twitter) default to a 16:9 aspect ratio (`1200 × 675 px`), while LinkedIn post feeds prefer 1.91:1 (`1200 × 627 px`). If your code image has arbitrary dimensions, LinkedIn and X crop the sides or top in feed previews. Readers only see your full snippet if they click to expand the thumbnail. For a deeper breakdown of this issue, check out our guide on creating a code screenshot for LinkedIn.
 
 ### 2. Zero Session Persistence
 Ray.so does not store draft state. If you accidentally hit Cmd+R, close the browser tab, or navigate backward, your pasted snippet, custom title, and styling configurations vanish completely. 
@@ -93,7 +93,7 @@ Carbon lets you adjust line height, upload custom TTF or WOFF2 fonts, toggle lin
 **Trade-offs vs. Ray.so:**
 Carbon's interface is significantly more cluttered than Ray.so. Adjusting all the sliders takes more time, and like Ray.so, Carbon relies purely on fixed padding rather than standard social aspect ratios. 
 
-**Pricing:** 100% Free and open source. Compare both tools directly in our [Portfolio Frame vs. Carbon breakdown](https://portfolioframe.com/vs/carbon) or see other options in our guide to the [best Carbon alternatives](https://portfolioframe.com/blog/carbon-alternative/).
+**Pricing:** 100% Free and open source. Compare both tools directly in our [Portfolio Frame vs. Carbon breakdown](https://portfolioframe.com/vs/carbon) or see other options in our guide to the [best Carbon alternatives](https://portfolioframe.com/blog/carbon-alternative).
 
 ### 3. Snappify
 *Best for technical educators and interactive visual guides.*
@@ -162,10 +162,10 @@ Chalk.ist has fewer background gradients and window options. It is built purely 
 When evaluating a tool to replace Ray.so, consider these three criteria:
 
 ### 1. Code Privacy and Local Rendering
-Never paste sensitive company code or proprietary algorithms into a tool that sends raw text to a backend API for processing. Always look for tools that state they are **100% client-side**. Both Ray.so and Portfolio Frame execute rendering locally in your browser, meaning your code never touches an external server. You can read more about visual workflows in our [complete guide to beautiful screenshots](https://portfolioframe.com/blog/complete-guide-to-beautiful-screenshots/).
+Never paste sensitive company code or proprietary algorithms into a tool that sends raw text to a backend API for processing. Always look for tools that state they are **100% client-side**. Both Ray.so and Portfolio Frame execute rendering locally in your browser, meaning your code never touches an external server. You can read more about visual workflows in our [complete guide to beautiful screenshots](https://portfolioframe.com/blog/complete-guide-to-beautiful-screenshots).
 
 ### 2. Social Media Aspect Ratios
-If your goal is building an audience on LinkedIn or X, do not settle for tools that only offer padding controls. Check out our step-by-step tutorial on [how to make beautiful code screenshots](https://portfolioframe.com/blog/how-to-make-beautiful-code-screenshots/) to see how fixed aspect ratios stop automated feed cropping.
+If your goal is building an audience on LinkedIn or X, do not settle for tools that only offer padding controls. Check out our step-by-step tutorial on [how to make beautiful code screenshots](https://portfolioframe.com/blog/how-to-make-beautiful-code-screenshots) to see how fixed aspect ratios stop automated feed cropping.
 
 ### 3. Contextual Markups and Explanations
 If you write instructional content, simple syntax highlighting is rarely enough. Choose an alternative that lets you annotate your code with arrows, text notes, and highlighted lines so readers can digest complex logic immediately.

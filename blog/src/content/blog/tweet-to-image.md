@@ -83,7 +83,7 @@ A bare white card against an empty background looks flat. Giving the card some b
 * **Backgrounds:** Use a subtle gradient, a solid brand color, or a soft blur backdrop.
 * **Drop Shadows:** Add a soft drop shadow beneath the tweet card to lift it off the background canvas, creating visual depth.
 
-If you want to read more about framing techniques, check out [The Complete Guide to Beautiful Screenshots](https://portfolioframe.com/blog/complete-guide-to-beautiful-screenshots/).
+If you want to read more about framing techniques, check out [The Complete Guide to Beautiful Screenshots](https://portfolioframe.com/blog/complete-guide-to-beautiful-screenshots).
 
 ![TODO: Screenshot showing background padding, shadows, and theme controls in Portfolio Frame](/blog/images/styling-tweet-card-editor.png)
 

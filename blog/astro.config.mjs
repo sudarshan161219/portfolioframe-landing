@@ -5,6 +5,12 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://portfolioframe.com',
   base: '/blog',
-  trailingSlash: 'always',
-  integrations: [sitemap()],
+  // Live URLs have no trailing slash (wrangler.jsonc drop-trailing-slash), so match it here
+  trailingSlash: 'never',
+  integrations: [
+    sitemap({
+      // match the no-trailing-slash live URLs (the blog index would otherwise be /blog/)
+      serialize: (item) => ({ ...item, url: item.url.replace(/\/+$/, '') }),
+    }),
+  ],
 });

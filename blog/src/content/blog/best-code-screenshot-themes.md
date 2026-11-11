@@ -36,7 +36,7 @@ To make your snippets readable across every device, evaluate your themes using f
 * **Visual fatigue:** Does the palette avoid harsh, pure black (#000000) against pure white (#ffffff) pairings that vibrate on OLED screens?
 * **Backdrop compatibility:** Does the syntax theme look good against custom frames, gradients, and padding without clashing?
 
-For a deeper look into snippet layout rules, check out our guide on [how to make beautiful code screenshots](https://portfolioframe.com/blog/how-to-make-beautiful-code-screenshots/).
+For a deeper look into snippet layout rules, check out our guide on [how to make beautiful code screenshots](https://portfolioframe.com/blog/how-to-make-beautiful-code-screenshots).
 
 ## 2. The 5 Best Code Screenshot Themes (Ranked by Use Case)
 
@@ -106,7 +106,7 @@ What about ligatures like `=>`, `===`, and `!=`? If your audience is made up of 
 Match your screenshot dimensions to your target platform:
 
 * **16:9 Landscape (1200x675 px):** Standard format for X cards, presentations, and blog header images.
-* **1:1 Square (1080x1080 px):** Ideal for standard feed posts. If you post to LinkedIn often, see our complete walkthrough on [code screenshots for LinkedIn](https://portfolioframe.com/blog/code-screenshot-for-linkedin/).
+* **1:1 Square (1080x1080 px):** Ideal for standard feed posts. If you post to LinkedIn often, see our complete walkthrough on code screenshots for LinkedIn.
 * **4:5 Portrait (1080x1350 px):** Maximizes vertical space on mobile feeds, which helps snippets avoid being cropped in carousels.
 * **Padding:** Keep container padding between 32px and 64px. Padding under 24px feels cramped, while padding over 100px shrinks your snippet text too much on phone screens.
 * **Resolution:** Always export at 2x or 3x scale. Standard 1x exports turn into fuzzy pixel clouds when uploaded to high-DPI smartphone displays.
@@ -134,7 +134,7 @@ Always copy the snippet raw text into the image `alt` attribute when sharing on 
 
 Copying and pasting code into web-based screenshot tools can interrupt your daily development workflow. Many online tools also send your snippets to remote servers, which creates privacy concerns if you handle proprietary code.
 
-If you have evaluated options like Carbon or Ray.so, you know that managing themes, backgrounds, and sizes across different tools takes time. You can read our detailed comparisons in our guides on [Carbon alternatives](https://portfolioframe.com/blog/carbon-alternative/) and [Ray.so alternatives](https://portfolioframe.com/blog/ray-so-alternative/).
+If you have evaluated options like Carbon or Ray.so, you know that managing themes, backgrounds, and sizes across different tools takes time. You can read our detailed comparisons in our guides on [Carbon alternatives](https://portfolioframe.com/blog/carbon-alternative) and [Ray.so alternatives](https://portfolioframe.com/blog/ray-so-alternative).
 
 ![TODO: Screenshot of Portfolio Frame running locally in a browser, showing the theme selector and Retina export options](/blog/images/portfolio-frame-code-theme-editor.png)
 

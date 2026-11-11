@@ -1,7 +1,7 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
 import Nav from '../components/Nav/Nav'
 import Footer from '../components/Footer/Footer'
-import { COMPARISON_SLUGS } from '../data/comparisons'
+import { COMPARISON_SLUGS, RELATED_GUIDES } from '../data/comparisons'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { useLocale } from '../i18n/LocaleContext'
 import { withLocale } from '../i18n/paths'
@@ -116,6 +116,17 @@ export default function Compare() {
             ))}
           </section>
         )}
+
+        <section className={styles.otherSection}>
+          <p className={styles.otherLabel}>Related guides</p>
+          <div className={styles.otherLinks}>
+            {RELATED_GUIDES[comparisonSlug].map((g) => (
+              <a key={g.slug} href={`/blog/${g.slug}`} className={styles.otherLink}>
+                {g.title}
+              </a>
+            ))}
+          </div>
+        </section>
 
         <section className={styles.otherSection}>
           <p className={styles.otherLabel}>{t.otherLabel}</p>

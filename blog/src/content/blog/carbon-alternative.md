@@ -79,7 +79,7 @@ Because developers often need to explain code rather than just show it, the tool
 
 * **Privacy-First:** Everything processes locally inside your browser. No accounts are required, and your private code never touches an external server.
 * **Pricing:** Free plan available. The Pro upgrade is a **$19 one-time payment** (no subscriptions) that includes SVG export, custom fonts, glassmorphism backgrounds, batch exports across aspect ratios, and the redact tool.
-* **Best For:** Indie hackers, engineers, and creators who want a single utility for code snaps, portfolio screenshots, and documentation assets. For practical tips, see our guide on [how to make beautiful code screenshots](https://portfolioframe.com/blog/how-to-make-beautiful-code-screenshots/).
+* **Best For:** Indie hackers, engineers, and creators who want a single utility for code snaps, portfolio screenshots, and documentation assets. For practical tips, see our guide on [how to make beautiful code screenshots](https://portfolioframe.com/blog/how-to-make-beautiful-code-screenshots).
 
 ### 5. CodeImage and Chalk.ist - Best Free and Open-Source Options
 

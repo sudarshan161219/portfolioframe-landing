@@ -68,7 +68,7 @@ Never rely on black highlighter markers that might have semi-transparency. Use d
 
 ## 3. How to Beautify Screenshots in 4 Steps
 
-You can produce clean, branded graphics in minutes without opening complex desktop editors. For a deep look at principles, read [The Complete Guide to Beautiful Screenshots](https://portfolioframe.com/blog/complete-guide-to-beautiful-screenshots/). Here is the standard four-step workflow.
+You can produce clean, branded graphics in minutes without opening complex desktop editors. For a deep look at principles, read [The Complete Guide to Beautiful Screenshots](https://portfolioframe.com/blog/complete-guide-to-beautiful-screenshots). Here is the standard four-step workflow.
 
 ### Step 1: Capture or Import the Asset
 Start with a clean crop. Instead of capturing your entire 4K monitor and trying to crop it down later, capture only the active window or target UI element. If you use a browser extension, you can grab the specific DOM element directly to avoid including browser bookmarks, tabs, or system clock icons.
